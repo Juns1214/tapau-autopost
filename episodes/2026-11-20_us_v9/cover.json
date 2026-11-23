@@ -1,1 +1,3 @@
-{"bg": "bg_wallstreet_13801277.jpg", "pre": "标普 500 本周", "num": "−8.6%", "post": "", "numColor": "#FF5A5F"}
+{"bg": "bg_wallstreet_13801277.jpg", "dark": 0.5, "d1": "11月20日", "d2": "美股早报",
+ "lines": [{"t": "美股怎么了？", "s": 170}, {"t": "GTA 6 卖爆都救不了", "s": 92, "c": "#FFD23F"}],
+ "badge": {"label": "标普 500 本周", "num": "−8.6%", "style": "glass"}}

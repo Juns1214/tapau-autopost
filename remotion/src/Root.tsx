@@ -1083,19 +1083,46 @@ const Recap: React.FC = () => <AbsoluteFill style={{background: '#061022'}}>
 </AbsoluteFill>;
 
 
-// 封面: title frame + one factual headline line. Props come from episodes/<ep>/cover.json via --props.
-const CoverComp: React.FC<any> = ({bg, pre, num, post, numColor}) => <AbsoluteFill style={{fontFamily: 'PH', background: '#061022'}}>
-  <style>{fonts}</style>
-  <Bg img={bg} blur={0} dark={0.35} />
-  <AbsoluteFill><TitleU t={10} /></AbsoluteFill>
-  <div style={{position: 'absolute', left: 0, width: W, top: 1190, textAlign: 'center', ...slideUp(10, 0)}}>
-    <span style={{...glassStyle({position: 'relative', display: 'inline-block', padding: '22px 46px', fontSize: 62, fontWeight: 900, color: 'white'}), borderRadius: 28, borderLeft: `10px solid ${YEL}`}}>
-      {pre}<span style={{color: numColor || YEL, margin: '0 10px'}}>{num}</span>{post}</span></div>
-</AbsoluteFill>;
+// 封面: date title (as in the video) + big question + yellow line + S&P card. Props: episodes/<ep>/cover.json via --props.
+// Everything important stays inside the centre 3:4 area (y 240-1680) so feed crops don't cut it.
+const CoverComp: React.FC<any> = ({bg, dark = 0.5, d1 = '11月20日', d2 = SHOW, lines = [], badge}) => {
+  const stroke = (w: number) => ({WebkitTextStroke: `${w}px #0B1020`, paintOrder: 'stroke fill', textShadow: '0 10px 40px rgba(0,0,0,0.7)'} as any);
+  const Txt2 = ({t, s, c = 'white'}: any) => <div style={{fontSize: s, fontWeight: 900, color: c, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'nowrap', ...stroke(s > 120 ? 14 : 10)}}>{t}</div>;
+  const BW = 700, BH = 300;
+  const chart = () => { // cumulative path from the real daily % changes
+    const ser: number[] = badge.series || []; const v = [100]; ser.forEach(p => v.push(v[v.length - 1] * (1 + p / 100)));
+    const lo = Math.min(...v), hi = Math.max(...v); const P = v.map((y, i) => [20 + i * (BW - 40) / (v.length - 1), 40 + (hi - y) / (hi - lo || 1) * (BH - 80)]);
+    if (badge.style === 'glass') { const mx = Math.max(...ser.map(Math.abs)); const bw = 70, gap = 26, x0 = (BW - ser.length * bw - (ser.length - 1) * gap) / 2, base = BH - 92;
+      return <svg width={BW} height={BH} style={{position: 'absolute', left: 0, top: 0}}>
+        <line x1={x0 - 20} x2={BW - x0 + 20} y1={base} y2={base} stroke="rgba(255,255,255,0.35)" strokeWidth={3} />
+        {ser.map((p, i) => { const h = Math.max(8, Math.abs(p) / mx * 70); return <rect key={i} x={x0 + i * (bw + gap)} y={base} width={bw} height={h} rx={6} fill={RED} opacity={0.9} />; })}</svg>; }
+    return <svg width={BW} height={BH} style={{position: 'absolute', left: 0, top: 0, opacity: 0.4}}>
+      <path d={`M${P.map(p => p.join(',')).join(' L')} L${BW - 20},${BH} L20,${BH} Z`} fill="rgba(0,0,0,0.35)" />
+      <polyline points={P.map(p => p.join(',')).join(' ')} fill="none" stroke="white" strokeWidth={6} strokeLinejoin="round" /></svg>;
+  };
+  const Badge = () => !badge ? null : <div style={{position: 'relative', width: BW, height: BH, borderRadius: 36, overflow: 'hidden', textAlign: 'center',
+      ...(badge.style === 'glass' ? glassStyle({position: 'relative', border: `3px solid ${rgba(RED, 0.85)}`, boxShadow: `0 30px 70px rgba(0,0,0,0.6), 0 0 50px ${rgba(RED, 0.45)}`})
+        : {background: 'linear-gradient(135deg, #FF4D57 0%, #C21B2C 55%, #6E0A18 100%)', border: '3px solid rgba(255,255,255,0.35)', boxShadow: '0 30px 70px rgba(0,0,0,0.6), 0 0 60px rgba(255,60,70,0.5)'})}}>
+    {badge.style !== 'glass' && chart()}
+    <div style={{position: 'relative', paddingTop: 30, fontSize: badge.ls || 64, fontWeight: 900, color: 'white'}}>{badge.label}</div>
+    <div style={{position: 'relative', fontSize: badge.s || 130, fontWeight: 900, lineHeight: 1.1, marginTop: 6, color: badge.style === 'glass' ? RED : 'white', textShadow: '0 6px 24px rgba(0,0,0,0.35)'}}>{badge.num}</div></div>;
+  return <AbsoluteFill style={{fontFamily: 'PH', background: '#061022'}}>
+    <style>{fonts}</style>
+    <Bg img={bg} blur={0} dark={dark} />
+    <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 52%, rgba(4,8,18,0.55), transparent 65%)'}} />
+    <div style={{position: 'absolute', left: 0, width: W, top: 260, height: 1400, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+      <Txt2 t={d1} s={110} c={YEL} /><Txt2 t={d2} s={110} />
+      <div style={{height: 70}} />
+      {lines.map((l: any, i: number) => <Txt2 key={i} t={l.t} s={l.s} c={l.c || 'white'} />)}
+      <div style={{height: 70}} />
+      <Badge />
+    </div>
+  </AbsoluteFill>;
+};
 
 const total = (SCENES as any[]).reduce((a, s) => a + s.frames, 0);
 export const Root: React.FC = () => <>
   <Composition id="Recap" component={Recap} durationInFrames={total} fps={FPS} width={W} height={H} />
   <Composition id="Sample" component={SampleComp as any} durationInFrames={150} fps={FPS} width={W} height={H} defaultProps={{card: 'reasons', v: 'A', sec: 4}} />
-  <Composition id="Cover" component={CoverComp} durationInFrames={1} fps={FPS} width={W} height={H} defaultProps={{bg: 'bg_wallstreet_13801277.jpg', pre: '标普 500 本周', num: '−8.6%', post: '', numColor: '#FF5A5F'}} />
+  <Composition id="Cover" component={CoverComp} durationInFrames={1} fps={FPS} width={W} height={H} defaultProps={{bg: 'bg_wallstreet_13801277.jpg', lines: [], badge: null}} />
 </>;
