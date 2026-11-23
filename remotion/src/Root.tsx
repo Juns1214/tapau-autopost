@@ -521,7 +521,7 @@ const SampleComp: React.FC<{card: string; v: string; sec: number}> = ({card, v})
   const [Comp, bg, num, bar, b] = C[card];
   return <AbsoluteFill style={{fontFamily: 'PH', background: '#061022'}}>
     <style>{fonts}</style>
-    <Bg img={bg} blur={9} dark={0.55} />
+    <Bg img={bg} blur={0} dark={0.35} />
     <AbsoluteFill><Comp t={t} b={{...b, v}} R={() => 0} /></AbsoluteFill>
     <TopBar num={num} text={bar} />
     <div style={{position: 'absolute', left: 36, top: 50, display: 'flex', gap: 10}}>
@@ -1082,8 +1082,20 @@ const Recap: React.FC = () => <AbsoluteFill style={{background: '#061022'}}>
   <Series>{(SCENES as any[]).map((sc, i) => <Series.Sequence key={i} durationInFrames={sc.frames}><Scene sc={sc} /></Series.Sequence>)}</Series>
 </AbsoluteFill>;
 
+
+// 封面: title frame + one factual headline line. Props come from episodes/<ep>/cover.json via --props.
+const CoverComp: React.FC<any> = ({bg, pre, num, post, numColor}) => <AbsoluteFill style={{fontFamily: 'PH', background: '#061022'}}>
+  <style>{fonts}</style>
+  <Bg img={bg} blur={0} dark={0.35} />
+  <AbsoluteFill><TitleU t={10} /></AbsoluteFill>
+  <div style={{position: 'absolute', left: 0, width: W, top: 1190, textAlign: 'center', ...slideUp(10, 0)}}>
+    <span style={{...glassStyle({position: 'relative', display: 'inline-block', padding: '22px 46px', fontSize: 62, fontWeight: 900, color: 'white'}), borderRadius: 28, borderLeft: `10px solid ${YEL}`}}>
+      {pre}<span style={{color: numColor || YEL, margin: '0 10px'}}>{num}</span>{post}</span></div>
+</AbsoluteFill>;
+
 const total = (SCENES as any[]).reduce((a, s) => a + s.frames, 0);
 export const Root: React.FC = () => <>
   <Composition id="Recap" component={Recap} durationInFrames={total} fps={FPS} width={W} height={H} />
   <Composition id="Sample" component={SampleComp as any} durationInFrames={150} fps={FPS} width={W} height={H} defaultProps={{card: 'reasons', v: 'A', sec: 4}} />
+  <Composition id="Cover" component={CoverComp} durationInFrames={1} fps={FPS} width={W} height={H} defaultProps={{bg: 'bg_wallstreet_13801277.jpg', pre: '标普 500 本周', num: '−8.6%', post: '', numColor: '#FF5A5F'}} />
 </>;

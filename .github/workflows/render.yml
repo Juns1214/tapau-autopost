@@ -35,13 +35,22 @@ jobs:
           cp -r episodes/$EP/img/. remotion/public/img/
           cp episodes/$EP/scenes.json remotion/src/scenes.json
           cp episodes/$EP/mix.m4a remotion/public/mix.m4a
+      - name: Render cover (封面)
+        working-directory: remotion
+        run: |
+          mkdir -p out
+          if [ -f ../episodes/$EP/cover.json ]; then
+            npx remotion still src/index.ts Cover out/cover.png --props=../episodes/$EP/cover.json --browser-executable=$(which google-chrome)
+          fi
       - name: Render
         working-directory: remotion
         run: npx remotion render src/index.ts Recap out/$EP.mp4 --concurrency=4 --crf=20 --browser-executable=$(which google-chrome)
       - uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.episode }}
-          path: remotion/out/*.mp4
+          path: |
+            remotion/out/*.mp4
+            remotion/out/cover.png
           retention-days: 7
       - name: Publish video file as a release asset (direct download URL for Facebook)
         if: inputs.post != 'none'
@@ -49,11 +58,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete "ep-$EP" -y --cleanup-tag 2>/dev/null || true
-          gh release create "ep-$EP" "remotion/out/$EP.mp4" --title "$EP" --notes "Rendered by GitHub Actions"
+          ASSETS="remotion/out/$EP.mp4"; [ -f remotion/out/cover.png ] && ASSETS="$ASSETS remotion/out/cover.png"
+          gh release create "ep-$EP" $ASSETS --title "$EP" --notes "Rendered by GitHub Actions"
       - name: Post to Facebook via Composio
         if: inputs.post != 'none'
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
           MODE: ${{ inputs.post }}
           VIDEO_URL: https://github.com/${{ github.repository }}/releases/download/ep-${{ inputs.episode }}/${{ inputs.episode }}.mp4
+          COVER_URL: https://github.com/${{ github.repository }}/releases/download/ep-${{ inputs.episode }}/cover.png
         run: python3 scripts/post_facebook.py
