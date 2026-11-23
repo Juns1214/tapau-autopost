@@ -155,10 +155,15 @@ no ad line, no disclaimer line (the video itself carries the disclaimer). End wi
 Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs and approved in the same one reply:
 - **马股快报** (in the 马股晚报 run): Malaysian economy & policy (BNM, ringgit, EPF, budget, trade), markets & big companies,
   personal finance (savings, cost of living, property, subsidies).
-- **国际快报** (in the 美股早报 run): global economy & policy (Fed, trade deals, inflation), markets & big companies, global tech & AI.
+- **国际快报** (in the 美股早报 run, Juns 23/11): 13–14 items, each 4–6 sentences, in this order:
+  🇺🇸 US macro ×3 (Fed & rate expectations; the day's data — CPI/PCE/jobs/retail sales; Treasury yields & dollar) →
+  📊 three indexes ×1 (S&P 500 / Nasdaq / Dow closes + main reason + VIX) → 🧩 sectors ×2 (leaders, laggards, why) →
+  🪙 gold · oil · Bitcoin ×1 (prices, changes, reason for the biggest mover) → 🏢💻 big companies / tech & AI ×5
+  (results, deals, AI, big moves incl. after-hours) → 🌏 rest of world ×1–2 (China/Asia, Europe/Japan, only real news).
+  No big data that day → give the slot to companies; peak earnings day → companies can take 6. Never pad.
 - **Overlap with the video is fine** (Juns, 23/11): video stories can appear in the digest too, alongside wider news
   (economy, policy, personal finance / tech).
-- 7 items, each 4–6 informative sentences (Juns, 23/11: deeper, but every extra sentence must add something — background, comparison vs last quarter/estimates/usual payout, what's next or what it means for ordinary people; no filler). "What happened / key numbers / context / why it matters" is only a guide, not a fixed template: shape each item to its topic (results → mostly the numbers: revenue, profit, YoY, dividend; policy → what changes and who it affects; deals → who, how much, why; tech/AI → what it is and why it's a big deal) (Juns, 23/11), written entirely in our own words from verified sources (never copy another
+- 马股快报: 7 items; 国际快报: 13–14 items (above); each 4–6 informative sentences (Juns, 23/11: deeper, but every extra sentence must add something — background, comparison vs last quarter/estimates/usual payout, what's next or what it means for ordinary people; no filler). "What happened / key numbers / context / why it matters" is only a guide, not a fixed template: shape each item to its topic (results → mostly the numbers: revenue, profit, YoY, dividend; policy → what changes and who it affects; deals → who, how much, why; tech/AI → what it is and why it's a big deal) (Juns, 23/11), written entirely in our own words from verified sources (never copy another
   page's sentences or structure). Neutral, no advice/targets; forecasts only when attributed ("瑞银预计…").
 - No sponsored items. No posts about party politics as such.
 - Format (text only, no image):
