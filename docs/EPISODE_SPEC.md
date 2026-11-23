@@ -26,6 +26,11 @@ Full worked example: `episodes/2026-11-20_us_auto/episode.json`.
   - Skip small, quiet stories (e.g. a mid-size developer's 3% profit rise) — they don't earn a slot.
   - **Audience test:** would an ordinary Malaysian viewer care? Small-cap share-price drama with no business story behind it
     (e.g. Mega Fortris sell-off) fails, even when the move is huge.
+  - **Less-known companies:** fine when the news is big (e.g. CrowdStrike–Zscaler, Intuit, Gap, Palo Alto), but always explain
+    in plain words what the company does / where viewers meet it (TurboTax, Gap clothing stores…). Names almost nobody in
+    Malaysia has heard of (e.g. Insmed, Williams-Sonoma) are skipped even with a 15–20% move.
+  - A big consumer story's next step (e.g. GTA VI review day → launch day) counts as a new development.
+  - US practice (19–20/11): Juns took 5–6 stories per day — saga, mega-IPO, famous AI/chip names, big deals, famous-brand results.
   - **Typical ranking** (Juns's picks, 18–23/11): national/big saga with a new development → famous / household names →
     deals, takeovers, big contracts → IPOs → results from less exciting sectors last.
   - A famous name with solid news can make it 6 stories rather than being dropped.
