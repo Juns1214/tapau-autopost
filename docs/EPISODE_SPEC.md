@@ -157,7 +157,7 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
 - **国际快报** (in the 美股早报 run): global economy & policy (Fed, trade deals, inflation), markets & big companies, global tech & AI.
 - **Different angle from the video:** the video covers company stories; the digest covers wider news. Overlap only for the
   day's biggest story.
-- 5–6 items, each ≈80–120 Chinese characters, written entirely in our own words from verified sources (never copy another
+- 7–8 items, each 3–4 informative sentences (what happened, key numbers, context, why it matters to readers), written entirely in our own words from verified sources (never copy another
   page's sentences or structure). Neutral, no advice/targets; forecasts only when attributed ("瑞银预计…").
 - No sponsored items. No posts about party politics as such.
 - Format (text only, no image):
@@ -165,10 +165,10 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
 【Tapau财经｜11/23 马股快报】
 
 🔌 │ #AI芯片风波未完
-两三句……
+三四句……
 
 🏦 │ #Maybank净利反升
-两三句……
+三四句……
 
 —
 #Tapau财经 #马股 #每日快报
