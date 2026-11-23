@@ -1,0 +1,37 @@
+name: Render episode
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Episode folder under episodes/ (e.g. 2026-11-20_us_v9)"
+        required: true
+        default: "2026-11-20_us_v9"
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      EP: ${{ inputs.episode }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Remotion + fonts
+        working-directory: remotion
+        run: npm install --no-audit --no-fund && npm run fonts
+      - name: Stage episode assets
+        run: |
+          cp -r episodes/$EP/img/. remotion/public/img/
+          cp episodes/$EP/scenes.json remotion/src/scenes.json
+          cp episodes/$EP/mix.m4a remotion/public/mix.m4a
+      - name: Render
+        working-directory: remotion
+        run: npx remotion render src/index.ts Recap out/$EP.mp4 --concurrency=4 --crf=20 --browser-executable=$(which google-chrome)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}
+          path: remotion/out/*.mp4
+          retention-days: 7

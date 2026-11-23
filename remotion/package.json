@@ -1,0 +1,16 @@
+{
+  "name": "tapau-remotion",
+  "private": true,
+  "scripts": {
+    "fonts": "mkdir -p public/fonts && cp node_modules/@fontpkg/alibaba-puhuiti-3-0/AlibabaPuHuiTi-3-55-Regular.ttf node_modules/@fontpkg/alibaba-puhuiti-3-0/AlibabaPuHuiTi-3-85-Bold.ttf node_modules/@fontpkg/alibaba-puhuiti-3-0/AlibabaPuHuiTi-3-105-Heavy.ttf public/fonts/"
+  },
+  "dependencies": {
+    "@fontpkg/alibaba-puhuiti-3-0": "0.0.0",
+    "@remotion/bundler": "4.0.545",
+    "@remotion/cli": "4.0.545",
+    "@remotion/renderer": "4.0.545",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "4.0.545"
+  }
+}

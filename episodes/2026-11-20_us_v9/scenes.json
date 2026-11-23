@@ -1,0 +1,1485 @@
+[
+ {
+  "bg": "bg_wallstreet_13801277.jpg",
+  "brand": false,
+  "frames": 63,
+  "T": [
+   0
+  ],
+  "subs": [
+   [
+    "",
+    ""
+   ]
+  ],
+  "beats": [
+   {
+    "t": "brandintro",
+    "s": 0,
+    "at0": 0
+   }
+  ]
+ },
+ {
+  "bg": "bg_wallstreet_13801277.jpg",
+  "brand": false,
+  "frames": 246,
+  "T": [
+   0.55,
+   2.967
+  ],
+  "subs": [
+   [
+    "11月20号，美股早报",
+    "US market brief · 20 Nov"
+   ],
+   [
+    "一天卖出 37.9 亿美元的 GTA 6，都救不了这个星期的美股啦",
+    "Even $3.79B of GTA 6 in a day couldn't save this week"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "titleu",
+    "s": 0,
+    "at0": 0.0
+   },
+   {
+    "t": "hooku",
+    "bg": "gta_art.png",
+    "s": 1,
+    "at0": 2.967
+   }
+  ]
+ },
+ {
+  "bg": "bg_wallstreet_35819810.jpg",
+  "bar": "美股三大指数 · 周五收盘",
+  "frames": 668,
+  "T": [
+   0.15,
+   1.535,
+   6.011,
+   11.669,
+   14.031
+  ],
+  "subs": [
+   [
+    "先看大盘",
+    "Markets first"
+   ],
+   [
+    "周五标普 500 跌 3.7%，收 6,910 点",
+    "S&P 500 −3.7% to 6,910"
+   ],
+   [
+    "纳斯达克综合指数跌 5.28%，今年以来转为下跌",
+    "Nasdaq Composite −5.28%, now down for the year"
+   ],
+   [
+    "道琼斯跌 1.93%",
+    "Dow −1.93%"
+   ],
+   [
+    "VIX 盘中一度冲上 40，收 35.89，去年 4 月以来最高",
+    "VIX topped 40 intraday, closed 35.89, highest since April 2025"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "dashboard",
+    "spx": [
+     7619.38,
+     7592.4,
+     7561.67,
+     7416.59,
+     7340.53,
+     7323.63,
+     7175.83,
+     6910.39
+    ],
+    "comp": [
+     25466.19,
+     25366.09,
+     25136.27,
+     24509.76,
+     24328.38,
+     24429.88,
+     23879.2,
+     22617.73
+    ],
+    "dji": [
+     52486.49,
+     52297.09,
+     52347.55,
+     51608.17,
+     50759.42,
+     50198.17,
+     49097.06,
+     48147.33
+    ],
+    "nq": 2,
+    "dj": 3,
+    "s": 1,
+    "at0": 1.535
+   },
+   {
+    "t": "vix",
+    "bg": "bg_market_7579576.jpg",
+    "s": 4,
+    "at0": 14.031
+   }
+  ]
+ },
+ {
+  "bg": "bg_market_8348727.jpg",
+  "bar": "标普 500 进入调整",
+  "frames": 351,
+  "T": [
+   0.15,
+   5.802
+  ],
+  "subs": [
+   [
+    "标普连跌 7 天，比 10/6 纪录低约 11.6%",
+    "S&P down 7 straight days, ~11.6% below the 6 Oct record"
+   ],
+   [
+    "回落超过 10% = 技术性调整，标普正式进入调整",
+    "More than 10% off the high: officially a correction"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "correction",
+    "s": 0,
+    "at0": 0.15
+   }
+  ]
+ },
+ {
+  "bg": "bg_market_7579943.jpg",
+  "bar": "黄金 · 原油 · 比特币",
+  "frames": 538,
+  "T": [
+   0.15,
+   7.73,
+   13.459
+  ],
+  "subs": [
+   [
+    "黄金约 US$3,530，单日 −2%，一周跌近 9%",
+    "Gold ~$3,530, −2% on the day, nearly −9% on the week"
+   ],
+   [
+    "原油小反弹：WTI 收 US$83.98，全周仍跌超过 5%",
+    "WTI $83.98, still down over 5% on the week"
+   ],
+   [
+    "比特币一天跌约 5%，到约 US$58,800",
+    "Bitcoin −5% to ~$58,800"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "assets",
+    "s": 0,
+    "at0": 0.15
+   }
+  ]
+ },
+ {
+  "bg": "fed_pexels_6534073.jpg",
+  "bar": "联储局 12 月会议",
+  "frames": 447,
+  "T": [
+   0.15,
+   1.96,
+   4.253,
+   10.885
+  ],
+  "subs": [
+   [
+    "为什么市场这么紧张？",
+    "Why so nervous?"
+   ],
+   [
+    "利率预期是其中一个因素",
+    "Rate expectations are one factor"
+   ],
+   [
+    "利率期货：联储局 12 月加息 0.25 个百分点的概率超过九成",
+    "Futures price >90% odds of a 25bp December hike"
+   ],
+   [
+    "不过这只是市场预期，联储局还没决定",
+    "An expectation, not a Fed decision"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "quip",
+    "text": "为什么市场这么紧张？",
+    "sub": "因素之一：利率预期",
+    "s": 0,
+    "at0": 0.15
+   },
+   {
+    "t": "fed",
+    "tnx": [
+     4.998,
+     5.103,
+     5.154,
+     5.121,
+     5.103,
+     5.066,
+     5.052,
+     4.912
+    ],
+    "cAt": 3,
+    "s": 2,
+    "at0": 4.253
+   }
+  ]
+ },
+ {
+  "bg": "bg_chips_6755168.jpg",
+  "c": "#76B900",
+  "num": "1",
+  "bar": "AI 芯片股暴跌",
+  "frames": 2337,
+  "T": [
+   0.29,
+   5.957,
+   14.91,
+   20.433,
+   27.082,
+   30.36,
+   38.69,
+   43.385,
+   50.423,
+   56.442,
+   64.074,
+   71.529
+  ],
+  "subs": [
+   [
+    "第一件事：AI 芯片股暴跌，主角 Nvidia",
+    "Story 1: AI chips plunge, led by Nvidia"
+   ],
+   [
+    "背景：11/12 黄仁勋辞去 CEO，财务长 Colette Kress 暂代",
+    "Background: Jensen Huang resigned on 12 Nov; CFO Colette Kress is interim CEO"
+   ],
+   [
+    "11/17 业绩其实很强：营收 US$1,158 亿，比去年多一倍多",
+    "Q3 revenue $115.8B, up 103%"
+   ],
+   [
+    "数据中心营收 US$1,076 亿，+110%",
+    "Data Center $107.6B, +110%"
+   ],
+   [
+    "讲真，成绩单这么好，股价还是挡不住",
+    "Strong results, but the stock kept falling"
+   ],
+   [
+    "华尔街日报：证交会在调查 Nvidia；路透社引述知情人士：重点是会计处理",
+    "WSJ: SEC probing Nvidia; Reuters: focus is accounting"
+   ],
+   [
+    "调查范围未公开；调查 ≠ 已认定违规",
+    "Scope not public; a probe is not a finding"
+   ],
+   [
+    "周五 Nvidia 跌 14%：US$145.98 → US$125.53",
+    "Fri: −14%, $145.98 → $125.53"
+   ],
+   [
+    "Motley Fool：单日市值蒸发约 US$4,910 亿",
+    "Fool: ~$491B wiped out in one day"
+   ],
+   [
+    "CNBC：连跌 7 周，2008 年以来最长，期间跌 46%",
+    "CNBC: 7 straight weekly drops, longest since 2008, −46%"
+   ],
+   [
+    "美光、AMD、博通也全跌超过 12%，整个板块被卖",
+    "Micron, AMD, Broadcom all fell over 12%"
+   ],
+   [
+    "市场担心的：砸这么多钱，最后赚不赚得回来",
+    "The worry: will AI spending pay off?"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "siteu",
+    "name": "Nvidia",
+    "logo": "nvda",
+    "line": "AI 芯片龙头 · 数据中心 GPU",
+    "img": "nvidia.png",
+    "s": 0,
+    "at0": 0.29
+   },
+   {
+    "t": "doc",
+    "img": "v9_nv_ceo.jpg",
+    "size": [
+     1240,
+     700
+    ],
+    "boxes": [
+     [
+      110,
+      118,
+      310,
+      36,
+      0.6
+     ],
+     [
+      110,
+      155,
+      1030,
+      72,
+      1.3
+     ]
+    ],
+    "zoom": [
+     2.2,
+     [
+      0,
+      0,
+      1240,
+      440
+     ]
+    ],
+    "take": [
+     "11/12 黄仁勋辞去 CEO",
+     "财务长 Colette Kress 暂代"
+    ],
+    "takeAt": 3.6,
+    "takeTitle": "Nvidia 官方公告（SEC 8-K）",
+    "src": "画面：Nvidia 公告 · SEC EDGAR（11月12日）",
+    "s": 1,
+    "at0": 5.957
+   },
+   {
+    "t": "doc",
+    "img": "v9_nv_q3.jpg",
+    "size": [
+     1240,
+     370
+    ],
+    "boxes": [
+     [
+      110,
+      163,
+      690,
+      38,
+      1.0
+     ],
+     [
+      110,
+      223,
+      840,
+      38,
+      6.088
+     ]
+    ],
+    "take": [
+     "营收 US$1,158 亿 · +103%",
+     "数据中心 US$1,076 亿 · +110%"
+    ],
+    "takeAt": 7.782,
+    "takeTitle": "11/17 第三季业绩（SEC 8-K）",
+    "src": "画面：Nvidia 业绩公告 · SEC EDGAR（11月17日）",
+    "s": 2,
+    "at0": 14.91
+   },
+   {
+    "t": "quip",
+    "text": "讲真，成绩单这么好，股价还是挡不住",
+    "s": 4,
+    "at0": 27.082
+   },
+   {
+    "t": "timeline",
+    "img": "bg_wallstreet_13802097.jpg",
+    "title": "调查报道怎么来的",
+    "ev": [
+     [
+      "11/17 星期二",
+      "华尔街日报：证交会在调查"
+     ],
+     [
+      "11/20 星期五",
+      "路透社：重点是会计处理",
+      "#FF5A5F"
+     ]
+    ],
+    "at": [
+     0.3,
+     4.165
+    ],
+    "src": "来源：WSJ、路透社（经 Motley Fool、CNBC 报道）",
+    "s": 5,
+    "at0": 30.36
+   },
+   {
+    "t": "listv",
+    "v": "A",
+    "img": "bg_chips_6755168.jpg",
+    "c": "#FF5A5F",
+    "title": "要注意",
+    "lines": [
+     "调查范围还没公开",
+     "调查 ≠ 已认定违规"
+    ],
+    "src": "分析与解读，非新闻事实",
+    "s": 6,
+    "at0": 38.69
+   },
+   {
+    "t": "priceu",
+    "c": "#76B900",
+    "logo": "nvda",
+    "title": "Nvidia 股价",
+    "sub": "每日 K 线 · 美元",
+    "d": [
+     [
+      "11/13",
+      169.91,
+      170,
+      158.39,
+      162.85
+     ],
+     [
+      "11/16",
+      159.02,
+      163.2,
+      155.01,
+      156.14
+     ],
+     [
+      "11/17",
+      156.9,
+      158.19,
+      150.33,
+      155.46
+     ],
+     [
+      "11/18",
+      159.19,
+      159.7,
+      150.4,
+      150.96
+     ],
+     [
+      "11/19",
+      152.92,
+      158.13,
+      145.71,
+      145.98
+     ],
+     [
+      "11/20",
+      143.52,
+      143.73,
+      124.5,
+      125.53
+     ]
+    ],
+    "rv": [
+     0.2,
+     0.35,
+     0.5,
+     0.65,
+     0.8,
+     1.6
+    ],
+    "chip": "周五 −14.01%",
+    "chipAt": 2.4,
+    "lowMark": true,
+    "src": "数据：Yahoo Finance 日线（11/13–11/20）",
+    "s": 7,
+    "at0": 43.385
+   },
+   {
+    "t": "bignumv",
+    "v": "A",
+    "img": "bg_chips_6755168.jpg",
+    "label": "Motley Fool 估计 · 周五一天",
+    "text": "≈ US$4,910 亿",
+    "unit": "市值蒸发",
+    "size": 118,
+    "src": "来源：Motley Fool（11月20日）",
+    "s": 8,
+    "at0": 50.423
+   },
+   {
+    "t": "doc",
+    "img": "v9_cnbc_nv2.jpg",
+    "size": [
+     1240,
+     810
+    ],
+    "boxes": [
+     [
+      40,
+      55,
+      1140,
+      190,
+      0.5
+     ],
+     [
+      75,
+      378,
+      1000,
+      98,
+      1.2
+     ],
+     [
+      75,
+      540,
+      1000,
+      98,
+      2.0
+     ]
+    ],
+    "take": [
+     "连跌 7 周 · 2008 年以来最长",
+     "期间 −46%"
+    ],
+    "takeAt": 3.0,
+    "takeTitle": "CNBC · 11月20日",
+    "src": "画面：CNBC 新闻（11月20日）",
+    "s": 9,
+    "at0": 56.442
+   },
+   {
+    "t": "chipsu",
+    "s": 10,
+    "at0": 64.074
+   },
+   {
+    "t": "listv",
+    "v": "A",
+    "img": "bg_ai_35280160.jpg",
+    "c": "#FFD600",
+    "title": "我们的观察",
+    "lines": [
+     "不只是 AI 有没有需求",
+     "砸这么多钱",
+     "最后赚不赚得回来？"
+    ],
+    "src": "分析与解读，非新闻事实",
+    "s": 11,
+    "at0": 71.529
+   }
+  ]
+ },
+ {
+  "ad": true,
+  "bg": "bg_market_7579943.jpg",
+  "c": "#FF6A00",
+  "bar": "广告 · moomoo 新客福利",
+  "frames": 830,
+  "T": [
+   0.15,
+   3.196,
+   9.722,
+   17.284,
+   19.597,
+   25.415
+  ],
+  "subs": [
+   [
+    "哇，moomoo 又有新客福利啦！",
+    "moomoo has new-customer rewards again!"
+   ],
+   [
+    "年底前开户：180 天零佣金，美股、马股、新加坡、香港、A 股都可以用",
+    "Open by year-end: 180 days zero commission in 5 markets"
+   ],
+   [
+    "入金满 RM1,000 送 RM100 现金券和交易券；放得越多还有 Apple 股票，最高合计 RM1,500！",
+    "Deposit RM1,000 for RM100 in coupons; more for Apple stock, up to RM1,500"
+   ],
+   [
+    "一切以 moomoo 官网条款为准",
+    "moomoo's official T&Cs apply"
+   ],
+   [
+    "扫画面上的 QR code，或输入画面上的推荐码",
+    "Scan the QR code or enter the referral code on screen"
+   ],
+   [
+    "好，我们回到新闻",
+    "Back to the news"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "adhero",
+    "s": 0,
+    "at0": 0.15
+   },
+   {
+    "t": "bignumv",
+    "v": "A",
+    "img": "bg_market_7579943.jpg",
+    "label": "新客开户 · 2026/12/31 前",
+    "text": "180 天",
+    "unit": "零佣金 · 美股 马股 新加坡 香港 A股",
+    "size": 200,
+    "src": "广告｜推荐码开户，频道主获推荐奖励｜以 moomoo 条款为准｜非投资建议",
+    "s": 1,
+    "at0": 3.196
+   },
+   {
+    "t": "adtiers",
+    "rv": [
+     0.2,
+     3.403,
+     4.537,
+     5.671
+    ],
+    "chipAt": 6.427,
+    "s": 2,
+    "at0": 9.722
+   },
+   {
+    "t": "adqr",
+    "s": 4,
+    "at0": 19.597
+   }
+  ]
+ },
+ {
+  "bg": "bg_ai_35280160.jpg",
+  "c": "#D97757",
+  "num": "2",
+  "bar": "ANTHROPIC 史上最大 IPO",
+  "frames": 1477,
+  "T": [
+   0.272,
+   4.546,
+   10.37,
+   15.614,
+   22.673,
+   28.323,
+   34.017,
+   41.494
+  ],
+  "subs": [
+   [
+    "第二件事：做 Claude 的 Anthropic 刚上市",
+    "Story 2: Anthropic, maker of Claude, went public"
+   ],
+   [
+    "发行价 US$83，高过原本 US$70–78 的范围",
+    "Priced at $83, above the $70–78 range"
+   ],
+   [
+    "原本计划 8.25 亿股，最后加到 9.8 亿股",
+    "Upsized from 825M to 980M shares"
+   ],
+   [
+    "集资 US$813 亿，超过 SpaceX 的 US$750 亿，史上最大 IPO",
+    "$81.3B raised, biggest IPO ever, topping SpaceX"
+   ],
+   [
+    "完全摊薄估值约 US$1.5 万亿，纳斯达克代号 ANT",
+    "~$1.5T fully diluted; Nasdaq: ANT"
+   ],
+   [
+    "首日开盘 US$111.50，收 US$97.17，+17%",
+    "Day 1: opened $111.50, closed $97.17, +17%"
+   ],
+   [
+    "第二天 −8.5%，收 US$88.91，仍比发行价高约 7%",
+    "Day 2: −8.5% to $88.91, still ~7% above IPO price"
+   ],
+   [
+    "第一天像开派对，第二天开始算账，又遇上周五大跌",
+    "Day 1 a party, day 2 the bill, amid Friday's sell-off"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "siteu",
+    "name": "Anthropic",
+    "logo": "ant",
+    "line": "Claude 的开发商 · 11/19 纳斯达克挂牌",
+    "img": "claude.png",
+    "src": "画面：Claude 官网",
+    "s": 0,
+    "at0": 0.272
+   },
+   {
+    "t": "doc",
+    "img": "ant_final.png",
+    "size": [
+     640,
+     440
+    ],
+    "view": [
+     0,
+     0,
+     640,
+     440
+    ],
+    "boxes": [
+     [
+      172,
+      324,
+      132,
+      24,
+      0.7
+     ],
+     [
+      40,
+      349,
+      192,
+      24,
+      1.2
+     ]
+    ],
+    "zoom": [
+     1.6,
+     [
+      20,
+      290,
+      600,
+      150
+     ]
+    ],
+    "take": [
+     "每股 US$83",
+     "高过原本 US$70–78 的范围"
+    ],
+    "takeAt": 2.6,
+    "takeTitle": "Anthropic 官方公告",
+    "src": "画面：Anthropic 官网公告（11月18日）；价格范围：CNBC",
+    "s": 1,
+    "at0": 4.546
+   },
+   {
+    "t": "comparev",
+    "v": "B",
+    "img": "bg_ai_35280160.jpg",
+    "title": "卖出的股数",
+    "v2": [
+     825,
+     980
+    ],
+    "lab": [
+     "原本计划",
+     "最后卖出"
+    ],
+    "txt": [
+     "8.25 亿股",
+     "9.8 亿股"
+    ],
+    "hi": 1,
+    "chip": "需求强 → 加大发行",
+    "chipBg": "#1FAE6B",
+    "src": "来源：CNBC、TechCrunch（11月18日）",
+    "s": 2,
+    "at0": 10.37
+   },
+   {
+    "t": "doc",
+    "img": "v9_cnbc_ant2.jpg",
+    "size": [
+     1240,
+     750
+    ],
+    "boxes": [
+     [
+      40,
+      55,
+      1110,
+      125,
+      0.5
+     ],
+     [
+      75,
+      643,
+      930,
+      98,
+      1.3
+     ]
+    ],
+    "take": [
+     "US$813 亿 > SpaceX US$750 亿",
+     "史上最大 IPO"
+    ],
+    "takeAt": 2.6,
+    "takeTitle": "CNBC · 11月18日",
+    "src": "画面：CNBC 新闻（11月18日）；SpaceX 数字：CNN",
+    "s": 3,
+    "at0": 15.614
+   },
+   {
+    "t": "bignumv",
+    "v": "A",
+    "img": "bg_wallstreet_13801277.jpg",
+    "label": "完全摊薄估值（约）",
+    "text": "US$1.5 万亿",
+    "unit": "纳斯达克代号 ANT",
+    "size": 150,
+    "src": "来源：CNBC、TechCrunch（11月18日）",
+    "s": 4,
+    "at0": 22.673
+   },
+   {
+    "t": "priceu",
+    "c": "#D97757",
+    "logo": "ant",
+    "title": "Anthropic（ANT）股价",
+    "sub": "日 K 线 · 美元；虚线 = US$83 发行价",
+    "d": [
+     [
+      "11/19 首日",
+      111.5,
+      115.1,
+      92.72,
+      97.17
+     ],
+     [
+      "11/20 第二天",
+      89.86,
+      92.56,
+      83.05,
+      88.91
+     ]
+    ],
+    "rv": [
+     0.3,
+     5.694
+    ],
+    "ref": [
+     83,
+     "US$83 发行价"
+    ],
+    "allClose": true,
+    "open": true,
+    "chip": "仍比发行价高约 7%",
+    "chipBg": "#3DD68C",
+    "chipAt": 9.58,
+    "src": "数据：Alpha Vantage 日线；Yahoo Finance",
+    "s": 5,
+    "at0": 28.323
+   },
+   {
+    "t": "quip",
+    "text": "第一天像开派对，第二天就开始认真算账啦",
+    "s": 7,
+    "at0": 41.494
+   }
+  ]
+ },
+ {
+  "bg": "bg_cyber_33315143.jpg",
+  "c": "#E81F25",
+  "num": "3",
+  "bar": "CROWDSTRIKE 想买 ZSCALER？",
+  "frames": 1503,
+  "T": [
+   0.15,
+   3.439,
+   10.53,
+   15.144,
+   23.394,
+   31.735,
+   37.11,
+   43.694
+  ],
+  "subs": [
+   [
+    "第三件事：网络安全业可能有大并购",
+    "Story 3: a possible cybersecurity mega-deal"
+   ],
+   [
+    "CrowdStrike 保护设备；Zscaler 保护连上网络和应用的过程",
+    "CrowdStrike protects devices; Zscaler protects connections"
+   ],
+   [
+    "一个管设备、一个管连线，合起来更接近一站式平台",
+    "Devices plus connections: closer to one platform"
+   ],
+   [
+    "周五收市后：彭博引述知情人士，CrowdStrike 洽谈收购 Zscaler；路透社也有类似报道",
+    "After Friday's close, Bloomberg, then Reuters: CrowdStrike in talks to buy Zscaler"
+   ],
+   [
+    "彭博：Zscaler 约 US$320 亿，CrowdStrike 约 US$2,330 亿，合计约 US$2,650 亿",
+    "Bloomberg: Zscaler ~$32B, CrowdStrike ~$233B, combined ~$265B"
+   ],
+   [
+    "Zscaler 今年以来跌约 13%，规模小很多",
+    "Zscaler down ~13% this year, much smaller"
+   ],
+   [
+    "盘后收市：Zscaler 约 +16%，CrowdStrike 约 −5%",
+    "After-hours close: Zscaler ~+16%, CrowdStrike ~−5%"
+   ],
+   [
+    "还在谈，市场先反应了；双方未确认，可能谈不成",
+    "Neither confirmed; talks may fail"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "quip",
+    "text": "网络安全业可能有大并购",
+    "s": 0,
+    "at0": 0.15
+   },
+   {
+    "t": "splitu",
+    "zsAt": 3.191,
+    "pillAt": 7.091,
+    "s": 1,
+    "at0": 3.439
+   },
+   {
+    "t": "doc",
+    "img": "v9_yf_crwd.jpg",
+    "size": [
+     1240,
+     470
+    ],
+    "boxes": [
+     [
+      25,
+      95,
+      1150,
+      120,
+      0.5
+     ],
+     [
+      25,
+      402,
+      1010,
+      56,
+      1.3
+     ]
+    ],
+    "take": [
+     "彭博：CrowdStrike 洽谈收购 Zscaler",
+     "引述知情人士 · 路透社也有类似报道"
+    ],
+    "takeAt": 2.4,
+    "takeTitle": "Bloomberg · 11月20日收市后",
+    "src": "画面：Bloomberg（经 Yahoo Finance 转载）",
+    "s": 3,
+    "at0": 15.144
+   },
+   {
+    "t": "comparev",
+    "v": "B",
+    "img": "bg_cyber_33315143.jpg",
+    "title": "市值（彭博数字）",
+    "v2": [
+     233,
+     32
+    ],
+    "lab": [
+     "CrowdStrike",
+     "Zscaler"
+    ],
+    "txt": [
+     "≈ US$2,330 亿",
+     "≈ US$320 亿"
+    ],
+    "hi": 0,
+    "chip": "合计 ≈ US$2,650 亿",
+    "chipBg": "#E81F25",
+    "src": "来源：Bloomberg（11月20日）",
+    "s": 4,
+    "at0": 23.394
+   },
+   {
+    "t": "bignumv",
+    "v": "A",
+    "img": "zs_prod2.png",
+    "c": "#1E6EE6",
+    "label": "Zscaler 今年以来股价",
+    "text": "≈ −13%",
+    "unit": "规模比 CrowdStrike 小很多",
+    "size": 180,
+    "src": "来源：Bloomberg（11月20日）",
+    "s": 5,
+    "at0": 31.735
+   },
+   {
+    "t": "dualu",
+    "labels": [
+     "11/11",
+     "11/12",
+     "11/13",
+     "11/16",
+     "11/17",
+     "11/18",
+     "11/19",
+     "11/20"
+    ],
+    "crwd": [
+     [
+      235.355,
+      238.5,
+      228.39,
+      229.06
+     ],
+     [
+      227,
+      230.62,
+      218,
+      229.87
+     ],
+     [
+      236.17,
+      236.17,
+      219.3545,
+      226.61
+     ],
+     [
+      223.8,
+      224.52,
+      218.422,
+      223.21
+     ],
+     [
+      224.21,
+      226,
+      213.65,
+      219.58
+     ],
+     [
+      223.8,
+      240.18,
+      218.509,
+      237.03
+     ],
+     [
+      246.89,
+      256.73,
+      239.7,
+      243.46
+     ],
+     [
+      237.375,
+      240.92,
+      227.3,
+      229.44
+     ]
+    ],
+    "zs": [
+     [
+      201,
+      203,
+      193.085,
+      193.795
+     ],
+     [
+      188.66,
+      194.4,
+      184.63,
+      193.22
+     ],
+     [
+      197.24,
+      197.43,
+      187.56,
+      192.47
+     ],
+     [
+      190,
+      194.206,
+      186.505,
+      190.84
+     ],
+     [
+      191.14,
+      193,
+      180.47,
+      185.19
+     ],
+     [
+      187.16,
+      202.355,
+      184.775,
+      197.83
+     ],
+     [
+      202.67,
+      218.105,
+      201.46,
+      205.71
+     ],
+     [
+      202.73,
+      206.2,
+      193.1282,
+      194.82
+     ]
+    ],
+    "s": 6,
+    "at0": 37.11
+   },
+   {
+    "t": "listv",
+    "v": "A",
+    "img": "bg_cyber_33315143.jpg",
+    "c": "#FF5A5F",
+    "title": "要注意",
+    "lines": [
+     "双方都还没正式确认",
+     "谈判也可能谈不成"
+    ],
+    "src": "分析与解读，非新闻事实",
+    "s": 7,
+    "at0": 43.694
+   }
+  ]
+ },
+ {
+  "bg": "gta_art.png",
+  "c": "#F5A623",
+  "num": "4",
+  "bar": "GTA 6 首日 37.9 亿",
+  "frames": 1539,
+  "T": [
+   0.15,
+   1.919,
+   5.897,
+   15.007,
+   21.513,
+   24.326,
+   31.996,
+   42.178,
+   45.797
+  ],
+  "subs": [
+   [
+    "最后来点轻松的",
+    "Something lighter"
+   ],
+   [
+    "等了 13 年的 GTA 6，11/19 正式发售",
+    "GTA 6 launched on 19 Nov after 13 years"
+   ],
+   [
+    "Take-Two 向证交会公告：首日全球零售销售额 US$37.9 亿（公司估算）",
+    "Take-Two 8-K: day-one global retail sales $3.79B (company estimate)"
+   ],
+   [
+    "这是零售额 ≠ 公司营收，更不是利润",
+    "Retail sales, not revenue, let alone profit"
+   ],
+   [
+    "有趣的是 Take-Two 这三天的股价",
+    "Take-Two's three days"
+   ],
+   [
+    "11/18 评测公开 +6.22%；发售当天反而 −3.67%",
+    "Reviews day +6.22%; launch day −3.67%"
+   ],
+   [
+    "11/20 公布销售：盘中 US$218.69，收 US$210，只 +0.65%",
+    "Sales day: high $218.69, closed $210, +0.65%"
+   ],
+   [
+    "游戏卖得好 ≠ 股价大涨",
+    "A hit game isn't a stock surge"
+   ],
+   [
+    "投资者看的是实际收入和利润",
+    "Investors watch real revenue and profit"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "quip",
+    "text": "最后来点轻松的",
+    "s": 0,
+    "at0": 0.15
+   },
+   {
+    "t": "bignumv",
+    "v": "A",
+    "img": "gta_art.png",
+    "label": "11月19日 正式发售",
+    "text": "13 年",
+    "unit": "距离 GTA 5（2013）",
+    "size": 200,
+    "src": "画面：Rockstar Games 官网",
+    "s": 1,
+    "at0": 1.919
+   },
+   {
+    "t": "doc",
+    "img": "sec8k.png",
+    "size": [
+     1210,
+     810
+    ],
+    "boxes": [
+     [
+      50,
+      38,
+      1140,
+      92,
+      0.6
+     ],
+     [
+      12,
+      362,
+      300,
+      34,
+      1.3
+     ],
+     [
+      12,
+      763,
+      905,
+      38,
+      2.0
+     ]
+    ],
+    "zoom": [
+     2.6,
+     [
+      0,
+      290,
+      720,
+      160
+     ]
+    ],
+    "take": [
+     "首日全球零售 US$37.9 亿",
+     "公司估算 · 截至 11/19"
+    ],
+    "takeAt": 4.0,
+    "takeTitle": "Take-Two 8-K · 11月20日",
+    "src": "画面：Take-Two 8-K · SEC EDGAR（11月20日）",
+    "s": 2,
+    "at0": 5.897
+   },
+   {
+    "t": "retailu",
+    "s": 3,
+    "at0": 15.007
+   },
+   {
+    "t": "ttwo",
+    "s1": 5,
+    "s2": 6,
+    "s": 4,
+    "at0": 21.513
+   },
+   {
+    "t": "quip",
+    "text": "游戏卖得好 ≠ 股价大涨",
+    "s": 7,
+    "at0": 42.178
+   },
+   {
+    "t": "listv",
+    "v": "A",
+    "img": "gta_art.png",
+    "c": "#FFD600",
+    "title": "我们的观察",
+    "lines": [
+     "投资者看的是",
+     "实际收入和利润"
+    ],
+    "src": "分析与解读，非新闻事实",
+    "s": 8,
+    "at0": 45.797
+   }
+  ]
+ },
+ {
+  "bg": "bg_wallstreet_13802097.jpg",
+  "bar": "本周回顾",
+  "frames": 1057,
+  "T": [
+   0.15,
+   1.9,
+   4.441,
+   8.763,
+   14.869,
+   19.611,
+   25.862
+  ],
+  "subs": [
+   [
+    "回顾一下这个星期",
+    "The week in review"
+   ],
+   [
+    "标普这五天，天天收跌",
+    "S&P fell every day this week"
+   ],
+   [
+    "周一 −1.92%，周二 −1.03%",
+    "Mon −1.92%, Tue −1.03%"
+   ],
+   [
+    "周三 Nvidia 业绩后，开盘涨过，收 −0.23%",
+    "Wed: early gain faded after Nvidia results, −0.23%"
+   ],
+   [
+    "周四 Anthropic 上市当天 −2.02%",
+    "Thu, Anthropic's debut day: −2.02%"
+   ],
+   [
+    "周五 −3.7%，盘中低见 6,882 点",
+    "Fri −3.7%, intraday low 6,882"
+   ],
+   [
+    "全周：标普 −8.6%，去年 4 月以来最差；纳指约 −10%",
+    "S&P −8.6%, worst week since April 2025; Nasdaq ~−10%"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "priceu",
+    "c": "#FF5A5F",
+    "title": "标普 500 · 这一星期",
+    "sub": "每日 K 线 · 点数；下面是每天涨跌",
+    "d": [
+     [
+      "周一 11/16",
+      7513.98,
+      7515.6,
+      7400.15,
+      7416.59
+     ],
+     [
+      "周二 11/17",
+      7411.02,
+      7415.37,
+      7288.34,
+      7340.53
+     ],
+     [
+      "周三 11/18",
+      7355.69,
+      7367.68,
+      7285.76,
+      7323.63
+     ],
+     [
+      "周四 11/19",
+      7389.26,
+      7415.64,
+      7173.63,
+      7175.83
+     ],
+     [
+      "周五 11/20",
+      7150.39,
+      7198.67,
+      6882.66,
+      6910.39
+     ]
+    ],
+    "dec": 0,
+    "allClose": true,
+    "small": true,
+    "rv": [
+     4.291,
+     6.452,
+     8.613,
+     14.719,
+     19.462
+    ],
+    "pct": [
+     "−1.92%",
+     "−1.03%",
+     "−0.23%",
+     "−2.02%",
+     "−3.70%"
+    ],
+    "chip": "五天全部收跌",
+    "chipAt": 1.75,
+    "src": "数据：Yahoo Finance ^GSPC 日线；前收 7,561.67",
+    "s": 0,
+    "at0": 0.15
+   },
+   {
+    "t": "weeku",
+    "s": 6,
+    "at0": 25.862
+   }
+  ]
+ },
+ {
+  "bg": "thanksgiving_pexels_5876728.jpg",
+  "bar": "下周留意",
+  "frames": 443,
+  "T": [
+   0.15,
+   2.318,
+   7.893,
+   10.555
+  ],
+  "subs": [
+   [
+    "下星期要留意三件事",
+    "Three things next week"
+   ],
+   [
+    "星期三：10 月 PCE、Q3 GDP 第二次估算",
+    "Wed: October PCE and Q3 GDP second estimate"
+   ],
+   [
+    "星期四：感恩节休市",
+    "Thu: Thanksgiving, closed"
+   ],
+   [
+    "星期五：美东时间下午 1 点提早收市",
+    "Fri: early close at 1pm ET"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "calendaru",
+    "s": 0,
+    "at0": 0.15
+   }
+  ]
+ },
+ {
+  "bg": "bg_city_36206025.jpg",
+  "brand": false,
+  "outro": true,
+  "frames": 276,
+  "T": [
+   0.15,
+   4.83
+  ],
+  "subs": [
+   [
+    "以上是今天的美股早报，内容仅为新闻整理，不构成投资建议",
+    "News summary only, not investment advice"
+   ],
+   [
+    "觉得有用就关注我们，下个交易日见啦",
+    "Follow us. See you next trading day"
+   ]
+  ],
+  "beats": [
+   {
+    "t": "outrou",
+    "s": 0,
+    "at0": 0.15
+   }
+  ]
+ }
+]
