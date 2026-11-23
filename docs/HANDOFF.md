@@ -38,7 +38,7 @@ Facebook Page Tapau财经 id 1541675575685159; Composio FB account facebook_kett
 - Scheduled tasks still DISABLED until Juns says go.
 
 ## Update 23/11 late (go-live)
-- Both scheduled tasks ENABLED (美股早报 05:47 Tue–Sat, 马股晚报 17:43 Mon–Fri MYT).
+- Both scheduled tasks ENABLED (美股早报 05:47 Tue–Sat, 马股晚报 17:13 Mon–Fri MYT). Go-live: US 08:30, MY 19:00 (digest scheduled via FB scheduled_publish_time; video publish_at, reply by 07:25 / 17:55).
 - Digests (马股快报 8 items / 国际快报 13–15 items, 4–6 sentences each) post AUTOMATICALLY; only video picks need Juns.
 - Cover: no badge by default, bigger centred text (`ds` 125). All rules in docs/EPISODE_SPEC.md.
 - 11/23 马股快报 posted manually (post 1541675575685159_122100167511558420). 11/23 video rendered, awaiting Juns's "publish".
