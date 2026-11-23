@@ -1,0 +1,2 @@
+zh-CN-XiaochenNeural styles: ['livecommercial']
+used in C: {'excited': 'livecommercial', 'sad': None, 'suspense': None, 'tease': None, 'neutral': None}
