@@ -87,6 +87,12 @@ Each TTS sentence must end with 。？！ and must not contain ；. Aim for ~1,6
 Any field that wants a time can use `{"$s": k, "f": 0.5, "o": 0.2}` = start of sentence k + 50 % of its length + 0.2 s,
 relative to the beat. Plain numbers are seconds after the beat starts.
 
+## Prices: moomoo first (Juns, 23/11)
+Fetch closes and daily candles with the moomoo MCP during the run (US: `US.NVDA`; **Malaysia: `BMS.<code>`**, e.g. `BMS.1155`
+Maybank, `BMS.5142` Wasco — moomoo DOES support Bursa; realtime quotes are delayed-only, daily K-lines work) and write them
+inline, e.g. `"d": [["11/20", o, h, l, c], ...]`. moomoo `quote_ipo_list_my` lists upcoming Bursa IPOs. US after-hours moves:
+`quote_history_kline` with `extended_time`. Use the `$yahoo` helper below only as a fallback (and for index sparklines).
+
 ## Data helpers (resolved in the cloud from Yahoo Finance, up to `date`)
 `{"$yahoo": "^GSPC", "kind": "closes", "n": 8}` → list of closes; `"kind": "candles", "labels": "md"|"wd"` → `[[label, o, h, l, c], ...]`;
 `"last"`, `"prev"`, `"pct"` → numbers. Symbols: ^GSPC ^IXIC ^DJI ^VIX ^TNX CL=F GC=F BTC-USD, US tickers, Bursa as `5263.KL`, KLCI `^KLSE`.
