@@ -63,8 +63,12 @@ jobs:
       - name: Check stills (first frame of every scene)
         working-directory: remotion
         run: |
-          FR=$(python3 -c "import json;s=json.load(open('src/scenes.json'));a=0;o=[]
-          for x in s: o.append(str(a+min(x['frames']-1,90))); a+=x['frames']
+          FR=$(STILLS="${{ inputs.post }}" python3 -c "import json,os;s=json.load(open('src/scenes.json'));a=0;o=[]
+          every=os.environ['STILLS']=='stills'
+          for x in s:
+            fs=[a+min(x['frames']-1,90)]
+            if every: fs+=[a+min(x['frames']-1,int((b.get('at0',0)+1.8)*30)) for b in x.get('beats',[])]
+            o+=[str(f) for f in sorted(set(fs))]; a+=x['frames']
           print(' '.join(o))")
           CHROME=$(which google-chrome) node stills.mjs out/stills $FR
       - name: Render video - retry once
@@ -84,6 +88,25 @@ jobs:
             build/caption.txt
             build/summary.json
           retention-days: 14
+      - name: Preview sheets to branch "preview" (stills mode, so the agent can look at them)
+        if: inputs.post == 'stills'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p /tmp/pv && python3 - <<'PY'
+          import glob
+          from PIL import Image
+          fs = sorted(glob.glob('remotion/out/stills/*.png')) ; fs = ['remotion/out/cover.png'] + fs
+          W, H, C = 270, 480, 6
+          for k in range(0, len(fs), 24):
+              part = fs[k:k + 24]; R = (len(part) + C - 1) // C
+              sheet = Image.new('RGB', (W * C, H * R), 'black')
+              for i, f in enumerate(part):
+                  im = Image.open(f).convert('RGB').resize((W, H)); sheet.paste(im, ((i % C) * W, (i // C) * H))
+              sheet.save(f'/tmp/pv/sheet_{k // 24:02d}.jpg', quality=80)
+          PY
+          cd /tmp/pv && git init -q && git checkout -q -b preview && git add . && git -c user.name=bot -c user.email=bot@users.noreply.github.com commit -qm "preview $EP"
+          git push -fq "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}" preview
       - name: Release (direct URLs for Facebook)
         if: inputs.post == 'unpublished' || inputs.post == 'publish'
         env:
