@@ -1,0 +1,26 @@
+name: TTS emotion demo
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["demo/tts/script.json", "demo/tts/make.py"]
+permissions:
+  contents: write
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tools
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+      - name: Make demo audio
+        env:
+          AZURE_API_KEY: ${{ secrets.AZURE_API_KEY }}
+        run: python3 demo/tts/make.py
+      - name: Commit output
+        run: |
+          git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add demo/tts/out
+          git commit -m "TTS emotion demo output [skip ci]" || exit 0
+          git pull --rebase origin main && git push origin main
