@@ -1,4 +1,4 @@
-name: Render episode
+name: Render and post episode
 on:
   workflow_dispatch:
     inputs:
@@ -6,12 +6,20 @@ on:
         description: "Episode folder under episodes/ (e.g. 2026-11-20_us_v9)"
         required: true
         default: "2026-11-20_us_v9"
+      post:
+        description: "none = render only; unpublished = upload as hidden test post; publish = go live"
+        required: true
+        default: "none"
+        type: choice
+        options: [none, unpublished, publish]
 permissions:
-  contents: read
+  contents: write
+env:
+  FB_PAGE_ID: "1541675575685159"
 jobs:
   render:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 150
     env:
       EP: ${{ inputs.episode }}
     steps:
@@ -35,3 +43,18 @@ jobs:
           name: ${{ inputs.episode }}
           path: remotion/out/*.mp4
           retention-days: 7
+      - name: Publish video file as a release asset (direct download URL for Facebook)
+        if: inputs.post != 'none'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete "ep-$EP" -y --cleanup-tag 2>/dev/null || true
+          gh release create "ep-$EP" "remotion/out/$EP.mp4" --title "$EP" --notes "Rendered by GitHub Actions"
+      - name: Post to Facebook via Composio
+        if: inputs.post != 'none'
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          COMPOSIO_FB_ACCOUNT: ${{ secrets.COMPOSIO_FB_ACCOUNT }}
+          MODE: ${{ inputs.post }}
+          VIDEO_URL: https://github.com/${{ github.repository }}/releases/download/ep-${{ inputs.episode }}/${{ inputs.episode }}.mp4
+        run: python3 scripts/post_facebook.py
