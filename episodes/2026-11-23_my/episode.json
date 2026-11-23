@@ -1,0 +1,576 @@
+{
+ "show": "my",
+ "date": "2026-11-23",
+ "music": "news1",
+ "scenes": [
+  {
+   "intro": true,
+   "bg": "my_kl.jpg"
+  },
+  {
+   "bg": "my_kl.jpg",
+   "brand": false,
+   "pause": {
+    "0": 0.4
+   },
+   "beats": [
+    {
+     "t": "titleu",
+     "s": 0
+    },
+    {
+     "t": "hooku",
+     "s": 1,
+     "rows": [
+      {
+       "label": "富时隆综指 今天",
+       "value": "−0.47%",
+       "sub": "收 1,549.05 点 · 连跌第 6 天",
+       "c": "#FF5A5F",
+       "img": "my_kl.jpg"
+      },
+      {
+       "label": "Maybank 第三季净利",
+       "value": "RM27.4 亿",
+       "sub": "按年 +4.7%",
+       "c": "#FFC83D",
+       "img": "my_savings.jpg",
+       "vc": "#3DD68C"
+      }
+     ],
+     "punch": "还好成绩单没跟着跌",
+     "punchAt": 2.4,
+     "src": "来源：Bernama/Focus Malaysia 收市报道；星报；The Edge（11月23日）"
+    }
+   ],
+   "sents": [
+    [
+     "十一月二十三号，马股晚报。",
+     "11月23号，马股晚报",
+     "Malaysia market brief · 23 Nov"
+    ],
+    [
+     "大盘连跌六天，还好Maybank的成绩单没有跟着跌啦。",
+     "大盘连跌 6 天，还好 Maybank 的成绩单没跟着跌啦",
+     "KLCI down 6 days in a row, but Maybank's results held up"
+    ]
+   ]
+  },
+  {
+   "bg": "my_city.jpg",
+   "bar": "富时隆综指 · 今日收市",
+   "beats": [
+    {
+     "t": "dashboard",
+     "s": 0,
+     "idx": [
+      {
+       "name": "FBM KLCI 富时隆综指",
+       "pct": -0.47,
+       "lvl": 1549.05,
+       "prev": 1556.51,
+       "vals": {
+        "$yahoo": "^KLSE",
+        "kind": "closes",
+        "n": 8
+       },
+       "note": "连跌第 6 天"
+      }
+     ],
+     "src": "数据：Bernama/Focus Malaysia 收市报道 · 走势线：Yahoo Finance 近 8 个交易日"
+    },
+    {
+     "t": "comparev",
+     "s": 3,
+     "v": "B",
+     "img": "my_city.jpg",
+     "title": "今天涨跌家数",
+     "v2": [
+      293,
+      849
+     ],
+     "lab": [
+      "上涨",
+      "下跌"
+     ],
+     "txt": [
+      "293 家",
+      "849 家"
+     ],
+     "hi": 1,
+     "chip": "下跌 ≈ 上涨的 3 倍",
+     "chipBg": "#FF5A5F",
+     "src": "来源：Bernama/Focus Malaysia（11月23日收市）"
+    },
+    {
+     "t": "quip",
+     "s": 5,
+     "text": "美国科技股大跌，卖压蔓延到亚洲",
+     "sub": "来源：星报（11月23日）"
+    }
+   ],
+   "sents": [
+    [
+     "先看大盘。",
+     "先看大盘",
+     "Markets first"
+    ],
+    [
+     "富时隆综指今天收在一千五百四十九点零五，跌了七点四六点，跌幅百分之零点四七。",
+     "富时隆综指收 1,549.05 点，跌 7.46 点（−0.47%）",
+     "KLCI −7.46 pts (−0.47%) to 1,549.05"
+    ],
+    [
+     "根据星报，这已经是连续第六天下跌。",
+     "星报：连续第 6 天下跌",
+     "Sixth straight day of losses (The Star)"
+    ],
+    [
+     "全场下跌的股票有八百四十九家，上涨只有二百九十三家，跌的差不多是涨的三倍。",
+     "下跌 849 家，上涨 293 家，差不多 3 倍",
+     "Losers 849 vs gainers 293"
+    ],
+    [
+     "成交量三十一亿一千万股，成交额二十八亿一千万令吉，比上周五少一些。",
+     "成交 31.1 亿股，RM28.1 亿，比上周五少",
+     "Volume 3.11B shares, RM2.81B, lower than Friday"
+    ],
+    [
+     "上周五美国科技股大跌，今天的卖压也蔓延到了亚洲市场。",
+     "上周五美国科技股大跌，卖压蔓延到亚洲",
+     "Friday's US tech sell-off spilled into Asia"
+    ]
+   ]
+  },
+  {
+   "bg": "my_power.jpg",
+   "c": "#E2231A",
+   "num": "1",
+   "bar": "公用事业股拖累大盘",
+   "pause": {
+    "3": 1.0,
+    "4": 1.0,
+    "7": 1.0
+   },
+   "beats": [
+    {
+     "t": "siteu",
+     "s": 0,
+     "name": "Tenaga Nasional 国能",
+     "logo": "tnb.png",
+     "line": "国家电力公司 · 综指权重股",
+     "src": "Logo：TNB 官网"
+    },
+    {
+     "t": "chipsu",
+     "s": 1,
+     "title": "今天拖累大盘的公用事业股",
+     "rows": [
+      [
+       "tnb.png",
+       "国能 Tenaga",
+       "−22 仙 → RM12.46",
+       1.73
+      ],
+      [
+       null,
+       "杨忠礼电力 YTL Power",
+       "−4 仙 → RM3.91",
+       1.01
+      ],
+      [
+       null,
+       "杨忠礼机构 YTL Corp",
+       "−9 仙 → RM1.61",
+       5.29
+      ]
+     ],
+     "max": 6,
+     "chip": "公用事业股是今天主要拖累",
+     "img": "my_power.jpg",
+     "src": "来源：Bernama/Focus Malaysia（11月23日收市）"
+    },
+    {
+     "t": "priceu",
+     "s": 3,
+     "c": "#E2231A",
+     "logo": "tnb.png",
+     "title": "国能 Tenaga 股价",
+     "sub": "每日 K 线 · 令吉",
+     "d": {
+      "$yahoo": "5347.KL",
+      "kind": "candles",
+      "n": 6,
+      "labels": "md"
+     },
+     "chip": "今天 −22 仙",
+     "chipAt": 2.0,
+     "src": "数据：Yahoo Finance 日线"
+    },
+    {
+     "t": "timeline",
+     "s": 4,
+     "img": "my_dc.jpg",
+     "title": "杨忠礼电力最近两次大跌",
+     "ev": [
+      [
+       "11/10",
+       "Nvidia 受审查消息 · 一度跌近 8%"
+      ],
+      [
+       "11/17",
+       "美国限制 AI 芯片出口 · 收跌超过 9%",
+       "#FF5A5F"
+      ]
+     ],
+     "at": [
+      {
+       "$s": 5,
+       "f": 0.1,
+       "o": 0.0
+      },
+      {
+       "$s": 6,
+       "f": 0.0,
+       "o": 0.0
+      }
+     ],
+     "src": "来源：The Edge（11月10日、11月17日）"
+    },
+    {
+     "t": "listv",
+     "s": 7,
+     "v": "A",
+     "img": "my_dc.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "数据中心相关股",
+      "最近跟着 AI 情绪上下"
+     ],
+     "src": "分析与解读，非新闻事实"
+    }
+   ],
+   "sents": [
+    [
+     "第一件事，今天拖累大盘最多的，是公用事业股。",
+     "第一件事：公用事业股拖累大盘",
+     "Story 1: utilities dragged the index"
+    ],
+    [
+     "国能跌了二十二仙，收在十二令吉四十六仙。",
+     "国能跌 22 仙，收 RM12.46",
+     "Tenaga −22 sen to RM12.46"
+    ],
+    [
+     "杨忠礼电力跌四仙到三令吉九十一仙，杨忠礼机构跌九仙到一令吉六十一仙。",
+     "杨忠礼电力 −4 仙到 RM3.91，杨忠礼机构 −9 仙到 RM1.61",
+     "YTL Power −4 sen to RM3.91; YTL Corp −9 sen to RM1.61"
+    ],
+    [
+     "来看看国能这几天的K线。",
+     "国能这几天的 K 线",
+     "Tenaga's recent candles"
+    ],
+    [
+     "其实杨忠礼电力最近本来就不平静。",
+     "杨忠礼电力最近本来就不平静",
+     "YTL Power has been volatile lately"
+    ],
+    [
+     "十一月十号，市场关注Nvidia受审查的消息，它一度跌了将近百分之八，不过The Edge指出，并没有可信报道把杨忠礼电力和事件扯上关系。",
+     "11/10 Nvidia 受审查消息，一度跌近 8%；The Edge：没有可信报道把它和事件扯上关系",
+     "10 Nov: fell nearly 8% amid Nvidia scrutiny; no credible link reported"
+    ],
+    [
+     "十一月十七号，据The Edge报道，美国限制向马来西亚等亚洲国家的数据中心出口AI芯片，杨忠礼电力当天收跌超过百分之九。",
+     "11/17 美国限制 AI 芯片出口到大马等地数据中心，收跌超过 9%",
+     "17 Nov: US AI-chip export curbs; closed down over 9%"
+    ],
+    [
+     "我们的观察是，数据中心相关的股票，最近很容易跟着AI的情绪上下摆动。",
+     "我们的观察：数据中心相关股，最近跟着 AI 情绪上下",
+     "Our view: data-centre plays swing with AI sentiment"
+    ]
+   ]
+  },
+  {
+   "ad": true
+  },
+  {
+   "bg": "my_savings.jpg",
+   "c": "#FFC83D",
+   "num": "2",
+   "bar": "MAYBANK 第三季业绩",
+   "pause": {
+    "3": 1.0,
+    "6": 1.0
+   },
+   "beats": [
+    {
+     "t": "siteu",
+     "s": 0,
+     "name": "Maybank 马银行",
+     "logo": "maybank.svg",
+     "line": "大马银行龙头 · 综指权重股",
+     "src": "Logo：Maybank 官网"
+    },
+    {
+     "t": "bignumv",
+     "s": 1,
+     "v": "A",
+     "img": "my_savings.jpg",
+     "label": "第三季净利（截至 9 月 30 日）",
+     "text": "RM27.4 亿",
+     "unit": "按年 +4.7%",
+     "size": 150,
+     "src": "来源：The Edge、星报（11月23日）"
+    },
+    {
+     "t": "comparev",
+     "s": 3,
+     "v": "B",
+     "img": "my_savings.jpg",
+     "title": "第三季营收",
+     "v2": [
+      166,
+      145.7
+     ],
+     "lab": [
+      "去年同季",
+      "今年第三季"
+     ],
+     "txt": [
+      "RM166 亿",
+      "RM145.7 亿"
+     ],
+     "hi": 1,
+     "chip": "营收反而减少",
+     "chipBg": "#FF5A5F",
+     "src": "来源：星报（11月23日）"
+    },
+    {
+     "t": "listv",
+     "s": 5,
+     "v": "A",
+     "img": "my_savings.jpg",
+     "c": "#3DD68C",
+     "title": "净利为什么还能涨？",
+     "lines": [
+      "净利息收入 +2.3%",
+      "减值拨备比去年少很多"
+     ],
+     "src": "来源：The Edge、星报（11月23日）"
+    },
+    {
+     "t": "quip",
+     "s": 6,
+     "text": "这一季没有宣布中期股息",
+     "sub": "来源：The Edge"
+    },
+    {
+     "t": "priceu",
+     "s": 7,
+     "c": "#FFC83D",
+     "logo": "maybank.svg",
+     "title": "Maybank 股价",
+     "sub": "每日 K 线 · 令吉 · 最后一根为今天收市",
+     "d": {
+      "$yahoo": "1155.KL",
+      "kind": "candles",
+      "n": 6,
+      "labels": "md"
+     },
+     "chip": "中午休市：+12 仙 → RM9.99",
+     "chipAt": 1.5,
+     "chipBg": "#3DD68C",
+     "src": "数据：Yahoo Finance 日线；中午价格：The Edge"
+    }
+   ],
+   "sents": [
+    [
+     "第二件事，马银行Maybank今天中午公布第三季业绩。",
+     "第二件事：Maybank 今天中午公布第三季业绩",
+     "Story 2: Maybank's Q3 results"
+    ],
+    [
+     "截至九月三十号的这一季，净利是二十七亿四千万令吉，比去年同期多了百分之四点七。",
+     "截至 9/30 这一季，净利 RM27.4 亿，按年 +4.7%",
+     "Q3 net profit RM2.74B, +4.7% y/y"
+    ],
+    [
+     "头九个月的净利加起来是七十九亿二千万令吉，比去年多了百分之一。",
+     "头 9 个月净利 RM79.2 亿，+1%",
+     "9M net profit RM7.92B, +1%"
+    ],
+    [
+     "有趣的是，营收反而从一百六十六亿令吉，减少到一百四十五亿七千万令吉。",
+     "营收反而从 RM166 亿减少到 RM145.7 亿",
+     "Revenue fell from RM16.6B to RM14.57B"
+    ],
+    [
+     "营收少了，净利还是涨，讲真有点神奇哦。",
+     "营收少了，净利还是涨",
+     "Less revenue, more profit"
+    ],
+    [
+     "主要是因为净利息收入增加了百分之二点三，加上减值拨备比去年少了很多。",
+     "净利息收入 +2.3%，减值拨备比去年少很多",
+     "Net interest income +2.3%, much lower impairments"
+    ],
+    [
+     "不过这一季，Maybank没有宣布中期股息。",
+     "这一季没有宣布中期股息",
+     "No interim dividend this quarter"
+    ],
+    [
+     "股价方面，Maybank在中午休市时涨了十二仙，到九令吉九十九仙，那是在业绩公布之前。",
+     "中午休市时 +12 仙到 RM9.99（业绩公布前）",
+     "Up 12 sen to RM9.99 at the midday break, before results"
+    ]
+   ]
+  },
+  {
+   "bg": "oil_pexels_19130305.jpg",
+   "c": "#1F5FAD",
+   "num": "3",
+   "bar": "VELESTO 派特别股息",
+   "pause": {
+    "4": 1.0
+   },
+   "beats": [
+    {
+     "t": "quip",
+     "s": 0,
+     "text": "最后来点轻松的"
+    },
+    {
+     "t": "siteu",
+     "s": 1,
+     "name": "Velesto Energy",
+     "logo": "velesto.svg",
+     "line": "钻油台服务 · 自升式钻井平台",
+     "src": "Logo：Velesto 官网"
+    },
+    {
+     "t": "bignumv",
+     "s": 2,
+     "v": "A",
+     "img": "oil_pexels_19130305.jpg",
+     "label": "11月20日宣布 · 特别股息",
+     "text": "每股 2 仙",
+     "unit": "今年合计每股 3 仙",
+     "size": 150,
+     "src": "来源：The Edge（11月23日）"
+    },
+    {
+     "t": "bignumv",
+     "s": 3,
+     "v": "B",
+     "img": "oil_pexels_19130305.jpg",
+     "label": "今天早上 10 点",
+     "text": "18.5 仙",
+     "unit": "+1 仙 · 约 +6%",
+     "size": 160,
+     "src": "来源：The Edge（11月23日）"
+    },
+    {
+     "t": "bignumv",
+     "s": 4,
+     "v": "A",
+     "img": "oil_pexels_19130305.jpg",
+     "label": "今年派出的总额",
+     "text": "RM2.479 亿",
+     "unit": "超过同期净利 5 倍",
+     "size": 140,
+     "src": "来源：The Edge（11月23日）"
+    },
+    {
+     "t": "listv",
+     "s": 5,
+     "v": "A",
+     "img": "oil_pexels_19130305.jpg",
+     "c": "#FF5A5F",
+     "title": "要注意",
+     "lines": [
+      "派得多 ≠ 赚得多",
+      "这一季盈利转弱"
+     ],
+     "src": "来源：The Edge（11月23日）"
+    }
+   ],
+   "sents": [
+    [
+     "最后来点轻松的。",
+     "最后来点轻松的",
+     "Something lighter"
+    ],
+    [
+     "做钻油台生意的Velesto，股价才十几仙，但最近很会派钱。",
+     "做钻油台生意的 Velesto，股价才十几仙，但最近很会派钱",
+     "Velesto: a penny stock that pays out a lot"
+    ],
+    [
+     "上周五它宣布派每股两仙的特别股息，今年加起来一共每股三仙。",
+     "上周五宣布每股 2 仙特别股息，今年合计每股 3 仙",
+     "2-sen special dividend; 3 sen in total this year"
+    ],
+    [
+     "今天早上十点，股价涨了一仙，到十八点五仙，涨幅大约百分之六。",
+     "今天早上 10 点：+1 仙到 18.5 仙，约 +6%",
+     "10am: +1 sen to 18.5 sen, ~+6%"
+    ],
+    [
+     "The Edge统计，它今年派出的钱一共两亿四千七百九十万令吉，超过同期净利的五倍。",
+     "The Edge：今年派出 RM2.479 亿，超过同期净利 5 倍",
+     "RM247.9M paid out this year, over 5x net profit"
+    ],
+    [
+     "不过要注意，它这一季的盈利其实是转弱的，派得多不代表赚得多哦。",
+     "不过这一季盈利转弱，派得多 ≠ 赚得多",
+     "But earnings weakened; payouts aren't profits"
+    ]
+   ]
+  },
+  {
+   "outro": true,
+   "bg": "bg_city_36206025.jpg"
+  }
+ ],
+ "assets": [
+  {
+   "type": "logo",
+   "url": "https://www.tnb.com.my/assets/images/logo_tnb_wba.png",
+   "file": "tnb.png"
+  },
+  {
+   "type": "logo",
+   "url": "https://www.maybank.com/iwov-resources/images/icons/maybank_logo.svg",
+   "file": "maybank.svg"
+  },
+  {
+   "type": "logo",
+   "url": "https://asset.xtopia.io/clients/asset_06BCF24A-3658-437A-AC25-8E9DF29B0D49/contentms/img/logo/logo-blue.svg",
+   "file": "velesto.svg"
+  }
+ ],
+ "cover": {
+  "lines": [
+   {
+    "t": "马股还在跌？",
+    "s": 160
+   },
+   {
+    "t": "Maybank 净利 +4.7%",
+    "s": 92,
+    "c": "#FFD23F"
+   }
+  ],
+  "badge": {
+   "label": "富时隆综指 今天",
+   "num": "−0.47%",
+   "c": "#FF5A5F"
+  }
+ },
+ "caption": "【马股晚报 11/23】大盘连跌 6 天，还好 Maybank 成绩单没跟着跌\n📉 富时隆综指收 1,549.05 点，−7.46 点（−0.47%）｜下跌 849 家，上涨 293 家\n1️⃣ 公用事业股拖累大盘：国能 −22 仙收 RM12.46，杨忠礼电力、杨忠礼机构也跌\n2️⃣ Maybank 第三季净利 RM27.4 亿，按年 +4.7%；营收减少，这季没派中期股息\n3️⃣ Velesto 派每股 2 仙特别股息，今年合计 3 仙（这季盈利转弱）\n\n来源：Bernama、Focus Malaysia、星报、The Edge、Yahoo Finance\n广告：moomoo 新客福利（推荐码开户，频道主获推荐奖励；以 moomoo 条款为准）\n内容仅为新闻整理，不构成投资建议。\n#马股 #马股晚报 #Bursa #Maybank #TapauFinance\n"
+}
