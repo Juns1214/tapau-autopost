@@ -163,11 +163,11 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
   🏢💻 big companies / tech & AI ×7 (results, deals, AI, big moves incl. after-hours) — BIG, well-known names only
   (Mag 7, mega-caps, chip/AI leaders, brands ordinary Malaysians know; bonus if they have a Malaysia link, e.g. Micron
   in Penang), and only when they had news that day; skip names most readers won't know (Gap, BJ's, Ross…) (Juns 23/11) → 🌏 rest of world /
-  🔮 week ahead ×1–2 (China/Asia, Europe/Japan, key dates; only real news). Yields/dollar only as a macro item when they made a big move.
+  🔮 week ahead ×2–3 (China/Asia, Europe/Japan, key dates; only real news). Yields/dollar only as a macro item when they made a big move.
   No big data that day → give the slot to companies; peak earnings day → companies can take 6. Never pad.
 - **Overlap with the video is fine** (Juns, 23/11): video stories can appear in the digest too, alongside wider news
   (economy, policy, personal finance / tech).
-- 马股快报: 7 items; 国际快报: 13–14 items (above); each 4–6 informative sentences (Juns, 23/11: deeper, but every extra sentence must add something — background, comparison vs last quarter/estimates/usual payout, what's next or what it means for ordinary people; no filler). "What happened / key numbers / context / why it matters" is only a guide, not a fixed template: shape each item to its topic (results → mostly the numbers: revenue, profit, YoY, dividend; policy → what changes and who it affects; deals → who, how much, why; tech/AI → what it is and why it's a big deal) (Juns, 23/11), written entirely in our own words from verified sources (never copy another
+- 马股快报: 8 items; 国际快报: 13–14 items (above); each 4–6 informative sentences (Juns, 23/11: deeper, but every extra sentence must add something — background, comparison vs last quarter/estimates/usual payout, what's next or what it means for ordinary people; no filler). "What happened / key numbers / context / why it matters" is only a guide, not a fixed template: shape each item to its topic (results → mostly the numbers: revenue, profit, YoY, dividend; policy → what changes and who it affects; deals → who, how much, why; tech/AI → what it is and why it's a big deal) (Juns, 23/11), written entirely in our own words from verified sources (never copy another
   page's sentences or structure). Neutral, no advice/targets; forecasts only when attributed ("瑞银预计…").
 - No sponsored items. No posts about party politics as such.
 - Format (text only, no image):
@@ -187,4 +187,5 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
   big brands/people/institutions (#Nvidia #美联储) and market words (#令吉 #马股) — not every item the same type
   (Juns, 23/11). No "—" line: one blank line after the last item, then the end tags.
   International version: 【Tapau财经｜11/24 国际快报】, end tags #Tapau财经 #国际财经 #美股 #投资 #股票 #全球经济.
-- Posted right after Juns approves (Composio Facebook text post on Page 1541675575685159).
+- Posted AUTOMATICALLY, no approval needed (Juns 23/11): written right after research and posted at once via Composio
+  FACEBOOK_CREATE_POST on Page 1541675575685159. Only the video picks still go to Juns for approval.
