@@ -26,3 +26,13 @@ Workflow: auto-publish, no script check; trading days only; US 08:00, MY 19:30; 
 ## Secrets (GitHub repo secrets, never paste values)
 AZURE_API_KEY (eastus), COMPOSIO_API_KEY (consumer ck_ key, used at https://connect.composio.dev/mcp), MUSIC_KEY (set by Claude via sealed box; decrypts assets/music/news1.mp3.enc).
 Facebook Page Tapau财经 id 1541675575685159; Composio FB account facebook_ketty-ingest; GitHub account github_insist-gascon (Juns1214).
+
+## Update 23/11 evening (revisions done)
+- **New flow:** each run researches, then sends Juns ONE message: ~10 candidate stories + recommended picks + hook line,
+  video title and cover description. He replies once ("ok" or changes); if he only changes picks, the run writes the new
+  hook/title/cover itself. Then build/render/post are automatic. No reply deadline — publish late if needed
+  (publish_at "" once the go-live time is too close or past). Both task prompts hold the full flow.
+- **Story selection rules, tone (medium 情绪, wording only), moomoo-first prices (BMS.<code> for Bursa):** see `docs/EPISODE_SPEC.md`.
+- Firmer run rules: Juns decided not needed. Voice: keep the flat voice (per-sentence pitch/speed rejected).
+- 2026-11-23_my rebuilt with the new rules and rendered with post=none for Juns's review.
+- Scheduled tasks still DISABLED until Juns says go.
