@@ -17,9 +17,12 @@ Full worked example: `episodes/2026-11-20_us_auto/episode.json`.
   - News that counts: results & dividends; contracts, deals, M&A, privatisation; disputes & trouble (lawsuits, regulators, Bursa queries, management exits); products & business (launches, expansion, analyst rating changes).
   - **Diversity first:** mix news types (results, saga/dispute, deal/contract, IPO, consumer). Results stories: about 2–3 per episode;
     on peak results days (late Feb, May, Aug, Nov) 3–4 is fine as long as at least 1–2 stories are not results.
-    Don't build the list from one results recap — actively search contracts, deals, IPOs, disputes and Bursa queries for the day.
-  - **Big ongoing sagas / controversies are top priority** (e.g. YTL Power–Nvidia–Megaspeed, Zetrix AI sukuk default): cover them
-    whenever there is a new development that day, even if they were in recent episodes.
+    Don't build the list from one results recap. Every day, search separately for: (1) dramas / sagas / controversies,
+    (2) IPOs (debuts, prospectus launches, oversubscription), (3) big famous companies' news of any kind, (4) contracts, deals,
+    takeovers, (5) results. Only then choose.
+  - **Big ongoing sagas / dramas are a MUST** (e.g. YTL Power–Nvidia–Megaspeed, Zetrix AI sukuk default): always include them
+    when there is a new development that day, even if they were in recent episodes and even if it makes the video longer.
+    Never drop one to save time.
   - Skip small, quiet stories (e.g. a mid-size developer's 3% profit rise) — they don't earn a slot.
   - **Audience test:** would an ordinary Malaysian viewer care? Small-cap share-price drama with no business story behind it
     (e.g. Mega Fortris sell-off) fails, even when the move is huge.
