@@ -16,12 +16,12 @@ and `docs/EPISODE_SPEC.md`.
 - Hidden test post of 11/20 on the Page: video id 1442451321407939, https://www.facebook.com/reel/1442451321407939 (unpublished; Juns couldn't find it in Business Suite — it's filed as a reel). Mp4: release `ep-2026-11-20_us_v9`.
 
 ## Open issues to look at
-1. The MY scheduled session (first run 23/11) wrote `episodes/2026-11-23_my/episode.json`, dispatched, then changed it to **5 stories** (Juns wants 4) and re-dispatched; both runs were cancelled mid-render, apparently by the session itself, and it never re-dispatched. Make the rules firmer: 4 stories; never cancel a running render; one dispatch per day unless the build failed.
+1. The MY scheduled session (first run 23/11) wrote `episodes/2026-11-23_my/episode.json`, dispatched, then changed it to 5 stories and re-dispatched; both runs were cancelled mid-render, apparently by the session itself, and it never re-dispatched. (Story count is now 4–5+, see below.) Still to fix: never cancel a running render; one dispatch per day unless the build failed.
 2. The 2026-11-23_my episode has not been reviewed visually (MY layout, logos, KL background are untested in the cloud).
 
 ## Juns's decisions (interview 23/11)
 Cover: date title (11月20日 / 美股早报) on top → big question from the hook (biggest text) → yellow fact line → small glass card with the story's key figure (label 64, number 130, no bars); background = title-frame background; no logo; catchy but factual.
-Workflow: auto-publish, no script check; trading days only; US 08:00, MY 19:30; Facebook only; failure → retry once, then skip + alert in the app (push); moomoo ad in both shows until 31/12/2026 (auto-dropped after); 4 stories ~4–5 min; famous names + big movers + one light story; prices from Yahoo/Alpha Vantage; caption short + sources + disclaimer + ~5 hashtags; new visual variations allowed; images captured in the cloud.
+Workflow: auto-publish, no script check; trading days only; US 08:00, MY 19:30; Facebook only; failure → retry once, then skip + alert in the app (push); moomoo ad in both shows until 31/12/2026 (auto-dropped after); 4–5+ stories ~5–6 min (story-selection rules revised 23/11 evening — see `docs/EPISODE_SPEC.md` "Story selection"); prices from Yahoo/Alpha Vantage; caption short + sources + disclaimer + ~5 hashtags; new visual variations allowed; images captured in the cloud.
 
 ## Secrets (GitHub repo secrets, never paste values)
 AZURE_API_KEY (eastus), COMPOSIO_API_KEY (consumer ck_ key, used at https://connect.composio.dev/mcp), MUSIC_KEY (set by Claude via sealed box; decrypts assets/music/news1.mp3.enc).
