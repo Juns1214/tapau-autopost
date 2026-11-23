@@ -144,5 +144,8 @@ Badge = key figure of the story (red #FF5A5F if down, green #3DD68C if up). Back
 Catchy but factual; no price predictions.
 
 ## Caption
-First line = the hook line (becomes the video title). Then the stories as numbered one-liners, sources, the disclaimer
+First line = the hook line (becomes the video title). Then one line per story, each starting with an emoji that fits the
+story (e.g. 🔌 chips/data centres, 🏦 banks, 🛢️ oil & gas, 🆕 IPO, ⛽ gas/utilities, 🎮 games, 🛒 retail) — no 1️⃣2️⃣3️⃣,
+no index/market line, no sources line (Juns, 23/11). Then the ad line (while the ad runs), the disclaimer
 「内容仅为新闻整理，不构成投资建议」 and ~5 hashtags (#美股 #美股早报 #TapauFinance …; MY: #马股 #马股晚报 #Bursa …).
+The daily approval message shows this caption preview too.
