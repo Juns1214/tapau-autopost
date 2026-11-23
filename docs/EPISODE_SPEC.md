@@ -156,10 +156,11 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
 - **马股快报** (in the 马股晚报 run): Malaysian economy & policy (BNM, ringgit, EPF, budget, trade), markets & big companies,
   personal finance (savings, cost of living, property, subsidies).
 - **国际快报** (in the 美股早报 run, Juns 23/11): 13–14 items, each 4–6 sentences, in this order:
-  🇺🇸 US macro ×3 (Fed & rate expectations; the day's data — CPI/PCE/jobs/retail sales; Treasury yields & dollar) →
-  📊 three indexes ×1 (S&P 500 / Nasdaq / Dow closes + main reason + VIX) → 🧩 sectors ×2 (leaders, laggards, why) →
-  🪙 gold · oil · Bitcoin ×1 (prices, changes, reason for the biggest mover) → 🏢💻 big companies / tech & AI ×5
-  (results, deals, AI, big moves incl. after-hours) → 🌏 rest of world ×1–2 (China/Asia, Europe/Japan, only real news).
+  🇺🇸 US macro ×2 (Fed & rate expectations; the day's data — CPI/PCE/jobs/retail sales) →
+  📊 three indexes ×1 (S&P 500 / Nasdaq / Dow closes + main reason + VIX) → 🧩 sectors ×1 (leaders AND laggards
+  in one item, why) → 🪙 gold · oil · Bitcoin ×1 (prices, changes, reason for the biggest mover) →
+  🏢💻 big companies / tech & AI ×7 (results, deals, AI, big moves incl. after-hours) → 🌏 rest of world /
+  🔮 week ahead ×1–2 (China/Asia, Europe/Japan, key dates; only real news). No separate yields/dollar item (Juns 23/11).
   No big data that day → give the slot to companies; peak earnings day → companies can take 6. Never pad.
 - **Overlap with the video is fine** (Juns, 23/11): video stories can appear in the digest too, alongside wider news
   (economy, policy, personal finance / tech).
