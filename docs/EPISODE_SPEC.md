@@ -160,7 +160,9 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
   CPI/PCE/jobs/retail sales, a big yields/dollar move); otherwise skip it and give the slots to other news (Juns 23/11) →
   📊 three indexes ×1 (S&P 500 / Nasdaq / Dow closes + main reason + VIX) → 🧩 sectors ×1 (leaders AND laggards
   in one item, why) → 🪙 gold · oil · Bitcoin ×1 (prices, changes, reason for the biggest mover) →
-  🏢💻 big companies / tech & AI ×7 (results, deals, AI, big moves incl. after-hours) → 🌏 rest of world /
+  🏢💻 big companies / tech & AI ×7 (results, deals, AI, big moves incl. after-hours) — BIG, well-known names only
+  (Mag 7, mega-caps, chip/AI leaders, brands ordinary Malaysians know; bonus if they have a Malaysia link, e.g. Micron
+  in Penang), and only when they had news that day; skip names most readers won't know (Gap, BJ's, Ross…) (Juns 23/11) → 🌏 rest of world /
   🔮 week ahead ×1–2 (China/Asia, Europe/Japan, key dates; only real news). Yields/dollar only as a macro item when they made a big move.
   No big data that day → give the slot to companies; peak earnings day → companies can take 6. Never pad.
 - **Overlap with the video is fine** (Juns, 23/11): video stories can appear in the digest too, alongside wider news
