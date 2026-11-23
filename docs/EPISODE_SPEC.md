@@ -8,17 +8,26 @@ Full worked example: `episodes/2026-11-20_us_auto/episode.json`.
 - **Count/length:** 4–5 stories, about 5–6 min, as a guide not a cap — more stories or a longer episode is fine when the news is good.
   Quiet day: still reach at least 4 (smaller companies or sector stories), all today's verified news.
 - **"Today":** the trading session plus anything released after the close up to the run (MY ≈17:30, US ≈06:00 MYT) — e.g. results after the bell.
+  Announcements released after the previous run (e.g. results out on Thursday evening after the 17:30 MY run) belong to the next episode,
+  told as "announced → how the stock reacted today".
 - **Choosing:** most interesting / most useful to ordinary viewers wins. Famous names are preferred when their news is interesting,
   but never forced in, and there is no minimum number of famous-name stories. No minimum price move — a story needs real news.
   - Famous, MY: FBM KLCI 30, household brands (Mr DIY, 99 Speedmart, Capital A …), popular retail-traded stocks, GLC / big-group companies.
   - Famous, US: Magnificent 7 + hot AI/chip names. Consumer brands (McDonald's, Nike, Netflix …) and Asia-linked listings (Grab, Sea, Alibaba ADR) are fine when interesting, but not "famous".
   - News that counts: results & dividends; contracts, deals, M&A, privatisation; disputes & trouble (lawsuits, regulators, Bursa queries, management exits); products & business (launches, expansion, analyst rating changes).
-  - Results stories: about 2–3 per episode at most; mix in other news types.
+  - **Diversity first:** mix news types (results, saga/dispute, deal/contract, IPO, consumer). Results stories: about 2–3 per episode;
+    on peak results days (late Feb, May, Aug, Nov) 3–4 is fine as long as at least 1–2 stories are not results.
+    Don't build the list from one results recap — actively search contracts, deals, IPOs, disputes and Bursa queries for the day.
+  - **Big ongoing sagas / controversies are top priority** (e.g. YTL Power–Nvidia–Megaspeed, Zetrix AI sukuk default): cover them
+    whenever there is a new development that day, even if they were in recent episodes.
+  - Skip small, quiet stories (e.g. a mid-size developer's 3% profit rise) — they don't earn a slot.
+  - A famous name with solid news can make it 6 stories rather than being dropped.
   - IPOs: MY Main, ACE and LEAP — listing-day debuts and upcoming IPOs (prospectus / price / listing date announced today). US: big, well-known IPOs only.
   - A story can cover a sector (several stocks moving on the same news) or a linked pair (both sides of one deal or dispute). Pure macro is not a story (it goes in the market section).
   - Light or quirky stories (IPO debuts, odd moves, unusual announcements) are optional — only when the day has one. The last slot is whatever fits.
 - **Exclusions:** small / low-priced / illiquid stocks only when the news is very big (reported by mainstream press, not just a filing or a price jump).
-  No repeat of a story from the previous episode of the same show unless there is new official news or another ±5 % or more move with a known reason.
+  No repeat of a story from the previous episode of the same show unless there is new official news or another ±5 % or more move with a known reason
+  (ongoing sagas with a new development always qualify).
 - **Order:** biggest / most interesting story first (it feeds the hook and the cover); `{"ad": true}` always right after story 1.
 - **Story structure:**
   - MY results: what the company does → revenue → net profit and YoY → why → dividend (amount, ex-date, payment date, or "none") → price move → caveat / analyst view. Use the full version especially for companies viewers may not know.
