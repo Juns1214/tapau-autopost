@@ -75,6 +75,12 @@ Normal scene keys: `bg` (image in `remotion/public/img/`), `bar` (top title bar 
 `sents` (one entry per sentence: `[TTS text with numbers in Chinese words, zh subtitle with Arabic numerals, short English subtitle]`),
 `beats` (visual changes; `s` = sentence index where the beat starts).
 
+**Tone (Juns, 23/11): more 情绪, medium strength, from the WORDS only** — the voice stays flat as now (per-sentence pitch/speed
+was tried and rejected: it sounds like different voices). 1–2 emotional moments per story, matched to the news:
+excited for big moves / big news (「哇」「爆了啦」「直接飙」), sympathy for drops (「惨咯」「冤不冤啊」), suspense for sagas
+(「重点来了」「剧情越来越精彩」), playful teasing about the situation (「讲真，比连续剧还精彩」). Emotion is about the event,
+never about whether to buy or sell, and never mocks investors.
+
 Each TTS sentence must end with 。？！ and must not contain ；. Aim for ~1,600–1,900 Chinese characters (≈5–6 min at 1.2× voice); longer is fine when there are more stories.
 
 ## Times inside beats
