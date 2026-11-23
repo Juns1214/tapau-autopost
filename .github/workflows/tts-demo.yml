@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["demo/tts/script.json", "demo/tts/make.py"]
+    paths: ["demo/tts/script.json", "demo/tts/make.py", ".github/workflows/tts-demo.yml"]
 permissions:
   contents: write
 jobs:
@@ -21,6 +21,6 @@ jobs:
       - name: Commit output
         run: |
           git config user.name "github-actions[bot]"; git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add demo/tts/out
+          git add -f demo/tts/out
           git commit -m "TTS emotion demo output [skip ci]" || exit 0
           git pull --rebase origin main && git push origin main
