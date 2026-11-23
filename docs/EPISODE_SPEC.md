@@ -164,15 +164,17 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
 ```
 【Tapau财经｜11/23 马股快报】
 
-🔌 │ #AI芯片风波未完
-三四句……
+🔌 │ AI芯片风波未完
+#YTL电力 今天发文澄清，否认把 #Nvidia 芯片转移出去……（三四句）
 
-🏦 │ #Maybank净利反升
-三四句……
+🏦 │ Maybank净利反升
+#Maybank 第三季净利……（三四句）
 
-—
-#Tapau财经 #马股 #每日快报
+#Tapau财经 #马股 #马来西亚 #投资 #股票 #Bursa
 ```
-  Topic emoji + " │ " + one #key-phrase headline per item; international version: 【Tapau财经｜11/24 国际快报】 and
-  #Tapau财经 #国际财经 #每日快报.
+  Header = topic emoji + " │ " + short plain title (no #). Inside the sentences, hashtag 2–3 words per item that
+  people actually search/tag, mixed Chinese/English, balanced across company names (#Maybank), topics (#AI #股息 #新股),
+  big brands/people/institutions (#Nvidia #美联储) and market words (#令吉 #马股) — not every item the same type
+  (Juns, 23/11). No "—" line: one blank line after the last item, then the end tags.
+  International version: 【Tapau财经｜11/24 国际快报】, end tags #Tapau财经 #国际财经 #美股 #投资 #股票 #全球经济.
 - Posted right after Juns approves (Composio Facebook text post on Page 1541675575685159).
