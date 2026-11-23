@@ -25,7 +25,7 @@
       {
        "label": "富时隆综指 今天",
        "value": "−0.47%",
-       "sub": "收 1,549.05 点 · 连跌第 6 天",
+       "sub": "收 1,549.05 点",
        "c": "#FF5A5F",
        "img": "my_kl.jpg"
       },
@@ -50,9 +50,9 @@
      "Malaysia market brief · 23 Nov"
     ],
     [
-     "大盘连跌六天，还好Maybank的成绩单没有跟着跌啦。",
-     "大盘连跌 6 天，还好 Maybank 的成绩单没跟着跌啦",
-     "KLCI down 6 days in a row, but Maybank's results held up"
+     "大盘又跌了，还好Maybank的成绩单没有跟着跌啦。",
+     "大盘又跌了，还好 Maybank 的成绩单没跟着跌啦",
+     "KLCI fell again, but Maybank's results held up"
     ]
    ]
   },
@@ -74,7 +74,7 @@
         "kind": "closes",
         "n": 8
        },
-       "note": "连跌第 6 天"
+       "note": "连续多天下跌"
       }
      ],
      "src": "数据：Bernama/Focus Malaysia 收市报道 · 走势线：Yahoo Finance 近 8 个交易日"
@@ -121,9 +121,9 @@
      "KLCI −7.46 pts (−0.47%) to 1,549.05"
     ],
     [
-     "根据星报，这已经是连续第六天下跌。",
-     "星报：连续第 6 天下跌",
-     "Sixth straight day of losses (The Star)"
+     "这已经是连续多天下跌了。",
+     "连续多天下跌",
+     "Another day of losses"
     ],
     [
      "全场下跌的股票有八百四十九家，上涨只有二百九十三家，跌的差不多是涨的三倍。",
@@ -432,8 +432,112 @@
   },
   {
    "bg": "oil_pexels_19130305.jpg",
-   "c": "#1F5FAD",
+   "c": "#0E7C86",
    "num": "3",
+   "bar": "WASCO 卖掉工程部门",
+   "pause": {
+    "3": 1.0,
+    "5": 1.0
+   },
+   "beats": [
+    {
+     "t": "bignumv",
+     "s": 0,
+     "v": "A",
+     "img": "oil_pexels_19130305.jpg",
+     "label": "卖给阿布扎比上市的 NMDC Energy",
+     "text": "RM7.82 亿",
+     "unit": "现金 · 约 US$1.93 亿",
+     "size": 150,
+     "src": "来源：The Sun、Dagang News（11月23日）"
+    },
+    {
+     "t": "bignumv",
+     "s": 2,
+     "v": "B",
+     "img": "oil_pexels_19130305.jpg",
+     "label": "预计一次性收益",
+     "text": "RM3.403 亿",
+     "unit": "预计 2027 年第一季完成",
+     "size": 150,
+     "src": "来源：The Sun（11月23日）"
+    },
+    {
+     "t": "bignumv",
+     "s": 3,
+     "v": "A",
+     "img": "oil_pexels_19130305.jpg",
+     "label": "建议特别股息（指示性）",
+     "text": "每股 30 仙",
+     "unit": "要等交易完成才派",
+     "size": 160,
+     "src": "来源：The Sun（11月23日）"
+    },
+    {
+     "t": "priceu",
+     "s": 4,
+     "c": "#0E7C86",
+     "title": "Wasco 股价",
+     "sub": "每日 K 线 · 令吉",
+     "d": {
+      "$yahoo": "5142.KL",
+      "kind": "candles",
+      "n": 6,
+      "labels": "md"
+     },
+     "src": "数据：Yahoo Finance 日线"
+    },
+    {
+     "t": "listv",
+     "s": 5,
+     "v": "A",
+     "img": "oil_pexels_19130305.jpg",
+     "c": "#FF5A5F",
+     "title": "要注意",
+     "lines": [
+      "还要股东和有关当局批准",
+      "股息数额以最终公告为准"
+     ],
+     "src": "来源：The Sun（11月23日）"
+    }
+   ],
+   "sents": [
+    [
+     "第三件事，油气服务公司Wasco，同意把工程和制造部门，以七亿八千二百万令吉现金，卖给阿布扎比上市的NMDC Energy。",
+     "第三件事：Wasco 把工程和制造部门以 RM7.82 亿现金卖给 NMDC Energy",
+     "Story 3: Wasco sells its engineering & fabrication unit for RM782M"
+    ],
+    [
+     "卖掉之后，它会保留管道服务和生物能源业务。",
+     "之后保留管道服务和生物能源业务",
+     "It keeps pipeline services and bioenergy"
+    ],
+    [
+     "公司预计这笔交易会带来三亿四千零三十万令吉的一次性收益，预计明年第一季完成。",
+     "预计一次性收益 RM3.403 亿，明年第一季完成",
+     "Expected one-off gain RM340.3M; completion Q1 2027"
+    ],
+    [
+     "它也建议派每股大约三十仙的特别股息，不过要等交易完成才派。",
+     "建议特别股息每股约 30 仙，交易完成后才派",
+     "Indicative 30 sen special dividend, after completion"
+    ],
+    [
+     "消息一出，Wasco今天的股价明显上涨。",
+     "消息一出，Wasco 股价明显上涨",
+     "Shares rose on the news"
+    ],
+    [
+     "不过这笔交易还要股东和有关当局批准，最终股息数额也要以公司公告为准。",
+     "还要股东和当局批准，股息以最终公告为准",
+     "Needs shareholder and regulatory approval"
+    ]
+   ]
+  },
+  {
+   "bg": "oil_pexels_19130305.jpg",
+   "c": "#1F5FAD",
+   "num": "4",
    "bar": "VELESTO 派特别股息",
    "pause": {
     "4": 1.0
@@ -442,7 +546,7 @@
     {
      "t": "quip",
      "s": 0,
-     "text": "最后来点轻松的"
+     "text": "小型股：很会派钱的 Velesto"
     },
     {
      "t": "siteu",
@@ -493,17 +597,17 @@
      "c": "#FF5A5F",
      "title": "要注意",
      "lines": [
-      "派得多 ≠ 赚得多",
-      "这一季盈利转弱"
+      "第三季净利 −58.9%",
+      "派得多 ≠ 赚得多"
      ],
      "src": "来源：The Edge（11月23日）"
     }
    ],
    "sents": [
     [
-     "最后来点轻松的。",
-     "最后来点轻松的",
-     "Something lighter"
+     "第四件事，来看一只很会派钱的小型股。",
+     "第四件事：很会派钱的小型股",
+     "Story 4: a small cap that pays out a lot"
     ],
     [
      "做钻油台生意的Velesto，股价才十几仙，但最近很会派钱。",
@@ -526,9 +630,100 @@
      "RM247.9M paid out this year, over 5x net profit"
     ],
     [
-     "不过要注意，它这一季的盈利其实是转弱的，派得多不代表赚得多哦。",
-     "不过这一季盈利转弱，派得多 ≠ 赚得多",
-     "But earnings weakened; payouts aren't profits"
+     "不过它第三季的净利是两千零六十一万令吉，比去年少了百分之五十八点九，派得多不代表赚得多哦。",
+     "不过第三季净利 RM2,061 万，按年 −58.9%，派得多 ≠ 赚得多",
+     "But Q3 net profit RM20.61M, −58.9%; payouts aren't profits"
+    ]
+   ]
+  },
+  {
+   "bg": "my_store.jpg",
+   "c": "#F58220",
+   "num": "5",
+   "bar": "7-ELEVEN 和 AEON 成绩单",
+   "pause": {
+    "3": 1.0
+   },
+   "beats": [
+    {
+     "t": "quip",
+     "s": 0,
+     "text": "最后来点轻松的：你常去的便利店和商场"
+    },
+    {
+     "t": "siteu",
+     "s": 1,
+     "name": "7-Eleven Malaysia",
+     "logo": "7eleven.webp",
+     "line": "大马便利店连锁",
+     "src": "Logo：7-Eleven Malaysia 官网"
+    },
+    {
+     "t": "bignumv",
+     "s": 2,
+     "v": "A",
+     "img": "my_store.jpg",
+     "label": "7-Eleven 第三季净利",
+     "text": "RM653 万",
+     "unit": "按年多了超过 2 倍 · 营收 +17.91%",
+     "size": 140,
+     "src": "来源：The Edge（11月20日公告）"
+    },
+    {
+     "t": "siteu",
+     "s": 3,
+     "name": "AEON 永旺",
+     "logo": "aeon.png",
+     "line": "购物中心与零售",
+     "src": "Logo：AEON Retail 官网"
+    },
+    {
+     "t": "bignumv",
+     "s": 4,
+     "v": "B",
+     "img": "my_store.jpg",
+     "label": "AEON 第三季净利",
+     "text": "RM925 万",
+     "unit": "按年 −36.7% · 营收 +1.5%",
+     "size": 140,
+     "src": "来源：The Edge（11月20日公告）"
+    },
+    {
+     "t": "quip",
+     "s": 5,
+     "text": "一个变成三倍多，一个少了三成多"
+    }
+   ],
+   "sents": [
+    [
+     "最后来点轻松的，看看大家常去的便利店和商场。",
+     "最后来点轻松的：便利店和商场",
+     "Lastly, the shops you visit"
+    ],
+    [
+     "7-Eleven马来西亚上周五公布，第三季营收九亿三千八百万令吉，增加百分之十七点九一。",
+     "7-Eleven 第三季营收 RM9.38 亿，+17.91%",
+     "7-Eleven Q3 revenue RM938M, +17.91%"
+    ],
+    [
+     "净利是六百五十三万令吉，比去年同期多了超过两倍。",
+     "净利 RM653 万，按年多了超过 2 倍",
+     "Net profit RM6.53M, more than tripled"
+    ],
+    [
+     "同一天，AEON也公布了成绩。",
+     "同一天 AEON 也公布成绩",
+     "AEON reported the same day"
+    ],
+    [
+     "它第三季营收是十亿一千万令吉，增加百分之一点五，但净利只有九百二十五万令吉，少了百分之三十六点七。",
+     "AEON 营收 RM10.1 亿 +1.5%，净利 RM925 万 −36.7%",
+     "AEON revenue RM1.01B +1.5%; profit RM9.25M −36.7%"
+    ],
+    [
+     "一个净利变成三倍多，一个少了三成多，下次去买东西，可以顺便想想这些数字咯。",
+     "一个变成三倍多，一个少了三成多",
+     "One tripled, one fell over a third"
     ]
    ]
   },
@@ -552,12 +747,22 @@
    "type": "logo",
    "url": "https://asset.xtopia.io/clients/asset_06BCF24A-3658-437A-AC25-8E9DF29B0D49/contentms/img/logo/logo-blue.svg",
    "file": "velesto.svg"
+  },
+  {
+   "type": "logo",
+   "url": "https://www.7eleven.com.my/wp-content/uploads/2024/07/7-Eleven-Logo-1.webp",
+   "file": "7eleven.webp"
+  },
+  {
+   "type": "logo",
+   "url": "https://aeonretail.com.my//wp-content/uploads/2023/05/AEON-LOGO-2.png",
+   "file": "aeon.png"
   }
  ],
  "cover": {
   "lines": [
    {
-    "t": "马股还在跌？",
+    "t": "马股又跌了？",
     "s": 160
    },
    {
@@ -572,5 +777,5 @@
    "c": "#FF5A5F"
   }
  },
- "caption": "【马股晚报 11/23】大盘连跌 6 天，还好 Maybank 成绩单没跟着跌\n📉 富时隆综指收 1,549.05 点，−7.46 点（−0.47%）｜下跌 849 家，上涨 293 家\n1️⃣ 公用事业股拖累大盘：国能 −22 仙收 RM12.46，杨忠礼电力、杨忠礼机构也跌\n2️⃣ Maybank 第三季净利 RM27.4 亿，按年 +4.7%；营收减少，这季没派中期股息\n3️⃣ Velesto 派每股 2 仙特别股息，今年合计 3 仙（这季盈利转弱）\n\n来源：Bernama、Focus Malaysia、星报、The Edge、Yahoo Finance\n广告：moomoo 新客福利（推荐码开户，频道主获推荐奖励；以 moomoo 条款为准）\n内容仅为新闻整理，不构成投资建议。\n#马股 #马股晚报 #Bursa #Maybank #TapauFinance\n"
+ "caption": "【马股晚报 11/23】大盘又跌了，还好 Maybank 成绩单没跟着跌\n📉 富时隆综指收 1,549.05 点，−7.46 点（−0.47%）｜下跌 849 家，上涨 293 家\n1️⃣ 公用事业股拖累大盘：国能 −22 仙收 RM12.46，杨忠礼电力、杨忠礼机构也跌\n2️⃣ Maybank 第三季净利 RM27.4 亿，按年 +4.7%；营收减少，这季没派中期股息\n3️⃣ Wasco 以 RM7.82 亿卖掉工程与制造部门，建议特别股息约 30 仙（需批准）\n4️⃣ Velesto 派 2 仙特别股息，但第三季净利 −58.9%\n5️⃣ 7-Eleven 第三季净利多了超过 2 倍，AEON 净利 −36.7%\n\n来源：Bernama、Focus Malaysia、星报、The Edge、The Sun、Yahoo Finance\n广告：moomoo 新客福利（推荐码开户，频道主获推荐奖励；以 moomoo 条款为准）\n内容仅为新闻整理，不构成投资建议。\n#马股 #马股晚报 #Bursa #Maybank #TapauFinance\n"
 }
