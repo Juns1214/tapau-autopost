@@ -287,7 +287,7 @@ def main():
     # cover + caption
     cover = dict(spec["cover"]); cover.setdefault("bg", scenes_in[1].get("bg") if len(scenes_in) > 1 else "bg_wallstreet_13801277.jpg")
     cover.setdefault("d1", meta["d1"]); cover.setdefault("d2", SHOW); cover.setdefault("dark", 0.5)
-    cover.setdefault("badge", {}); cover["badge"].setdefault("style", "glass")
+    if cover.get("badge"): cover["badge"].setdefault("style", "glass")  # no badge by default (Juns, 23/11)
     json.dump(cover, open(f"{OUT}/cover.json", "w", encoding="utf-8"), ensure_ascii=False)
     open(f"{OUT}/caption.txt", "w", encoding="utf-8").write(spec["caption"].strip() + "\n")
     check_files(scenes, cover)

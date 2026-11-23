@@ -1000,22 +1000,18 @@
   }
  ],
  "cover": {
+  "ds": 125,
   "lines": [
    {
     "t": "谁在逆市飙？",
-    "s": 160
+    "s": 170
    },
    {
     "t": "Wasco 卖部门 派30仙",
-    "s": 90,
+    "s": 100,
     "c": "#FFD23F"
    }
-  ],
-  "badge": {
-   "label": "Wasco 今天",
-   "num": "+12.0%",
-   "c": "#3DD68C"
-  }
+  ]
  },
  "caption": "【马股晚报 11/23】大盘一片红，Wasco 却逆市飙了 12%\n🔌 YTL电力否认转移 Nvidia 芯片，股价仍跌\n🏦 Maybank 第三季净利 +4.7%\n🛢️ Wasco 卖部门派 30 仙，股价飙 12%\n🆕 新股：EMPG 招股，Emits 超额认购 6.43 倍\n⛽ Petronas Gas 净利大涨却被降级\n\n#马股 #马股晚报 #Bursa #Wasco #TapauFinance\n"
 }

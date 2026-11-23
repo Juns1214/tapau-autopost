@@ -1092,7 +1092,7 @@ const Recap: React.FC = () => <AbsoluteFill style={{background: '#061022'}}>
 
 // 封面: date title (as in the video) + big question + yellow line + S&P card. Props: episodes/<ep>/cover.json via --props.
 // Everything important stays inside the centre 3:4 area (y 240-1680) so feed crops don't cut it.
-const CoverComp: React.FC<any> = ({bg, dark = 0.5, d1 = META.d1, d2 = SHOW, lines = [], badge}) => {
+const CoverComp: React.FC<any> = ({bg, dark = 0.5, d1 = META.d1, d2 = SHOW, lines = [], badge, ds = 110}) => {
   const stroke = (w: number) => ({WebkitTextStroke: `${w}px #0B1020`, paintOrder: 'stroke fill', textShadow: '0 10px 40px rgba(0,0,0,0.7)'} as any);
   const Txt2 = ({t, s, c = 'white'}: any) => <div style={{fontSize: s, fontWeight: 900, color: c, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'nowrap', ...stroke(s > 120 ? 14 : 10)}}>{t}</div>;
   const BW = 700, BH = 300;
@@ -1118,10 +1118,10 @@ const CoverComp: React.FC<any> = ({bg, dark = 0.5, d1 = META.d1, d2 = SHOW, line
     <Bg img={bg} blur={0} dark={dark} />
     <AbsoluteFill style={{background: 'radial-gradient(ellipse at 50% 52%, rgba(4,8,18,0.55), transparent 65%)'}} />
     <div style={{position: 'absolute', left: 0, width: W, top: 260, height: 1400, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-      <Txt2 t={d1} s={110} c={YEL} /><Txt2 t={d2} s={110} />
+      <Txt2 t={d1} s={ds} c={YEL} /><Txt2 t={d2} s={ds} />
       <div style={{height: 70}} />
       {lines.map((l: any, i: number) => <Txt2 key={i} t={l.t} s={l.s} c={l.c || 'white'} />)}
-      <div style={{height: 70}} />
+      {badge && <div style={{height: 70}} />}
       <Badge />
     </div>
   </AbsoluteFill>;

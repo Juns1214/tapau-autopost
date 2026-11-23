@@ -136,11 +136,12 @@ Add `"optional": true` when the image is nice-to-have. Library images already in
 
 ## Cover (封面)
 ```json
-"cover": {"lines": [{"t": "美股怎么了？", "s": 170}, {"t": "GTA 6 卖爆都救不了", "s": 92, "c": "#FFD23F"}],
-          "badge": {"label": "标普 500 本周", "num": "−8.6%", "c": "#FF5A5F"}}
+"cover": {"ds": 125, "lines": [{"t": "美股怎么了？", "s": 170}, {"t": "GTA 6 卖爆都救不了", "s": 100, "c": "#FFD23F"}]}
 ```
-Question line = from the day's hook, ~5–7 characters, size 150–170 (fits 1 line at ≤ 900 px). Yellow line = the hook's key fact, size ~90.
-Badge = key figure of the story (red #FF5A5F if down, green #3DD68C if up). Background and date title are automatic (same as the title frame).
+No badge box (Juns, 23/11): date + show name, question line, yellow line only, centred, a bit bigger.
+Date/show size `ds` 125. Question line = from the day's hook, ~5–7 characters, size 165–170 (fits 1 line at ≤ 960 px).
+Yellow line = the hook's key fact, size ~100 (≤ ~16 chars so it fits one line). Background is automatic.
+(`badge` still works if Juns asks for one: {"label", "num", "c"}.)
 Catchy but factual; no price predictions.
 
 ## Caption
