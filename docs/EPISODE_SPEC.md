@@ -21,6 +21,10 @@ Full worked example: `episodes/2026-11-20_us_auto/episode.json`.
   - **Big ongoing sagas / controversies are top priority** (e.g. YTL Power–Nvidia–Megaspeed, Zetrix AI sukuk default): cover them
     whenever there is a new development that day, even if they were in recent episodes.
   - Skip small, quiet stories (e.g. a mid-size developer's 3% profit rise) — they don't earn a slot.
+  - **Audience test:** would an ordinary Malaysian viewer care? Small-cap share-price drama with no business story behind it
+    (e.g. Mega Fortris sell-off) fails, even when the move is huge.
+  - **Typical ranking** (Juns's picks, 18–23/11): national/big saga with a new development → famous / household names →
+    deals, takeovers, big contracts → IPOs → results from less exciting sectors last.
   - A famous name with solid news can make it 6 stories rather than being dropped.
   - IPOs: MY Main, ACE and LEAP — listing-day debuts and upcoming IPOs (prospectus / price / listing date announced today). US: big, well-known IPOs only.
   - A story can cover a sector (several stocks moving on the same news) or a linked pair (both sides of one deal or dispute). Pure macro is not a story (it goes in the market section).
