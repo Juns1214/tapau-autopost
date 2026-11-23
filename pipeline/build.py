@@ -76,6 +76,28 @@ def fetch(url, dest):
             if i == 2: raise RuntimeError(f"download failed {url}: {e}")
             time.sleep(3)
 
+def find_target(pg, a):
+    """Resolve the page to capture. Plain "url", or "find": {"lists": [listing urls], "text": link text, "frame": true}
+    -> open each listing page, follow the first link containing text; with frame, open the first iframe's src
+    (Bursa announcement details keep the document in an iframe)."""
+    f = a.get("find")
+    if not f: return a["url"]
+    for lst in f["lists"]:
+        try:
+            pg.goto(lst, wait_until="domcontentloaded", timeout=60000); pg.wait_for_timeout(f.get("wait", 6000))
+            loc = pg.locator("a", has_text=f["text"]).first
+            href = loc.get_attribute("href", timeout=8000)
+            if not href: continue
+            url = urllib.parse.urljoin(pg.url, href)
+            if f.get("frame", "bursamalaysia.com" in lst):
+                pg.goto(url, wait_until="domcontentloaded", timeout=60000); pg.wait_for_timeout(4000)
+                src = pg.locator("iframe").first.get_attribute("src", timeout=8000)
+                if src: url = urllib.parse.urljoin(pg.url, src)
+            log("found", f["text"], "->", url); return url
+        except Exception as e:
+            log("find failed on", lst, e)
+    raise RuntimeError(f"link not found: {f['text']}")
+
 def screenshots(items):
     if not items: return
     from playwright.sync_api import sync_playwright
@@ -83,12 +105,13 @@ def screenshots(items):
     with sync_playwright() as p:
         br = p.chromium.launch(executable_path=chrome or None, args=["--no-sandbox"])
         for a in items:
-            dest = f"{PUB}/img/{a['file']}"; w, h, dpr = a.get("w", 1000), a.get("h", 600), a.get("dpr", 2)
+            dest = f"{PUB}/{'logo' if a.get('dest') == 'logo' else 'img'}/{a['file']}"; w, h, dpr = a.get("w", 1000), a.get("h", 600), a.get("dpr", 2)
             ok = False
             for attempt in range(2):
                 try:
                     ctx = br.new_context(viewport={"width": w, "height": h}, device_scale_factor=dpr, user_agent=UA["User-Agent"], locale="en-US")
-                    pg = ctx.new_page(); pg.goto(a["url"], wait_until="domcontentloaded", timeout=60000)
+                    pg = ctx.new_page(); url = find_target(pg, a)
+                    pg.goto(url, wait_until="domcontentloaded", timeout=60000)
                     pg.wait_for_timeout(a.get("wait", 4000)); pg.add_style_tag(content=HIDE + a.get("css", ""))
                     if a.get("scroll"): pg.evaluate(f"window.scrollTo(0,{a['scroll']})"); pg.wait_for_timeout(800)
                     clip = None
@@ -130,6 +153,22 @@ def assets(spec):
     screenshots(shots)
     # copy episode-supplied images
     if os.path.isdir(f"{EPD}/img"): sh(f"cp -r '{EPD}/img/.' '{PUB}/img/'")
+
+def fallback(b):
+    """An optional asset that could not be captured must not break the build: doc/news beats fall back to their
+    "fb" beat (or a quip), siteu loses the missing screenshot/logo. Logged so the run shows what is missing."""
+    have = lambda f: os.path.exists(f"{PUB}/img/{f}")
+    if b.get("t") in ("doc", "news"):
+        imgs = [b.get("img")] if b["t"] == "doc" else [it[0] for it in b.get("items", [])]
+        if any(i and not have(i) for i in imgs):
+            log("FALLBACK (missing evidence)", imgs)
+            fb = b.get("fb") or {"t": "quip", "text": b.get("takeTitle") or ""}
+            return dict(fb, s=b["s"])
+    if b.get("t") == "siteu":
+        if b.get("img") and not have(b["img"]): log("FALLBACK no site shot", b["img"]); b.pop("img")
+        lg = b.get("logo")
+        if lg and "." in lg and not os.path.exists(f"{PUB}/logo/{lg}"): log("FALLBACK no logo", lg); b.pop("logo")
+    return b
 
 def apply_doc_meta(b):
     """doc beat with "auto": true takes size + boxes from the screenshot; "boxAt" gives the times."""
@@ -267,7 +306,7 @@ def main():
         Td = [t + 0.15 for t in Tn]; ends = [Td[j + 1] - pz.get(j + 1, 0) for j in range(n - 1)] + [d - 0.35]
         beats = []
         for bt in sc["beats"]:
-            b = apply_doc_meta(dict(bt)); st = Td[b["s"]] if not (b["s"] == 0 and pz.get(0)) else 0.0
+            b = apply_doc_meta(fallback(dict(bt))); st = Td[b["s"]] if not (b["s"] == 0 and pz.get(0)) else 0.0
             b = resolve(b, st, Td, ends); b["at0"] = round(st, 3); beats.append(b)
         out = {k: v for k, v in sc.items() if k not in ("beats", "pause", "sents")}
         out.update(frames=fr, T=[round(t, 3) for t in Td], subs=SUBS, beats=beats)

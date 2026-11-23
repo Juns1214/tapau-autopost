@@ -143,53 +143,159 @@
    "num": "1",
    "bar": "AI 芯片风波：杨忠礼电力澄清",
    "pause": {
-    "4": 1.0,
-    "5": 1.0,
-    "7": 1.0,
-    "10": 1.0
+    "3": 0.8,
+    "6": 0.6,
+    "9": 1.0
    },
    "beats": [
     {
      "t": "quip",
      "s": 0,
-     "text": "AI 芯片风波 · 新进展"
+     "text": "AI 芯片风波 · 新进展",
+     "sub": "第一件事"
     },
     {
      "t": "siteu",
      "s": 1,
      "name": "YTL Power 杨忠礼电力",
+     "logo": "ytlpower_logo.png",
+     "logoW": 200,
      "abbr": "YTL",
+     "img": "site_ytlpower.png",
      "c": "#1E4FA3",
-     "line": "公用事业 · 柔佛数据中心",
-     "src": "来源：星报（11月23日）"
+     "line": "电力、水务 · 柔佛 AI 数据中心",
+     "src": "画面：YTL Power 官网"
+    },
+    {
+     "t": "rel",
+     "s": 2,
+     "title": "外界指称的链条（未经证实）",
+     "titleBg": "#FF5A5F",
+     "h": 980,
+     "nodes": [
+      [
+       "阿里巴巴",
+       "中国科技公司 · 使用者",
+       540,
+       70,
+       "#FF9F43",
+       0.2
+      ],
+      [
+       "Megaspeed",
+       "新加坡云端公司",
+       540,
+       320,
+       "#FF5A5F",
+       {
+        "$s": 2,
+        "f": 0.15
+       }
+      ],
+      [
+       "Speedmatrix",
+       "Megaspeed 的马来西亚子公司",
+       540,
+       570,
+       "#FF5A5F",
+       {
+        "$s": 2,
+        "f": 0.4
+       }
+      ],
+      [
+       "YTL 柔佛数据中心",
+       "放着 Nvidia 芯片（出租空间）",
+       540,
+       820,
+       "#1E4FA3",
+       {
+        "$s": 2,
+        "f": 0.65
+       }
+      ]
+     ],
+     "links": [
+      [
+       0,
+       1,
+       "远程使用",
+       {
+        "$s": 2,
+        "f": 0.3
+       }
+      ],
+      [
+       1,
+       2,
+       "子公司",
+       {
+        "$s": 2,
+        "f": 0.5
+       }
+      ],
+      [
+       2,
+       3,
+       "租用",
+       {
+        "$s": 2,
+        "f": 0.75
+       }
+      ]
+     ],
+     "chip": "贸工部调查中 · YTL Power：报道不属实",
+     "chipAt": {
+      "$s": 3,
+      "f": 0.3
+     },
+     "src": "来源：The Edge、星报、NST（11月10–20日）"
+    },
+    {
+     "t": "doc",
+     "s": 3,
+     "auto": true,
+     "img": "edge_ytl.png",
+     "boxAt": [
+      0.5
+     ],
+     "zoomTo": 0,
+     "take": [
+      "沽空机构指 Megaspeed 是 YTL 大客户",
+      "双方都没有公开证实"
+     ],
+     "takeTitle": "The Edge 报道",
+     "src": "来源：The Edge（11月16日）",
+     "fb": {
+      "t": "listv",
+      "v": "B",
+      "img": "my_dc.jpg",
+      "c": "#FF5A5F",
+      "title": "要注意",
+      "lines": [
+       "这些都是指称，未经证实",
+       "贸工部正在调查"
+      ],
+      "src": "来源：NST、Bernama（11月13日）"
+     }
     },
     {
      "t": "listv",
-     "s": 2,
+     "s": 4,
      "v": "A",
      "img": "my_dc.jpg",
      "c": "#1E4FA3",
-     "title": "杨忠礼电力怎么说",
+     "title": "今天管理层怎么说",
      "lines": [
-      "否认帮忙把 Nvidia 芯片转给中国客户",
-      "GPU 服务不服务中国客户"
+      "没有参与任何芯片转移",
+      "GPU 服务不服务中国客户",
+      "美国新规不影响租用服务"
      ],
      "src": "来源：星报（11月23日）"
     },
     {
-     "t": "bignumv",
-     "s": 4,
-     "v": "B",
-     "img": "my_dc.jpg",
-     "label": "杨忠礼电力 今天收市",
-     "text": "RM3.91",
-     "unit": "−4 仙 · −1.0%",
-     "size": 160,
-     "src": "数据：moomoo 日线（BMS）"
-    },
-    {
      "t": "priceu",
-     "s": 5,
+     "s": 6,
      "c": "#1E4FA3",
      "title": "杨忠礼电力股价",
      "sub": "每日 K 线 · 令吉",
@@ -251,18 +357,17 @@
        3.91
       ]
      ],
-     "chip": "8 个交易日来最低收市",
+     "chip": "8 个交易日来最低收市价",
      "chipAt": {
-      "$s": 6,
-      "f": 0.6,
-      "o": 0.0
+      "$s": 7,
+      "f": 0.7
      },
      "chipBg": "#FF5A5F",
      "src": "数据：moomoo 日线（BMS）"
     },
     {
      "t": "chipsu",
-     "s": 7,
+     "s": 8,
      "title": "今天的公用事业股",
      "rows": [
       [
@@ -290,21 +395,15 @@
      "src": "数据：moomoo 日线（BMS）；Free Malaysia Today"
     },
     {
-     "t": "quip",
-     "s": 9,
-     "text": "SkyeChip：美国新规对它没有重大财务影响",
-     "sub": "来源：星报（11月23日）"
-    },
-    {
      "t": "listv",
-     "s": 10,
+     "s": 9,
      "v": "A",
      "img": "my_dc.jpg",
      "c": "#FFD600",
      "title": "我们的观察",
      "lines": [
       "澄清了，股价还在跌",
-      "市场还在等更清楚的答案"
+      "市场在等调查结果"
      ],
      "src": "分析与解读，非新闻事实"
     }
@@ -312,58 +411,43 @@
    "sents": [
     [
      "第一件事，重点来了，AI芯片风波还在继续。",
-     "第一件事：AI 芯片风波还在继续",
-     "Story 1: the AI chip saga continues"
+     "第一件事：AI 芯片风波还在继续"
     ],
     [
-     "做电力和数据中心的杨忠礼电力，上周五发声明，否认它在柔佛的数据中心，帮忙把Nvidia芯片转给中国客户，说这些报道完全不属实。",
-     "杨忠礼电力上周五发声明：否认柔佛数据中心帮忙把 Nvidia 芯片转给中国客户，说报道完全不属实",
-     "YTL Power denied helping divert Nvidia chips to Chinese customers"
+     "先帮大家回顾一下，杨忠礼电力在柔佛有一座AI数据中心，用的是Nvidia最新的芯片。",
+     "先回顾：杨忠礼电力在柔佛有 AI 数据中心，用 Nvidia 最新芯片"
     ],
     [
-     "管理层在分析员汇报会上也说，没有参与和Megaspeed或Speedmatrix有关的芯片转移，它的GPU服务也不服务中国客户。",
-     "管理层：没有参与和 Megaspeed、Speedmatrix 有关的芯片转移，GPU 服务不服务中国客户",
-     "Management denied any role in the Megaspeed/Speedmatrix diversions"
+     "外国媒体和沽空机构指称，新加坡的Megaspeed，通过马来西亚子公司Speedmatrix，在这里租用芯片，再让阿里巴巴远程使用。",
+     "外媒和沽空机构指称：新加坡 Megaspeed 透过本地子公司 Speedmatrix 租用芯片，让阿里巴巴远程使用"
+    ],
+    [
+     "这些说法都还没有被证实，贸工部说正在调查，杨忠礼电力上周五也发声明，说报道完全不属实。",
+     "这些说法未经证实；贸工部在调查，杨忠礼电力上周五发声明说报道完全不属实"
+    ],
+    [
+     "今天的新进展是，管理层在分析员汇报会上说，没有参与任何芯片转移，GPU服务也不服务中国客户。",
+     "今天新进展：管理层说没有参与芯片转移，GPU 服务不服务中国客户"
     ],
     [
      "它还说，美国最新的芯片新规，不影响它的数据中心租用服务。",
-     "美国芯片新规不影响它的数据中心租用服务",
-     "It says the new US rule doesn't affect its co-location services"
+     "美国芯片新规不影响它的数据中心租用服务"
     ],
     [
-     "不过市场好像还没被说服，今天杨忠礼电力再跌四仙，收在三令吉九十一仙。",
-     "市场还没被说服：今天再跌 4 仙，收 RM3.91",
-     "Shares still fell 4 sen to RM3.91 today"
+     "不过市场好像还没被说服，来看它最近八个交易日的K线。",
+     "市场还没被说服，看最近 8 个交易日的 K 线"
     ],
     [
-     "来看它最近八个交易日的K线。",
-     "最近 8 个交易日的 K 线",
-     "Last eight sessions"
+     "十一月十二号单日跌了百分之八点一，十七号美国公布芯片新规之后，又跌了百分之九点二，今天再跌四仙，收在三令吉九十一仙，是这八天里最低的收市价。",
+     "11/12 −8.1%，11/17 新规后 −9.2%，今天再跌 4 仙收 RM3.91，8 天最低"
     ],
     [
-     "十一月十二号单日跌了百分之八点一，十七号美国公布芯片新规之后，又跌了百分之九点二，今天是这八天里最低的收市价。",
-     "11/12 单日 −8.1%，11/17 芯片新规后又 −9.2%，今天是这 8 天最低收市价",
-     "−8.1% on 12 Nov, −9.2% on 17 Nov; today's close is the lowest of the eight days"
+     "母公司杨忠礼机构更惨，今天跌了九仙，到一令吉六十一仙，国能也跌了二十二仙，公用事业股成了拖累大盘的主角。",
+     "杨忠礼机构 −9 仙到 RM1.61，国能 −22 仙，公用事业股拖累大盘"
     ],
     [
-     "母公司杨忠礼机构更惨，今天跌了九仙，到一令吉六十一仙，跌幅超过百分之五。",
-     "母公司杨忠礼机构更惨：−9 仙到 RM1.61，跌超过 5%",
-     "Parent YTL Corp −9 sen to RM1.61, over −5%"
-    ],
-    [
-     "国能也跌了二十二仙，收在十二令吉四十六仙，公用事业股成了今天拖累大盘的主角。",
-     "国能 −22 仙收 RM12.46，公用事业股成了拖累大盘的主角",
-     "Tenaga −22 sen to RM12.46; utilities led the decline"
-    ],
-    [
-     "另外，本地芯片公司SkyeChip今天也表示，美国新规对它没有重大的财务影响。",
-     "本地芯片公司 SkyeChip：美国新规对它没有重大财务影响",
-     "SkyeChip sees no material impact from the US rule"
-    ],
-    [
-     "我们的观察是，公司澄清了，股价还在跌，说明市场还在等更清楚的答案，讲真，这出剧还没完哦。",
-     "我们的观察：澄清了股价还在跌，市场还在等更清楚的答案，这出剧还没完",
-     "Our view: the market still wants clearer answers"
+     "我们的观察是，公司澄清了，股价还在跌，说明市场还在等调查的结果，讲真，这出剧还没完哦。",
+     "我们的观察：澄清了股价还在跌，市场在等调查结果，这出剧还没完"
     ]
    ]
   },
@@ -376,8 +460,9 @@
    "num": "2",
    "bar": "MAYBANK 第三季业绩",
    "pause": {
-    "3": 1.0,
-    "5": 1.0,
+    "1": 0.6,
+    "3": 0.6,
+    "7": 0.8,
     "8": 1.0
    },
    "beats": [
@@ -386,65 +471,102 @@
      "s": 0,
      "name": "Maybank 马银行",
      "logo": "maybank.svg",
-     "line": "大马银行龙头 · 综指权重股",
-     "src": "Logo：Maybank 官网"
+     "logoW": 220,
+     "img": "site_maybank.png",
+     "c": "#FFC83D",
+     "line": "大马最大银行 · 综指权重股",
+     "src": "画面：Maybank 官网"
     },
     {
-     "t": "bignumv",
+     "t": "doc",
      "s": 1,
-     "v": "A",
-     "img": "my_savings.jpg",
-     "label": "第三季净利（截至 9 月 30 日）",
-     "text": "RM27.4 亿",
-     "unit": "按年 +4.7%",
-     "size": 150,
-     "src": "来源：The Edge、星报、NST（11月23日）"
+     "auto": true,
+     "img": "fr_maybank.png",
+     "boxAt": [
+      {
+       "$s": 1,
+       "f": 0.2
+      },
+      {
+       "$s": 2,
+       "f": 0.2
+      }
+     ],
+     "zoomTo": 1,
+     "take": [
+      "营收：RM166 亿 → RM145.7 亿",
+      "股东净利：+4.7% 至 RM27.4 亿"
+     ],
+     "takeTitle": "Bursa 季报",
+     "src": "来源：Bursa Malaysia 季报（11月23日）",
+     "fb": {
+      "t": "comparev",
+      "v": "B",
+      "img": "my_savings.jpg",
+      "title": "第三季营收",
+      "v2": [
+       166,
+       145.7
+      ],
+      "lab": [
+       "去年同季",
+       "今年第三季"
+      ],
+      "txt": [
+       "RM166 亿",
+       "RM145.7 亿"
+      ],
+      "hi": 1,
+      "chip": "营收反而减少",
+      "chipBg": "#FF5A5F",
+      "src": "来源：The Sun、星报（11月23日）"
+     }
     },
     {
      "t": "comparev",
      "s": 3,
      "v": "B",
      "img": "my_savings.jpg",
-     "title": "第三季营收",
+     "title": "第三季股东净利",
      "v2": [
-      166,
-      145.7
+      26.2,
+      27.4
      ],
      "lab": [
       "去年同季",
       "今年第三季"
      ],
      "txt": [
-      "RM166 亿",
-      "RM145.7 亿"
+      "RM26.2 亿",
+      "RM27.4 亿"
      ],
      "hi": 1,
-     "chip": "营收反而减少",
-     "chipBg": "#FF5A5F",
-     "src": "来源：星报（11月23日）"
+     "chip": "按年 +4.7%",
+     "chipBg": "#3DD68C",
+     "src": "来源：The Sun（11月23日）"
     },
     {
      "t": "listv",
-     "s": 5,
+     "s": 4,
      "v": "A",
      "img": "my_savings.jpg",
      "c": "#3DD68C",
      "title": "净利为什么还能涨？",
      "lines": [
-      "净资金收入 +2.3% · 投资减值减少",
-      "但非利息收入 −3.2%（债券收益率上升）"
+      "① 减值拨备 −39.2%",
+      "② 收费收入、赚幅改善"
      ],
-     "src": "来源：The Edge、星报（11月23日）"
+     "src": "来源：Xinhua、NST（11月23日）"
     },
     {
      "t": "quip",
-     "s": 7,
-     "text": "这一季没有宣布股息",
-     "sub": "来源：The Edge"
+     "s": 6,
+     "text": "头 9 个月净利 RM79.2 亿（+1%）· 这季没派息",
+     "sub": "来源：The Edge（11月23日）"
     },
     {
      "t": "priceu",
-     "s": 8,
+     "s": 7,
      "c": "#FFC83D",
      "logo": "maybank.svg",
      "title": "Maybank 股价",
@@ -497,53 +619,57 @@
      "chipAt": 1.5,
      "chipBg": "#3DD68C",
      "src": "数据：moomoo 日线（BMS）"
+    },
+    {
+     "t": "listv",
+     "s": 8,
+     "v": "A",
+     "img": "my_savings.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "业绩稳，但营收在减少",
+      "看第四季营收能否回升"
+     ],
+     "src": "分析与解读，非新闻事实"
     }
    ],
    "sents": [
     [
-     "第二件事，马银行Maybank今天公布第三季业绩。",
-     "第二件事：Maybank 公布第三季业绩",
-     "Story 2: Maybank's Q3 results"
+     "第二件事，马银行Maybank今天公布第三季业绩，来看它交给交易所的季报。",
+     "第二件事：Maybank 第三季业绩，看它交给交易所的季报"
     ],
     [
-     "截至九月三十号这一季，净利是二十七亿四千万令吉，比去年同期多了百分之四点七。",
-     "截至 9/30 这一季，净利 RM27.4 亿，按年 +4.7%",
-     "Q3 net profit RM2.74B, +4.7% y/y"
+     "截至九月三十号这一季，营收从一百六十六亿令吉，减少到一百四十五亿七千万令吉。",
+     "营收从 RM166 亿减少到 RM145.7 亿"
     ],
     [
-     "头九个月的净利加起来是七十九亿二千万令吉，比去年多了百分之一。",
-     "头 9 个月净利 RM79.2 亿，+1%",
-     "9M net profit RM7.92B, +1%"
+     "不过股东净利反而多了百分之四点七，到二十七亿四千万令吉。",
+     "股东净利反而 +4.7%，到 RM27.4 亿"
     ],
     [
-     "有趣的是，营收反而从一百六十六亿令吉，减少到一百四十五亿七千万令吉。",
-     "营收反而从 RM166 亿减少到 RM145.7 亿",
-     "Revenue fell from RM16.6B to RM14.57B"
+     "营收少了，净利还涨，讲真有点神奇哦，原因主要有两个。",
+     "营收少了净利还涨？原因有两个"
     ],
     [
-     "营收少了，净利还涨，讲真有点神奇哦。",
-     "营收少了，净利还涨，有点神奇",
-     "Less revenue, more profit"
+     "第一，减值拨备少了百分之三十九点二，只有两亿一千五百二十万令吉。",
+     "① 减值拨备 −39.2%，只有 RM2.152 亿"
     ],
     [
-     "主要是净资金收入增加了百分之二点三，加上投资减值比去年少。",
-     "净资金收入 +2.3%，投资减值减少",
-     "Net fund-based income +2.3%, lower impairments"
+     "第二，核心收费收入和净利息赚幅都改善了。",
+     "② 核心收费收入、净利息赚幅改善"
     ],
     [
-     "不过债券收益率上升，让它的非利息收入少了百分之三点二。",
-     "但债券收益率上升，非利息收入 −3.2%",
-     "Non-interest income −3.2% on rising bond yields"
-    ],
-    [
-     "这一季没有宣布股息。",
-     "这一季没有宣布股息",
-     "No dividend this quarter"
+     "头九个月加起来，净利是七十九亿二千万令吉，比去年多了百分之一，这一季没有宣布股息。",
+     "头 9 个月净利 RM79.2 亿，+1%；这季没派息"
     ],
     [
      "股价方面，今天最高去到十令吉零二仙，收市只涨两仙，到九令吉八十九仙。",
-     "今天最高 RM10.02，收市只 +2 仙到 RM9.89",
-     "High RM10.02, closed +2 sen at RM9.89"
+     "今天最高 RM10.02，收市 +2 仙到 RM9.89"
+    ],
+    [
+     "我们的观察是，银行业绩稳，但营收在减少，市场要看的是第四季能不能把营收也拉回来。",
+     "我们的观察：业绩稳但营收在减，要看第四季营收能否回升"
     ]
    ]
   },
@@ -553,55 +679,181 @@
    "num": "3",
    "bar": "WASCO 卖部门 · 股价飙",
    "pause": {
-    "4": 1.0,
-    "5": 1.0
+    "3": 0.6,
+    "7": 0.8,
+    "8": 1.0
    },
    "beats": [
     {
      "t": "siteu",
      "s": 0,
      "name": "Wasco",
+     "logo": "wasco_logo.png",
+     "logoW": 220,
      "abbr": "W",
+     "img": "site_wasco.png",
      "c": "#0E7C86",
-     "line": "油气服务公司",
-     "src": "来源：The Edge（11月23日）"
+     "line": "油气管道涂层 · 工程制造",
+     "src": "画面：Wasco 官网"
     },
     {
-     "t": "bignumv",
-     "s": 1,
-     "v": "A",
-     "img": "oil_pexels_19130305.jpg",
-     "label": "卖给阿布扎比上市的 NMDC Energy",
-     "text": "RM7.82 亿",
-     "unit": "现金",
-     "size": 150,
-     "src": "来源：The Edge、BusinessToday（11月23日）"
-    },
-    {
-     "t": "bignumv",
+     "t": "rel",
      "s": 2,
+     "title": "谁卖什么给谁",
+     "titleBg": "#0E7C86",
+     "h": 760,
+     "nodes": [
+      [
+       "Wasco",
+       "卖方",
+       540,
+       70,
+       "#0E7C86",
+       0.2
+      ],
+      [
+       "工程与制造部门",
+       "WEGL + WPE 集团",
+       540,
+       360,
+       "#FFD23F",
+       {
+        "$s": 2,
+        "f": 0.3
+       }
+      ],
+      [
+       "NMDC Energy",
+       "阿布扎比上市 · 买方",
+       540,
+       650,
+       "#3C7DFF",
+       {
+        "$s": 2,
+        "f": 0.6
+       }
+      ]
+     ],
+     "links": [
+      [
+       0,
+       1,
+       "出售",
+       {
+        "$s": 2,
+        "f": 0.35
+       }
+      ],
+      [
+       1,
+       2,
+       "RM7.822 亿现金",
+       {
+        "$s": 2,
+        "f": 0.65
+       }
+      ]
+     ],
+     "src": "来源：Bursa 公告；The Sun、BusinessToday（11月23日）"
+    },
+    {
+     "t": "doc",
+     "s": 3,
+     "auto": true,
+     "img": "ann_wasco.png",
+     "boxAt": [
+      0.4
+     ],
+     "zoomTo": 0,
+     "take": [
+      "预计一次性收益 RM3.403 亿",
+      "企业价值 US$2.1 亿"
+     ],
+     "takeTitle": "Bursa 公告",
+     "src": "来源：Bursa Malaysia 公告（11月23日）",
+     "fb": {
+      "t": "doc",
+      "auto": true,
+      "img": "edge_wasco.png",
+      "boxAt": [
+       0.4
+      ],
+      "zoomTo": 0,
+      "take": [
+       "预计一次性收益 RM3.403 亿"
+      ],
+      "takeTitle": "The Edge 报道",
+      "src": "来源：The Edge（11月23日）"
+     }
+    },
+    {
+     "t": "comparev",
+     "s": 4,
      "v": "B",
      "img": "oil_pexels_19130305.jpg",
-     "label": "预计一次性收益",
-     "text": "RM3.403 亿",
-     "unit": "目标 2027 年第一季完成",
-     "size": 150,
-     "src": "来源：The Sun（11月23日）"
+     "title": "RM7.822 亿怎么用（主要两块）",
+     "v2": [
+      232.3,
+      474.9
+     ],
+     "lab": [
+      "特别股息 30 仙",
+      "3 年内收购"
+     ],
+     "txt": [
+      "RM2.323 亿",
+      "RM4.749 亿"
+     ],
+     "hi": 0,
+     "chip": "每股约 30 仙",
+     "chipBg": "#3DD68C",
+     "src": "来源：Arabian Post 引述 Bursa 公告"
     },
     {
-     "t": "bignumv",
-     "s": 3,
-     "v": "A",
+     "t": "timeline",
+     "s": 6,
      "img": "oil_pexels_19130305.jpg",
-     "label": "建议特别股息（指示性）",
-     "text": "每股 30 仙",
-     "unit": "要等交易完成才派",
-     "size": 160,
-     "src": "来源：The Sun（11月23日）"
+     "c": "#0E7C86",
+     "title": "交易时间线",
+     "ev": [
+      [
+       "2026 年 11 月 20 日",
+       "签有条件买卖合约"
+      ],
+      [
+       "11 月 23 日",
+       "公布 · 停牌 1 小时"
+      ],
+      [
+       "待定",
+       "特大批准"
+      ],
+      [
+       "2027 年第一季",
+       "目标完成 · 才派股息",
+       "#FFD23F"
+      ]
+     ],
+     "at": [
+      0.3,
+      {
+       "$s": 6,
+       "f": 0.3
+      },
+      {
+       "$s": 6,
+       "f": 0.55
+      },
+      {
+       "$s": 6,
+       "f": 0.75
+      }
+     ],
+     "src": "来源：Wasco 公告；The Edge、AOG（11月23日）"
     },
     {
      "t": "priceu",
-     "s": 4,
+     "s": 7,
      "c": "#0E7C86",
      "title": "Wasco 股价",
      "sub": "每日 K 线 · 令吉",
@@ -657,126 +909,184 @@
     },
     {
      "t": "listv",
-     "s": 5,
+     "s": 8,
      "v": "A",
      "img": "oil_pexels_19130305.jpg",
      "c": "#FFD600",
      "title": "我们的观察",
      "lines": [
-      "30 仙 ≈ 今天收市价的 40%",
+      "30 仙 ≈ 今天收市价的 4 成",
       "前提：交易真的完成"
      ],
      "src": "分析与解读，非新闻事实"
-    },
-    {
-     "t": "quip",
-     "s": 6,
-     "text": "还要股东和有关当局批准",
-     "sub": "来源：The Sun（11月23日）"
     }
    ],
    "sents": [
     [
      "第三件事，今天全场最亮眼的，Wasco！",
-     "第三件事：今天全场最亮眼的 Wasco",
-     "Story 3: today's standout, Wasco"
+     "第三件事：今天全场最亮眼的 Wasco"
     ],
     [
-     "这家油气服务公司，同意把工程和制造部门，以七亿八千二百万令吉现金，卖给阿布扎比上市的NMDC Energy。",
-     "这家油气服务公司把工程和制造部门以 RM7.82 亿现金卖给 NMDC Energy",
-     "Sells its engineering & fabrication unit for RM782M cash"
+     "Wasco做油气管道涂层和工程制造，在马来西亚和印尼都有大型制造厂。",
+     "Wasco：油气管道涂层、工程制造，马来西亚和印尼都有大厂"
     ],
     [
-     "公司预计会带来三亿四千零三十万令吉的一次性收益，目标在明年第一季完成交易。",
-     "预计一次性收益 RM3.403 亿，目标明年第一季完成",
-     "Expected one-off gain RM340.3M; completion targeted Q1 2027"
+     "它宣布把工程和制造部门，以七亿八千二百万令吉现金，卖给阿布扎比上市的NMDC Energy。",
+     "把工程和制造部门以 RM7.822 亿现金卖给阿布扎比上市的 NMDC Energy"
     ],
     [
-     "最劲的是，它建议派每股大约三十仙的特别股息。",
-     "最劲的是：建议特别股息每股约 30 仙",
-     "And an indicative 30-sen special dividend"
+     "这是它交给交易所的公告，预计会带来三亿四千零三十万令吉的一次性收益。",
+     "交易所公告：预计一次性收益 RM3.403 亿"
+    ],
+    [
+     "最劲的是，它建议派每股大约三十仙的特别股息，大约用掉两亿三千二百三十万令吉。",
+     "最劲：建议特别股息每股约 30 仙，约 RM2.323 亿"
+    ],
+    [
+     "剩下大约四亿七千四百九十万令吉，准备在三年内拿去收购新业务。",
+     "约 RM4.749 亿留作 3 年内收购新业务"
+    ],
+    [
+     "时间线是这样，上周五签约，今天公布，还要开特大批准，目标明年第一季完成。",
+     "时间线：11/20 签约 → 11/23 公布 → 特大批准 → 目标 2027 年第一季完成"
     ],
     [
      "消息一出，Wasco早上停牌一个小时，复牌后股价直接飙，收市涨了百分之十二，到七十四点五仙。",
-     "早上停牌 1 小时，复牌后直接飙，收市 +12% 到 74.5 仙",
-     "Halted for an hour, then closed +12% at 74.5 sen"
+     "停牌 1 小时，复牌后直接飙，收市 +12% 到 74.5 仙"
     ],
     [
-     "我们的观察是，哇，三十仙的股息，差不多等于今天收市价的四成。",
-     "我们的观察：30 仙股息，差不多是今天收市价的 4 成",
-     "Our view: 30 sen is about 40% of today's close"
-    ],
-    [
-     "不过要注意，这笔股息要等交易完成才派，交易还要股东和有关当局批准哦。",
-     "注意：交易完成才派，还要股东和当局批准",
-     "Only after completion and approvals"
+     "我们的观察是，哇，三十仙的股息，差不多等于今天收市价的四成，不过前提是交易真的完成哦。",
+     "我们的观察：30 仙 ≈ 今天收市价的 4 成，前提是交易完成"
     ]
    ]
   },
   {
-   "bg": "my_store.jpg",
+   "bg": "my_city.jpg",
    "c": "#8E44AD",
    "num": "4",
    "bar": "两只新股消息",
    "pause": {
-    "3": 1.0,
-    "6": 1.0
+    "2": 0.6,
+    "6": 0.6,
+    "7": 1.0
    },
    "beats": [
     {
-     "t": "bignumv",
+     "t": "quip",
+     "s": 0,
+     "text": "两只新股消息",
+     "sub": "第四件事"
+    },
+    {
+     "t": "siteu",
      "s": 1,
-     "v": "A",
-     "img": "my_store.jpg",
-     "label": "EMPG · 服装零售 · 招股价",
-     "text": "28 仙",
-     "unit": "筹 RM3,405 万",
-     "size": 160,
-     "src": "来源：星报（11月23日）"
+     "name": "EMPG Group",
+     "abbr": "EMPG",
+     "c": "#8E44AD",
+     "line": "服装零售 · Exhaust / Hummer / Pierre Cardin",
+     "src": "来源：The Edge（11月23日）"
     },
     {
-     "t": "bignumv",
+     "t": "doc",
      "s": 2,
-     "v": "B",
-     "img": "my_store.jpg",
-     "label": "以招股价计的上市市值",
-     "text": "RM1.697 亿",
-     "unit": "RM2,500 万拿去开更多门店",
-     "size": 140,
-     "src": "来源：星报（11月23日）"
+     "auto": true,
+     "img": "pr_empg.png",
+     "boxAt": [
+      0.4,
+      {
+       "$s": 2,
+       "f": 0.6
+      }
+     ],
+     "zoomTo": 0,
+     "take": [
+      "公众发行 1.216 亿新股",
+      "创业板（ACE Market）IPO"
+     ],
+     "takeTitle": "Bursa 招股书页面",
+     "src": "来源：Bursa Malaysia 招股书页面",
+     "fb": {
+      "t": "listv",
+      "v": "B",
+      "img": "my_city.jpg",
+      "c": "#8E44AD",
+      "title": "EMPG IPO",
+      "lines": [
+       "发行 1.216 亿新股",
+       "创业板上市"
+      ],
+      "src": "来源：The Edge（11月23日）"
+     }
     },
     {
-     "t": "quip",
-     "s": 3,
-     "text": "申请截止 12/2 · 创业板上市 12/21",
-     "sub": "来源：星报（11月23日）"
-    },
-    {
-     "t": "bignumv",
+     "t": "comparev",
      "s": 4,
-     "v": "A",
-     "img": "chip_pexels_6636463.jpg",
-     "label": "Emits · 槟城天线制造商",
-     "text": "6.43 倍",
-     "unit": "超额认购 · 每股 16 仙",
-     "size": 160,
-     "src": "来源：星报（11月23日）；moomoo 新股资料"
+     "v": "B",
+     "img": "my_city.jpg",
+     "title": "RM3,405 万怎么用",
+     "v2": [
+      25,
+      9.05
+     ],
+     "lab": [
+      "开店扩张",
+      "营运资金 + 上市开销"
+     ],
+     "txt": [
+      "RM2,500 万",
+      "RM905 万"
+     ],
+     "hi": 0,
+     "chip": "7 成多拿去开店",
+     "chipBg": "#8E44AD",
+     "src": "来源：EMPG 招股书；The Edge（11月23日）"
     },
     {
-     "t": "quip",
+     "t": "timeline",
      "s": 5,
-     "text": "今天抽签 · 12月1日上市",
-     "sub": "来源：Dealroom、moomoo 新股资料"
+     "img": "my_city.jpg",
+     "c": "#8E44AD",
+     "title": "新股日程",
+     "ev": [
+      [
+       "11 月 23 日",
+       "EMPG 开放申请"
+      ],
+      [
+       "12 月 1 日",
+       "Emits 上市（超购 6.43 倍）",
+       "#3DD68C"
+      ],
+      [
+       "12 月 2 日",
+       "EMPG 申请截止"
+      ],
+      [
+       "12 月 21 日",
+       "EMPG 上市",
+       "#FFD23F"
+      ]
+     ],
+     "at": [
+      0.3,
+      {
+       "$s": 6,
+       "f": 0.3
+      },
+      0.9,
+      1.4
+     ],
+     "src": "来源：EMPG 招股书；星报（11月23日）"
     },
     {
      "t": "listv",
-     "s": 6,
+     "s": 7,
      "v": "A",
-     "img": "my_store.jpg",
+     "img": "my_city.jpg",
      "c": "#FFD600",
      "title": "我们的观察",
      "lines": [
-      "MyDCD、Aquawalk 开盘都低于招股价",
+      "MyDCD、Aquawalk 开盘低于招股价",
       "超额认购 ≠ 一定赚"
      ],
      "src": "分析与解读，非新闻事实；开盘价：星报、Bernama"
@@ -785,38 +1095,35 @@
    "sents": [
     [
      "第四件事，来看新股。",
-     "第四件事：新股",
-     "Story 4: IPOs"
+     "第四件事：新股"
     ],
     [
-     "服装零售商EMPG今天推出招股书，每股二十八仙，准备筹三千四百零五万令吉。",
-     "服装零售商 EMPG 推出招股书：每股 28 仙，筹 RM3,405 万",
-     "Apparel retailer EMPG: 28 sen, raising RM34.05M"
+     "服装零售商EMPG，旗下有Exhaust、Hummer和Pierre Cardin这些品牌，今天推出招股书。",
+     "服装零售商 EMPG（Exhaust、Hummer、Pierre Cardin）推出招股书"
     ],
     [
-     "以招股价计算，上市市值大约一亿六千九百七十万令吉，其中两千五百万令吉会拿去开更多门店。",
-     "上市市值约 RM1.697 亿，RM2,500 万拿去开更多门店",
-     "Market cap ~RM169.7M; RM25M for new stores"
+     "这是交易所的招股书页面，会发行一亿两千一百六十万股新股，在创业板上市。",
+     "交易所招股书页面：发行 1.216 亿新股，创业板上市"
     ],
     [
-     "公众申请到十二月二号截止，预计十二月二十一号在创业板上市。",
-     "公众申请 12/2 截止，预计 12/21 创业板上市",
-     "Applications close 2 Dec; ACE listing 21 Dec"
+     "每股二十八仙，筹三千四百零五万令吉，上市市值大约一亿六千九百七十万令吉。",
+     "每股 28 仙，筹 RM3,405 万，上市市值约 RM1.697 亿"
     ],
     [
-     "另一只新股Emits，是槟城的天线制造商，招股超额认购了六点四三倍，每股十六仙。",
-     "另一只新股 Emits：槟城天线制造商，超额认购 6.43 倍，每股 16 仙",
-     "Emits, a Penang antenna maker: 6.43x oversubscribed, 16 sen"
+     "钱怎么用呢，两千五百万令吉，也就是七成多，拿去开一百个寄售专柜和十五间门店。",
+     "RM2,500 万（7 成多）开 100 个专柜 + 15 间门店"
     ],
     [
-     "今天抽签，十二月一号上市。",
-     "今天抽签，12/1 上市",
-     "Balloting today, listing 1 Dec"
+     "公众申请到十二月二号截止，预计十二月二十一号上市。",
+     "申请 12/2 截止，预计 12/21 上市"
+    ],
+    [
+     "另一只新股Emits，是槟城的天线制造商，招股超额认购了六点四三倍，每股十六仙，十二月一号上市。",
+     "Emits（槟城天线制造商）：超额认购 6.43 倍，每股 16 仙，12/1 上市"
     ],
     [
      "我们的观察是，最近像MyDCD和Aquawalk，开盘都低于招股价，所以超额认购不等于一定赚哦。",
-     "我们的观察：MyDCD、Aquawalk 开盘都低于招股价，超额认购 ≠ 一定赚",
-     "Our view: recent IPOs opened below price; oversubscribed ≠ profit"
+     "我们的观察：MyDCD、Aquawalk 开盘都低于招股价，超额认购≠一定赚"
     ]
    ]
   },
@@ -826,53 +1133,150 @@
    "num": "5",
    "bar": "PETRONAS GAS 被降级",
    "pause": {
-    "3": 0.6,
-    "6": 1.0,
-    "7": 1.0
+    "2": 0.6,
+    "4": 0.6,
+    "7": 0.8,
+    "8": 1.0
    },
    "beats": [
     {
      "t": "siteu",
      "s": 0,
-     "name": "Petronas Gas 国油气体",
+     "name": "PETRONAS Gas",
+     "logo": "petgas_logo.png",
+     "logoW": 220,
      "abbr": "PG",
+     "img": "site_petgas.png",
      "c": "#00A19C",
      "line": "天然气处理与输送",
-     "src": "来源：The Edge"
+     "src": "画面：PETRONAS Gas 官网"
     },
     {
-     "t": "bignumv",
+     "t": "doc",
+     "s": 1,
+     "auto": true,
+     "img": "fr_petgas.png",
+     "boxAt": [
+      0.4,
+      {
+       "$s": 1,
+       "f": 0.4
+      }
+     ],
+     "zoomTo": 1,
+     "take": [
+      "营收：RM16.07 亿（去年 RM16.18 亿）",
+      "股东净利：RM6.305 亿（去年 RM4.442 亿）"
+     ],
+     "takeTitle": "Bursa 季报",
+     "src": "来源：Bursa Malaysia 季报（11月19日）",
+     "fb": {
+      "t": "comparev",
+      "v": "B",
+      "img": "my_power.jpg",
+      "title": "第三季股东净利",
+      "v2": [
+       444.2,
+       630.5
+      ],
+      "lab": [
+       "去年同季",
+       "今年第三季"
+      ],
+      "txt": [
+       "RM4.442 亿",
+       "RM6.305 亿"
+      ],
+      "hi": 1,
+      "chip": "按年 +41.9%",
+      "chipBg": "#3DD68C",
+      "src": "来源：The Edge（11月19日）"
+     }
+    },
+    {
+     "t": "fin5",
      "s": 2,
-     "v": "A",
+     "c": "#00A19C",
+     "q": [
+      "25Q3",
+      "25Q4",
+      "26Q1",
+      "26Q2",
+      "26Q3"
+     ],
+     "rev": [
+      1618.3,
+      1570.7,
+      1585.1,
+      1501.0,
+      1607.2
+     ],
+     "np": [
+      444.2,
+      363.9,
+      438.7,
+      453.3,
+      630.5
+     ],
+     "yoyL": [
+      "同比 −0.7%",
+      "同比 +41.9%"
+     ]
+    },
+    {
+     "t": "comparev",
+     "s": 3,
+     "v": "B",
      "img": "my_power.jpg",
-     "label": "第三季净利（11月19日公布）",
-     "text": "RM6.305 亿",
-     "unit": "按年 +41.9% · 派 18 仙",
-     "size": 150,
-     "src": "来源：The Edge（11月20日）"
+     "title": "第三季净利拆开看",
+     "v2": [
+      477.1,
+      630.5
+     ],
+     "lab": [
+      "核心净利",
+      "报告净利"
+     ],
+     "txt": [
+      "RM4.771 亿",
+      "RM6.305 亿"
+     ],
+     "hi": 1,
+     "chip": "差的就是一次性回拨",
+     "chipBg": "#FF5A5F",
+     "src": "来源：BusinessToday 引述 HLIB（11月21日）"
     },
     {
      "t": "listv",
-     "s": 4,
+     "s": 5,
      "v": "B",
      "img": "my_power.jpg",
      "c": "#FF5A5F",
      "title": "MBSB 研究",
      "lines": [
-      "RM1.5 亿一次性拨备回拨",
+      "RM1.5 亿回拨不会再有",
       "评级：买入 → 中性"
      ],
      "src": "来源：星报（11月23日）"
     },
     {
-     "t": "quip",
-     "s": 5,
-     "text": "联昌：扣除后，核心每股盈利按年 +29%",
-     "sub": "来源：星报（11月23日）"
+     "t": "div",
+     "s": 6,
+     "kind": "第三次中期股息",
+     "amt": "每股 18 仙",
+     "ex": [
+      "9",
+      "周三"
+     ],
+     "pay": [
+      "23",
+      "周三"
+     ],
+     "src": "来源：The Edge、星报（11月19日）"
     },
     {
      "t": "priceu",
-     "s": 6,
+     "s": 7,
      "c": "#00A19C",
      "title": "Petronas Gas 股价",
      "sub": "每日 K 线 · 令吉",
@@ -927,7 +1331,7 @@
     },
     {
      "t": "listv",
-     "s": 7,
+     "s": 8,
      "v": "A",
      "img": "my_power.jpg",
      "c": "#FFD600",
@@ -941,44 +1345,40 @@
    ],
    "sents": [
     [
-     "第五件事，国油气体Petronas Gas。",
-     "第五件事：Petronas Gas",
-     "Story 5: Petronas Gas"
+     "第五件事，国油气体Petronas Gas，国油旗下负责处理和输送天然气的公司。",
+     "第五件事：Petronas Gas，国油旗下处理和输送天然气"
     ],
     [
-     "它是国油旗下，负责处理和输送天然气的公司。",
-     "国油旗下，处理和输送天然气",
-     "Petronas's gas processing and transport arm"
+     "上周它公布第三季业绩，这是交给交易所的季报，股东净利六亿三千零五十万令吉，去年同期是四亿四千四百二十万令吉，多了四成多。",
+     "Bursa 季报：股东净利 RM6.305 亿，去年 RM4.442 亿，多了 4 成多"
     ],
     [
-     "上周它公布第三季净利六亿三千零五十万令吉，比去年的四亿四千四百二十万令吉多了四成多，还派十八仙中期股息。",
-     "上周公布第三季净利 RM6.305 亿，去年 RM4.442 亿，多了 4 成多，派 18 仙",
-     "Q3 profit RM630.5M vs RM444.2M; 18-sen dividend"
+     "看过去五个季度，营收一直在十五到十六亿令吉左右，净利却在这一季突然跳高。",
+     "过去 5 季：营收稳在 RM15–16 亿，净利这季突然跳高"
     ],
     [
-     "看起来很漂亮对吗？但重点来了。",
-     "看起来很漂亮？重点来了",
-     "Looks great? Here's the catch"
+     "为什么？重点来了，这季有一笔一亿五千零六十万令吉的一次性拨备回拨。",
+     "为什么？这季有 RM1.506 亿一次性拨备回拨"
     ],
     [
-     "MBSB研究说，这季有一笔一亿五千万令吉的一次性拨备回拨，以后不太可能再有，所以把评级从买入降到中性。",
-     "MBSB 研究：有 RM1.5 亿一次性拨备回拨，不太可能再有，评级从买入降到中性",
-     "MBSB: RM150M one-off reversal; downgraded to neutral"
+     "扣除之后，核心净利是四亿七千七百一十万令吉，按年增长百分之七点六，就没那么夸张了。",
+     "扣除后核心净利 RM4.771 亿，按年 +7.6%"
     ],
     [
-     "联昌研究也指出，扣除这笔之后，核心每股盈利还是按年增长百分之二十九。",
-     "联昌：扣除后，核心每股盈利按年 +29%",
-     "CIMB: core EPS still +29% y/y"
+     "MBSB研究认为这笔钱以后不会再有，所以把评级从买入降到中性。",
+     "MBSB 研究：不会再有，评级从买入降到中性"
+    ],
+    [
+     "股息方面，派十八仙，十二月九号除权，十二月二十三号派发。",
+     "派 18 仙：12/9 除权，12/23 派发"
     ],
     [
      "今天股价倒是很淡定，涨了六仙，收在十七令吉三十仙。",
-     "今天股价很淡定：+6 仙收 RM17.30",
-     "Shares calm: +6 sen to RM17.30"
+     "今天股价很淡定：+6 仙收 RM17.30"
     ],
     [
      "我们的观察是，看业绩不要只看净利，一次性项目会让数字好看很多哦。",
-     "我们的观察：看业绩别只看净利，一次性项目会让数字好看很多",
-     "Our view: watch for one-offs in headline profit"
+     "我们的观察：别只看净利，一次性项目会让数字好看很多"
     ]
    ]
   },
@@ -997,6 +1397,158 @@
    "type": "logo",
    "url": "https://www.maybank.com/iwov-resources/images/icons/maybank_logo.svg",
    "file": "maybank.svg"
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.ytlpowerinternational.com/",
+   "file": "ytlpower_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.wasco.com.my/",
+   "file": "wasco_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.petronasgas.com/",
+   "file": "petgas_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.ytlpowerinternational.com/",
+   "file": "site_ytlpower.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.wasco.com.my/",
+   "file": "site_wasco.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.petronasgas.com/",
+   "file": "site_petgas.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.maybank.com/",
+   "file": "site_maybank.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "file": "fr_maybank.png",
+   "w": 1000,
+   "h": 1250,
+   "optional": true,
+   "highlight": [
+    "Revenue",
+    "Profit/(loss) attributable to ordinary equity holders of the parent"
+   ],
+   "find": {
+    "lists": [
+     "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=1155",
+     "https://www.klsescreener.com/v2/announcements/stock/1155"
+    ],
+    "text": "Quarterly rpt"
+   }
+  },
+  {
+   "type": "screenshot",
+   "file": "fr_petgas.png",
+   "w": 1000,
+   "h": 1250,
+   "optional": true,
+   "highlight": [
+    "Revenue",
+    "Profit/(loss) attributable to ordinary equity holders of the parent"
+   ],
+   "find": {
+    "lists": [
+     "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=6033",
+     "https://www.klsescreener.com/v2/announcements/stock/6033"
+    ],
+    "text": "Quarterly rpt"
+   }
+  },
+  {
+   "type": "screenshot",
+   "file": "ann_wasco.png",
+   "w": 1000,
+   "h": 1250,
+   "optional": true,
+   "highlight": [
+    "NMDC Energy"
+   ],
+   "find": {
+    "lists": [
+     "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=5142",
+     "https://www.klsescreener.com/v2/announcements/stock/5142"
+    ],
+    "text": "DISPOSAL"
+   }
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.bursamalaysia.com/regulation/prospectus_exposure/empg-group-berhad-empg",
+   "file": "pr_empg.png",
+   "w": 1000,
+   "h": 1100,
+   "optional": true,
+   "highlight": [
+    "121,600,000",
+    "ACE Market"
+   ]
+  },
+  {
+   "type": "screenshot",
+   "url": "https://theedgemalaysia.com/node/825922",
+   "file": "edge_ytl.png",
+   "w": 900,
+   "h": 1100,
+   "optional": true,
+   "highlight": [
+    "Megaspeed International"
+   ]
+  },
+  {
+   "type": "screenshot",
+   "url": "https://theedgemalaysia.com/node/826790",
+   "file": "edge_wasco.png",
+   "w": 900,
+   "h": 1100,
+   "optional": true,
+   "highlight": [
+    "RM782.2 million"
+   ]
   }
  ],
  "cover": {
