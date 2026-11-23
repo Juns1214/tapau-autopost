@@ -134,6 +134,27 @@ Red = down, green = up. New visual variations are allowed, but stay inside these
 ```
 Add `"optional": true` when the image is nice-to-have. Library images already in `remotion/public/img/`: bg_wallstreet_*, bg_market_*, bg_ai_*, bg_chips_*, bg_city_*, bg_cyber_*, gold/oil/crypto/fed/chip/nyse/shopping/thanksgiving pexels, my_* (kl, city, build, cocoa, court, dc, deal, fibre, land, power, savings, solar, store, tower, water).
 
+## Visual quality bar (MANDATORY — Juns 23/11; benchmark = my_2026-11-20_v4)
+Every story must SHOW proof, not just big numbers on glass cards:
+1. **Company intro** = `siteu` with the OFFICIAL logo (`logo` asset from the company site) AND a screenshot of the
+   official website. Never fall back to initials (YTL / W / PG badges) — find the logo (company site, Bursa, Wikipedia
+   media file). If truly impossible, say so in the approval message.
+2. **Official evidence** = `doc` beat with a screenshot of the PRIMARY document and `highlight` on the exact lines
+   being read out, zoomed in: Bursa quarterly report "Summary of key financial information" table for results,
+   Bursa announcement for deals/dividends/contracts (div beat), the PROSPECTUS / IPO announcement for IPOs,
+   SEC filing / IR press release for US. Add a `news` headline screenshot (The Star / The Edge) when it helps.
+3. **Results stories** = `fin5` 5-quarter revenue + net profit bars with YoY badges (KLSE Screener / Bursa data),
+   then the reason cards, dividend (div beat with the Bursa notice), price candles.
+4. **Explain the story visually** when there are relationships or a sequence: `rel` flow diagram (who → who),
+   `timeline` (signed → unconditional → terminated), `pie` (stake split), `comparev` (before/after).
+5. **Sagas**: recap the background first (who did what, with the flow diagram), then today's new development.
+6. **Backgrounds must match the company** (no 7-Eleven photo for an apparel retailer; use the company's own photo
+   from its site or a neutral sector image).
+7. Do NOT use `bignumv` more than ~1 per story, and never the decorative block grid under a number (it carries no
+   information). Don't hold the same card for 3+ sentences — change the visual every 1–2 sentences.
+8. Check text fits: long lines must not wrap onto the next line (keep list items ≤ 14 Chinese chars).
+9. Before pushing, render stills (post=stills) and LOOK at them; fix anything that falls short of the benchmark.
+
 ## Cover (封面)
 ```json
 "cover": {"ds": 125, "lines": [{"t": "美股怎么了？", "s": 170}, {"t": "GTA 6 卖爆都救不了", "s": 100, "c": "#FFD23F"}]}
