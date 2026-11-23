@@ -6,11 +6,11 @@ on:
         description: "Folder under episodes/ that holds episode.json (e.g. 2026-11-24_us)"
         required: true
       post:
-        description: "none | unpublished | publish"
+        description: "stills (cover + scene stills only, no video) | none (video, no post) | unpublished | publish"
         required: true
         default: "publish"
         type: choice
-        options: [none, unpublished, publish]
+        options: [stills, none, unpublished, publish]
       publish_at:
         description: "Malaysia time HH:MM to go live (scheduled on Facebook if the render finishes early). Empty = now."
         required: false
@@ -33,6 +33,15 @@ jobs:
       - name: HOLD check
         run: |
           if [ -f HOLD ] || [ -f "episodes/$EP/HOLD" ]; then echo "HOLD file present - stopping."; exit 1; fi
+      - name: Already released/posted? (one post per episode)
+        if: inputs.post == 'unpublished' || inputs.post == 'publish'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "ep-$EP" --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "::error::Release ep-$EP already exists, so the Facebook step was reached before. Not posting again (avoids double posts). Delete the release by hand only if you are sure nothing was posted."
+            exit 1
+          fi
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -59,6 +68,7 @@ jobs:
           print(' '.join(o))")
           CHROME=$(which google-chrome) node stills.mjs out/stills $FR
       - name: Render video - retry once
+        if: inputs.post != 'stills'
         working-directory: remotion
         run: |
           R="npx remotion render src/index.ts Recap out/$EP.mp4 --concurrency=4 --crf=20 --browser-executable=$(which google-chrome)"
@@ -75,14 +85,14 @@ jobs:
             build/summary.json
           retention-days: 14
       - name: Release (direct URLs for Facebook)
-        if: inputs.post != 'none'
+        if: inputs.post == 'unpublished' || inputs.post == 'publish'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete "ep-$EP" -y --cleanup-tag 2>/dev/null || true
           gh release create "ep-$EP" "remotion/out/$EP.mp4" remotion/out/cover.png --title "$EP" --notes-file build/caption.txt
       - name: Post to Facebook (no blind retry - avoids double posts)
-        if: inputs.post != 'none'
+        if: inputs.post == 'unpublished' || inputs.post == 'publish'
         env:
           COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
           MODE: ${{ inputs.post }}

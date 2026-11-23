@@ -16,7 +16,7 @@ and `docs/EPISODE_SPEC.md`.
 - Hidden test post of 11/20 on the Page: video id 1442451321407939, https://www.facebook.com/reel/1442451321407939 (unpublished; Juns couldn't find it in Business Suite — it's filed as a reel). Mp4: release `ep-2026-11-20_us_v9`.
 
 ## Open issues to look at
-1. The MY scheduled session (first run 23/11) wrote `episodes/2026-11-23_my/episode.json`, dispatched, then changed it to 5 stories and re-dispatched; both runs were cancelled mid-render, apparently by the session itself, and it never re-dispatched. (Story count is now 4–5+, see below.) Still to fix: never cancel a running render; one dispatch per day unless the build failed.
+1. The MY scheduled session (first run 23/11) wrote `episodes/2026-11-23_my/episode.json`, dispatched, then changed it to 5 stories and re-dispatched; both runs were cancelled mid-render, apparently by the session itself, and it never re-dispatched. (Story count is now 4–5+, see below.) Fixed 23/11 evening: run rules added to the skill and both task prompts (one dispatch per episode, never cancel a run, no edits after dispatch except one fix after a build failure); `daily.yml` refuses to post if release `ep-<episode>` already exists; new `post: stills` mode renders only the cover + scene stills (~5 min) for visual checks.
 2. The 2026-11-23_my episode has not been reviewed visually (MY layout, logos, KL background are untested in the cloud).
 
 ## Juns's decisions (interview 23/11)
