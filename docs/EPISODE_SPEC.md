@@ -155,8 +155,8 @@ Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs a
 - **马股快报** (in the 马股晚报 run): Malaysian economy & policy (BNM, ringgit, EPF, budget, trade), markets & big companies,
   personal finance (savings, cost of living, property, subsidies).
 - **国际快报** (in the 美股早报 run): global economy & policy (Fed, trade deals, inflation), markets & big companies, global tech & AI.
-- **Different angle from the video:** the video covers company stories; the digest covers wider news. Overlap only for the
-  day's biggest story.
+- **Overlap with the video is fine** (Juns, 23/11): video stories can appear in the digest too, alongside wider news
+  (economy, policy, personal finance / tech).
 - 7–8 items, each 3–4 informative sentences. "What happened / key numbers / context / why it matters" is only a guide, not a fixed template: shape each item to its topic (results → mostly the numbers: revenue, profit, YoY, dividend; policy → what changes and who it affects; deals → who, how much, why; tech/AI → what it is and why it's a big deal) (Juns, 23/11), written entirely in our own words from verified sources (never copy another
   page's sentences or structure). Neutral, no advice/targets; forecasts only when attributed ("瑞银预计…").
 - No sponsored items. No posts about party politics as such.
