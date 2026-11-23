@@ -149,3 +149,30 @@ per story (≈10–20 chars, no explanations), each starting with an emoji that 
 🏦 banks, 🛢️ oil & gas, 🆕 IPO, ⛽ gas/utilities, 🎮 games, 🛒 retail). No 1️⃣2️⃣3️⃣, no market line, no sources line,
 no ad line, no disclaimer line (the video itself carries the disclaimer). End with ~5 hashtags
 (#美股 #美股早报 #TapauFinance …; MY: #马股 #马股晚报 #Bursa …). The daily approval message shows this caption preview too.
+
+## Daily text digests (Juns, 23/11)
+Two Facebook text posts on the Tapau财经 Page, drafted inside the video runs and approved in the same one reply:
+- **马股快报** (in the 马股晚报 run): Malaysian economy & policy (BNM, ringgit, EPF, budget, trade), markets & big companies,
+  personal finance (savings, cost of living, property, subsidies).
+- **国际快报** (in the 美股早报 run): global economy & policy (Fed, trade deals, inflation), markets & big companies, global tech & AI.
+- **Different angle from the video:** the video covers company stories; the digest covers wider news. Overlap only for the
+  day's biggest story.
+- 5–6 items, each ≈80–120 Chinese characters, written entirely in our own words from verified sources (never copy another
+  page's sentences or structure). Neutral, no advice/targets; forecasts only when attributed ("瑞银预计…").
+- No sponsored items. No posts about party politics as such.
+- Format (text only, no image):
+```
+【Tapau财经｜11/23 马股快报】
+
+🔌 │ #AI芯片风波未完
+两三句……
+
+🏦 │ #Maybank净利反升
+两三句……
+
+—
+#Tapau财经 #马股 #每日快报
+```
+  Topic emoji + " │ " + one #key-phrase headline per item; international version: 【Tapau财经｜11/24 国际快报】 and
+  #Tapau财经 #国际财经 #每日快报.
+- Posted right after Juns approves (Composio Facebook text post on Page 1541675575685159).
