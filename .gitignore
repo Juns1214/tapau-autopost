@@ -4,3 +4,7 @@ remotion/out/
 out/
 *.wav
 .env
+node_modules
+remotion/public/mix.m4a
+build/
+remotion/out/

@@ -7,10 +7,19 @@ from composio_mcp import MCP
 EP = os.environ["EP"]; MODE = os.environ.get("MODE", "unpublished")
 if os.path.exists("HOLD") or os.path.exists(f"episodes/{EP}/HOLD"):
     print("HOLD file found - skipping post."); sys.exit(0)
-cap_path = f"episodes/{EP}/caption.txt"
+cap_path = os.environ.get("CAPTION_FILE") or f"episodes/{EP}/caption.txt"
 caption = open(cap_path, encoding="utf-8").read().strip() if os.path.exists(cap_path) else ""
 title = caption.splitlines()[0][:100] if caption else EP
 args = {"page_id": os.environ["FB_PAGE_ID"], "file_url": os.environ["VIDEO_URL"], "title": title, "description": caption, "published": MODE == "publish"}
+# PUBLISH_AT = "HH:MM" Malaysia time: schedule the post if that time is more than 12 minutes away, else publish now.
+import datetime, time as _t
+pa = os.environ.get("PUBLISH_AT", "").strip()
+if MODE == "publish" and pa:
+    myt = datetime.timezone(datetime.timedelta(hours=8)); now = datetime.datetime.now(myt)
+    hh, mm = map(int, pa.split(":")); target = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+    if target - now > datetime.timedelta(minutes=12):
+        args["published"] = False; args["scheduled_publish_time"] = int(target.timestamp())
+        print("Scheduling post for", target.isoformat())
 m = MCP(os.environ["COMPOSIO_API_KEY"]).start()
 out, err = m.execute("FACEBOOK_CREATE_VIDEO_POST", args)
 s = json.dumps(out, ensure_ascii=False)
@@ -25,7 +34,7 @@ print("Posted:", json.dumps(data, ensure_ascii=False)[:500])
 # 封面: upload cover.png as the preferred thumbnail (Composio workbench gives us a file key for it).
 vid = str(data.get("id") or data.get("video_id") or "")
 cover = os.environ.get("COVER_URL")
-if vid and cover and os.path.exists(f"episodes/{EP}/cover.json"):
+if vid and cover:
     code = f"""
 import requests, time
 p = '/home/user/cover.png'

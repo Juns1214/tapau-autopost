@@ -1,6 +1,7 @@
 import React from 'react';
 import {Composition, AbsoluteFill, useCurrentFrame, interpolate, Easing, staticFile, Img, Series, Audio} from 'remotion';
 import SCENES from './scenes.json';
+import META from './meta.json';
 
 const FPS = 30, W = 1080, H = 1920;
 const YEL = '#FFD640', RED = '#FF5A5F', GRN = '#3DD68C', INK = '#141824', MUTED = '#B4C0D6', HL = '#FFD600', BLUE = '#4C8DFF';
@@ -593,8 +594,8 @@ const lerp = (a: number, b: number, f: number) => a + (b - a) * f;
 const fmt = (v: number, d = 2) => v.toLocaleString('en-US', {minimumFractionDigits: d, maximumFractionDigits: d});
 const Pill: React.FC<{x: number; y: number; bg: string; color?: string; size?: number; children?: any; style?: any}> = ({x, y, bg, color = 'white', size = 34, children, style}) =>
   <div style={{position: 'absolute', left: x, top: y, padding: '8px 22px', borderRadius: 16, background: bg, color, fontSize: size, fontWeight: 900, whiteSpace: 'nowrap', ...style}}>{children}</div>;
-const Logo: React.FC<{sym: string; x: number; y: number; s: number}> = ({sym, x, y, s}) => <div style={{position: 'absolute', left: x, top: y, width: s, height: s, borderRadius: s * 0.18, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 24px rgba(0,0,0,0.35)', overflow: 'hidden'}}>
-  <Img src={staticFile('logo/logo_' + sym + '_av.png')} style={{maxWidth: s * 0.86, maxHeight: s * 0.86}} /></div>;
+const Logo: React.FC<{sym: string; x: number; y: number; s: number; w?: number}> = ({sym, x, y, s, w}) => <div style={{position: 'absolute', left: x, top: y, width: w || s, height: s, borderRadius: s * 0.18, background: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 10px 24px rgba(0,0,0,0.35)', overflow: 'hidden'}}>
+  <Img src={staticFile(sym.includes('.') ? 'logo/' + sym : 'logo/logo_' + sym + '_av.png')} style={{maxWidth: (w || s) * 0.86, maxHeight: s * 0.86, objectFit: 'contain'}} /></div>;
 const Spark: React.FC<{vals: number[]; w: number; h: number; prog: number; color?: string; sw?: number}> = ({vals, w, h, prog, color, sw = 5}) => {
   const lo = Math.min(...vals), hi = Math.max(...vals), pad = (hi - lo) * 0.12 || 1;
   const P = vals.map((v, i) => [i * w / (vals.length - 1), h - (v - lo + pad) / (hi - lo + 2 * pad) * h]);
@@ -610,67 +611,73 @@ const Spark: React.FC<{vals: number[]; w: number; h: number; prog: number; color
 };
 
 const TitleU = ({t}: any) => <>
-  <Txt x={0} w={W} y={640} size={150} color={YEL} align="center" style={{...slideUp(t, 0.15), textShadow: '0 8px 30px rgba(0,0,0,0.6)'}}>11月20日</Txt>
-  <Txt x={0} w={W} y={820} size={150} align="center" style={{...slideUp(t, 0.3), textShadow: '0 8px 30px rgba(0,0,0,0.6)'}}>美股早报</Txt>
+  <Txt x={0} w={W} y={640} size={150} color={YEL} align="center" style={{...slideUp(t, 0.15), textShadow: '0 8px 30px rgba(0,0,0,0.6)'}}>{META.d1}</Txt>
+  <Txt x={0} w={W} y={820} size={150} align="center" style={{...slideUp(t, 0.3), textShadow: '0 8px 30px rgba(0,0,0,0.6)'}}>{SHOW}</Txt>
   <div style={{position: 'absolute', left: 0, width: W, top: 1030, textAlign: 'center', ...slideUp(t, 0.5)}}>
-    <span style={{...glassStyle({position: 'relative', display: 'inline-block', padding: '12px 36px', fontSize: 40, fontWeight: 700}), borderRadius: 40}}>20 Nov 2026 · 周五收盘</span></div>
+    <span style={{...glassStyle({position: 'relative', display: 'inline-block', padding: '12px 36px', fontSize: 40, fontWeight: 700}), borderRadius: 40}}>{META.pill}</span></div>
 </>;
 
-const HookU = ({t}: any) => {
-  const rows = [['GTA 6 首日零售销售', 'US$37.9 亿', '公司估算 · Take-Two 公告', '#F5A623', 'gta_art.png', GRN], ['标普 500 这一星期', '−8.6%', '去年 4 月以来最差的一周', '#FF5A5F', 'bg_wallstreet_13801277.jpg', RED]];
+// hook: b.rows = [{label, value, sub, c, img, vc}], b.punch, b.src
+const HookU = ({t, b}: any) => {
+  const rows: any[] = b.rows || [];
   return <>
-    {rows.map(([n, a, sub, c, img, ac], i) => <PCard key={i} x={60} y={330 + i * 400} w={960} h={340} v="A" c={c} img={img} style={slideX(t, 0.1 + i * 0.9, i ? -600 : 600)}>
-      <div style={{position: 'absolute', left: 50, top: 36}}><Chip bg={c} color={i ? 'white' : INK} size={36}>{n}</Chip></div>
-      <Txt x={50} y={118} size={110} color={ac} style={{textShadow: '0 6px 24px rgba(0,0,0,0.6)'}}>{a}</Txt>
-      <Txt x={50} y={262} size={32} weight={700} color="#DDE4F0">{sub}</Txt>
+    {rows.map((r, i) => <PCard key={i} x={60} y={330 + i * 400} w={960} h={340} v="A" c={r.c} img={r.img} style={slideX(t, 0.1 + i * 0.9, i ? -600 : 600)}>
+      <div style={{position: 'absolute', left: 50, top: 36}}><Chip bg={r.c} color={r.chipInk ? INK : 'white'} size={36}>{r.label}</Chip></div>
+      <Txt x={50} y={118} size={r.size || 110} color={r.vc || (String(r.value).trim().startsWith('−') || String(r.value).trim().startsWith('-') ? RED : GRN)} style={{textShadow: '0 6px 24px rgba(0,0,0,0.6)'}}>{r.value}</Txt>
+      <Txt x={50} y={262} size={32} weight={700} color="#DDE4F0">{r.sub}</Txt>
     </PCard>)}
-    <Txt x={0} w={W} y={1150} size={70} color={YEL} align="center" style={{...slideUp(t, 2.4), textShadow: '0 6px 24px rgba(0,0,0,0.8)'}}>都救不了这个星期</Txt>
-    <Source text="来源：Take-Two 8-K（11/20）；Yahoo Finance 指数日线" />
+    {b.punch && <Txt x={0} w={W} y={1150} size={70} color={YEL} align="center" style={{...slideUp(t, b.punchAt ?? 0.9 * rows.length + 0.6), textShadow: '0 6px 24px rgba(0,0,0,0.8)'}}>{b.punch}</Txt>}
+    {b.src && <Source text={b.src} />}
   </>;
 };
 
-const SiteU = ({t, b}: any) => { const y0 = cy(190 + 30 + 600); return <>
+// company card: b.name, b.line, b.logo (sym or file), b.abbr, b.img (site screenshot), b.pos
+const SiteU = ({t, b}: any) => { const y0 = cy(190 + 30 + 600); const lw = b.logoW || 130; return <>
   <Glass x={40} y={y0} w={1000} h={190} style={slideUp(t)}>
     <div style={{position: 'absolute', left: 0, top: 0, width: 12, height: 190, background: b.c}} />
-    <Logo sym={b.logo} x={40} y={30} s={130} />
-    <Txt x={200} y={30} size={62}>{b.name}</Txt>
-    <Txt x={202} y={114} size={34} weight={700} color="#D6DEEC">{b.line}</Txt>
+    {b.logo ? <Logo sym={b.logo} x={40} y={30} s={130} w={lw} /> :
+      <div style={{position: 'absolute', left: 40, top: 30, width: 130, height: 130, borderRadius: 24, background: b.c, color: 'white', fontSize: 54, fontWeight: 900, textAlign: 'center', lineHeight: '130px'}}>{(b.abbr || b.name.slice(0, 2)).toUpperCase()}</div>}
+    <Txt x={70 + lw} y={30} size={lw > 150 || b.name.length > 16 ? 50 : 62}>{b.name}</Txt>
+    <Txt x={72 + lw} y={114} size={b.line && b.line.length > 22 ? 28 : 34} weight={700} color="#D6DEEC">{b.line}</Txt>
   </Glass>
-  <div style={{...glassStyle({left: 40, top: y0 + 220, width: 1000, height: 600, padding: 0, border: `2px solid ${rgba(b.c, 0.7)}`, boxShadow: `0 28px 60px rgba(0,0,0,0.55), 0 0 36px ${rgba(b.c, 0.35)}`}), ...slideUp(t, 0.2)}}>
+  {b.img && <div style={{...glassStyle({left: 40, top: y0 + 220, width: 1000, height: 600, padding: 0, border: `2px solid ${rgba(b.c, 0.7)}`, boxShadow: `0 28px 60px rgba(0,0,0,0.55), 0 0 36px ${rgba(b.c, 0.35)}`}), ...slideUp(t, 0.2)}}>
     <Img src={staticFile('img/' + b.img)} style={{position: 'absolute', left: 0, top: 0, width: 1000, height: 600, objectFit: 'cover', objectPosition: b.pos || 'top left', transform: `scale(${1 + 0.04 * k(t, 0.3, 6)})`, transformOrigin: 'top left'}} />
-  </div>
+  </div>}
   <Source text={b.src || ('画面：' + b.name + ' 官网')} />
 </>; };
 
-const Dashboard = ({t, b, R}: any) => {
-  const nq = R(b.nq), dj = R(b.dj); const Y0 = cy(860);
-  const card = (x: number, y: number, w: number, h: number, name: string, pct: number, lvl: number, prev: number, vals: number[], t0: number, big: boolean, hiAt?: number, note = '') => {
-    if (t < t0 - 0.05) return null; const hi = hiAt !== undefined && t > hiAt;
-    return <Glass x={x} y={y} w={w} h={h} style={{...slideUp(t, t0), ...(hi ? {border: `4px solid ${HL}`, boxShadow: `0 0 40px rgba(255,214,0,0.35), 0 28px 60px rgba(0,0,0,0.5)`} : {})}}>
-      <Txt x={36} y={28} size={big ? 42 : 36}>{name}</Txt>
-      <Txt x={34} y={big ? 92 : 80} size={big ? 140 : 84} color={RED}>{fmt(lerp(0, pct, k(t, t0 + 0.2, 1.1)))}%</Txt>
-      <Txt x={36} y={big ? 262 : 186} size={big ? 54 : 40}>{fmt(lerp(prev, lvl, k(t, t0 + 0.2, 1.1)))}</Txt>
-      <Txt x={38} y={big ? 330 : 240} size={28} weight={400} color={MUTED}>前收 {fmt(prev)}{note}</Txt>
-      <div style={{position: 'absolute', left: big ? 600 : 36, top: big ? 120 : 290}}><Spark vals={vals} w={big ? 330 : w - 72} h={big ? 200 : 100} prog={k(t, t0 + 0.4, 1.4)} /></div>
-      {hi && <Pill x={w - 270} y={18} bg={HL} color={INK} size={28} style={{padding: '4px 16px'}}>三者中跌最多</Pill>}
+// index dashboard: b.idx = [{name, pct, lvl, prev, vals, note}] (1-3), b.at = [beat-relative times for idx 1,2] (R-resolved), b.hi = index to highlight, b.hiAt, b.hiText, b.src, b.dec
+const Dashboard = ({t, b}: any) => {
+  const idx: any[] = b.idx; const at: number[] = [0, ...(b.at || [1.5, 3])]; const Y0 = cy(idx.length > 1 ? 860 : 400); const dec = b.dec ?? 2;
+  const card = (i: number, x: number, y: number, w: number, h: number, big: boolean) => {
+    const d = idx[i]; const t0 = at[i] ?? 0; if (t < t0 - 0.05) return null; const hi = b.hi === i && b.hiAt !== undefined && t > b.hiAt; const c = d.pct < 0 ? RED : GRN;
+    return <Glass key={i} x={x} y={y} w={w} h={h} style={{...slideUp(t, t0), ...(hi ? {border: `4px solid ${HL}`, boxShadow: `0 0 40px rgba(255,214,0,0.35), 0 28px 60px rgba(0,0,0,0.5)`} : {})}}>
+      <Txt x={36} y={28} size={big ? 42 : 36}>{d.name}</Txt>
+      <Txt x={34} y={big ? 92 : 80} size={big ? 140 : 84} color={c}>{d.pct > 0 ? '+' : ''}{fmt(lerp(0, d.pct, k(t, t0 + 0.2, 1.1)))}%</Txt>
+      <Txt x={36} y={big ? 262 : 186} size={big ? 54 : 40}>{fmt(lerp(d.prev, d.lvl, k(t, t0 + 0.2, 1.1)), dec)}</Txt>
+      <Txt x={38} y={big ? 330 : 240} size={28} weight={400} color={MUTED}>前收 {fmt(d.prev, dec)}{d.note ? ' · ' + d.note : ''}</Txt>
+      {d.vals && <div style={{position: 'absolute', left: big ? 600 : 36, top: big ? 120 : 290}}><Spark vals={d.vals} w={big ? 330 : w - 72} h={big ? 200 : 100} prog={k(t, t0 + 0.4, 1.4)} /></div>}
+      {hi && <Pill x={w - 270} y={18} bg={HL} color={INK} size={28} style={{padding: '4px 16px'}}>{b.hiText}</Pill>}
     </Glass>;
   };
   return <>
-    {card(50, Y0, 980, 400, 'S&P 500  标普 500', -3.70, 6910.39, 7175.83, b.spx, 0, true)}
-    {card(50, Y0 + 440, 480, 420, 'NASDAQ 综合', -5.28, 22617.73, 23879.20, b.comp, nq, false, nq + 1.6, ' · 年内转跌')}
-    {card(550, Y0 + 440, 480, 420, 'DOW 道琼斯', -1.93, 48147.33, 49097.06, b.dji, dj, false)}
-    <Source text="数据：Yahoo Finance 指数日线 · 走势线为近 8 个交易日" />
+    {card(0, 50, Y0, 980, 400, true)}
+    {idx.length === 2 && card(1, 50, Y0 + 440, 980, 420, false)}
+    {idx.length === 3 && <>{card(1, 50, Y0 + 440, 480, 420, false)}{card(2, 550, Y0 + 440, 480, 420, false)}</>}
+    {(b.chips || []).map((c: any, j: number) => t > c.at - 0.05 && <div key={'c' + j} style={{position: 'absolute', left: 0, width: W, top: Y0 + (idx.length > 1 ? 900 : 440) + j * 100, textAlign: 'center', ...pop(t, c.at)}}><Chip bg={c.bg || 'rgba(255,214,64,0.22)'} color={c.color || YEL} size={44} style={{border: '1.5px solid rgba(255,214,64,0.6)'}}>{c.text}</Chip></div>)}
+    <Source text={b.src || '数据：Yahoo Finance 指数日线'} />
   </>;
 };
 
-const Vix = ({t}: any) => {
-  const val = lerp(28.44, 35.89, k(t, 0.3, 1.4)); const cx = 490, cyy = 520, R = 360, th = 92; const Y0 = cy(900);
+// VIX gauge: b.prev, b.close, b.note, b.src
+const Vix = ({t, b}: any) => {
+  const val = lerp(b.prev, b.close, k(t, 0.3, 1.4)); const cx = 490, cyy = 520, R = 360, th = 92; const Y0 = cy(900);
   const seg = ['#3DD68C', '#A6DA6A', '#FFD23F', '#FF9F43', '#FF5A5F'];
   const arc = (a0: number, a1: number) => { const p = (a: number, r: number) => [cx + r * Math.cos(a), cyy + r * Math.sin(a)];
     const [x0, y0] = p(a0, R), [x1, y1] = p(a1, R), [x2, y2] = p(a1, R - th), [x3, y3] = p(a0, R - th);
     return `M${x0},${y0} A${R},${R} 0 0 1 ${x1},${y1} L${x2},${y2} A${R - th},${R - th} 0 0 0 ${x3},${y3} Z`; };
   const ang = (v: number) => Math.PI + (Math.min(Math.max(v, 10), 50) - 10) / 40 * Math.PI;
-  const rot = -90 + (Math.min(Math.max(val, 10), 50) - 10) / 40 * 180;
+  const rot = -90 + (Math.min(Math.max(val, 10), 50) - 10) / 40 * 180; const up = b.close > b.prev;
   return <>
     <Glass x={50} y={Y0} w={980} h={900} style={slideUp(t)}>
       <Txt x={44} y={36} size={50}>恐慌指数 VIX</Txt>
@@ -680,86 +687,83 @@ const Vix = ({t}: any) => {
         <g transform={`translate(${cx},${cyy}) rotate(${rot})`}><path d={`M0,${-(R - 40)} C 18,-120 34,-20 34,10 A34,34 0 1 1 -34,10 C -34,-20 -18,-120 0,${-(R - 40)} Z`} fill="#9AA3B5" stroke="rgba(255,255,255,0.6)" strokeWidth={2} /></g>
         <circle cx={cx} cy={cyy + 10} r={14} fill="#E6EAF2" />
       </svg>
-      <Txt x={0} w={980} y={630} size={lerp(120, 160, k(t, 1.5, 0.4))} color={t > 1.5 ? RED : 'white'} align="center">{val.toFixed(2)}</Txt>
-      <Txt x={0} w={980} y={830} size={32} weight={400} color={MUTED} align="center">前收 28.44　·　2025 年 4 月以来最高收盘</Txt>
+      <Txt x={0} w={980} y={630} size={lerp(120, 160, k(t, 1.5, 0.4))} color={t > 1.5 ? (up ? RED : GRN) : 'white'} align="center">{val.toFixed(2)}</Txt>
+      <Txt x={0} w={980} y={830} size={32} weight={400} color={MUTED} align="center">前收 {b.prev.toFixed(2)}{b.note ? '　·　' + b.note : ''}</Txt>
     </Glass>
-    <Source text="数据：Yahoo Finance（CBOE VIX）" />
+    <Source text={b.src || '数据：Yahoo Finance（CBOE VIX）'} />
   </>;
 };
 
-const Correction = ({t}: any) => {
-  const base = 6500, hr = 7818.93, hn = 6910.39; const Y0 = cy(900);
+// distance from a reference level: b.title, b.rows=[[label, value],[label, value]], b.base, b.pct, b.chip, b.src
+const Correction = ({t, b}: any) => {
+  const rows: any[] = b.rows; const top = Math.max(rows[0][1], rows[1][1]); const base = b.base ?? Math.min(rows[0][1], rows[1][1]) * 0.94; const Y0 = cy(900); const c = b.pct < 0 ? RED : GRN;
   return <>
-    <PCard x={50} y={Y0} w={980} h={760} v="B" c={RED} style={slideUp(t)}>
-      <Txt x={50} y={44} size={56}>标普 500 · 距收盘纪录</Txt>
-      {[['收盘纪录 10/6', hr, 'rgba(220,228,245,0.85)', 0.2], ['11/20 收盘', hn, RED, 0.6]].map(([lab, v, c, st]: any, j) =>
-        <div key={j}><Txt x={50} y={170 + j * 170} size={38}>{lab}</Txt><Txt x={930} y={170 + j * 170} size={42} style={{transform: 'translateX(-100%)'}}>{fmt(v)}</Txt>
-          <div style={{position: 'absolute', left: 50, top: 230 + j * 170, height: 56, borderRadius: 14, background: c, boxShadow: j ? `0 0 24px ${rgba(RED, 0.6)}` : 'none', width: Math.max(20, 880 * (v - base) / (hr - base) * k(t, st, 0.8))}} /></div>)}
-      <Txt x={0} w={980} y={540} size={130} color="white" align="center" style={{opacity: k(t, 1.3), textShadow: `0 0 40px ${rgba(RED, 0.9)}`}}>{lerp(0, -11.6, k(t, 1.3, 0.8)).toFixed(1)}%</Txt>
+    <PCard x={50} y={Y0} w={980} h={760} v="B" c={c} style={slideUp(t)}>
+      <Txt x={50} y={44} size={56}>{b.title}</Txt>
+      {rows.map(([lab, v]: any, j: number) =>
+        <div key={j}><Txt x={50} y={170 + j * 170} size={38}>{lab}</Txt><Txt x={930} y={170 + j * 170} size={42} style={{transform: 'translateX(-100%)'}}>{fmt(v, b.dec ?? 2)}</Txt>
+          <div style={{position: 'absolute', left: 50, top: 230 + j * 170, height: 56, borderRadius: 14, background: j ? c : 'rgba(220,228,245,0.85)', boxShadow: j ? `0 0 24px ${rgba(c, 0.6)}` : 'none', width: Math.max(20, 880 * (v - base) / (top - base) * k(t, 0.2 + 0.4 * j, 0.8))}} /></div>)}
+      <Txt x={0} w={980} y={540} size={130} color="white" align="center" style={{opacity: k(t, 1.3), textShadow: `0 0 40px ${rgba(c, 0.9)}`}}>{b.pct > 0 ? '+' : ''}{lerp(0, b.pct, k(t, 1.3, 0.8)).toFixed(1)}%</Txt>
     </PCard>
-    <div style={{position: 'absolute', left: 0, width: W, top: Y0 + 800, textAlign: 'center', ...pop(t, 2.0)}}><Chip bg={RED} size={50}>跌超过 10% = 技术性调整</Chip></div>
-    <Source text="数据：Yahoo Finance；标普收盘口径" />
+    {b.chip && <div style={{position: 'absolute', left: 0, width: W, top: Y0 + 800, textAlign: 'center', ...pop(t, b.chipAt ?? 2.0)}}><Chip bg={c} size={50}>{b.chip}</Chip></div>}
+    <Source text={b.src || '数据：Yahoo Finance；收盘口径'} />
   </>;
 };
 
-const ASSETS = [
-  {en: 'GOLD', zh: '黄金现货', price: '≈ $3,530', unit: '美元/盎司 · 现货', day: '−2.0%', wk: '一周 −9.0%', img: 'gold_pexels_7361127.jpg', key: 'gold', c: '#E0B23A'},
-  {en: 'OIL · WTI', zh: 'WTI 原油', price: '$83.98', unit: '美元/桶 · 结算价', day: '+0.93%', wk: '一周 −5.17%', img: 'oil_pexels_19130305.jpg', key: 'wti', c: '#8C6B4F'},
-  {en: 'BITCOIN', zh: '比特币', price: '≈ $58,800', unit: '美元 · UTC 日线', day: '−5.0%', wk: '一周 −13.8%', img: 'crypto_pexels_35544540.jpg', key: 'btc', c: '#F7931A'}];
-const AVALS: any = {gold: [3883.11, 3862.96, 3849.98, 3740.20, 3605.48, 3533.11], wti: [88.56, 85.72, 86.01, 83.26, 83.21, 83.98], btc: [68249.27, 64128.05, 65305.06, 64855.84, 64893.95, 62987.27, 61901.82, 58798.98]};
-const Assets = ({t, R}: any) => {
-  const rv = [0.2, R(1), R(2)]; const Y0 = cy(960);
+// asset rows: b.rows=[{en, zh, price, unit, day, wk, img, c, vals}], b.rv (times), b.src
+const Assets = ({t, b}: any) => {
+  const rows: any[] = b.rows; const rv: number[] = b.rv || rows.map((_, i) => 0.2 + i * 1.5); const Y0 = cy(rows.length * 330 - 30);
   return <>
-    {ASSETS.map((a, i) => t < rv[i] - 0.05 ? null : <PCard key={i} x={50} y={Y0 + i * 330} w={980} h={300} v="A" c={a.c} img={a.img} style={slideX(t, rv[i], i % 2 ? -600 : 600)}>
+    {rows.map((a, i) => t < rv[i] - 0.05 ? null : <PCard key={i} x={50} y={Y0 + i * 330} w={980} h={300} v="A" c={a.c} img={a.img} style={slideX(t, rv[i], i % 2 ? -600 : 600)}>
       <Txt x={40} y={26} size={30} color={a.c}>{a.en}</Txt>
       <Txt x={40} y={66} size={46}>{a.zh}</Txt>
       <Txt x={40} y={136} size={58}>{a.price}</Txt>
       <Txt x={42} y={216} size={26} weight={400} color="#D6DCE8">{a.unit}</Txt>
       <Txt x={940} y={24} size={76} color={a.day.startsWith('+') ? GRN : RED} style={{transform: 'translateX(-100%)'}}>{a.day}</Txt>
-      <div style={{position: 'absolute', left: 480, top: 140}}><Spark vals={AVALS[a.key]} w={420} h={100} prog={k(t, rv[i] + 0.3, 1.2)} sw={6} /></div>
-      <Pill x={700} y={246} bg="rgba(200,30,40,0.9)" size={26} style={{padding: '4px 18px'}}>{a.wk}</Pill>
+      {a.vals && <div style={{position: 'absolute', left: 480, top: 140}}><Spark vals={a.vals} w={420} h={100} prog={k(t, rv[i] + 0.3, 1.2)} sw={6} /></div>}
+      {a.wk && <Pill x={700} y={246} bg={a.wk.includes('+') ? 'rgba(20,150,90,0.9)' : 'rgba(200,30,40,0.9)'} size={26} style={{padding: '4px 18px'}}>{a.wk}</Pill>}
     </PCard>)}
-    <Source text="数据：Alpha Vantage；Yahoo Finance · 走势线为近 6–8 个交易日" />
+    <Source text={b.src || '数据：Alpha Vantage；Yahoo Finance'} />
   </>;
 };
 
-const Fed = ({t, b, R}: any) => {
-  const p = lerp(0, 90, k(t, 0.2, 1.2)); const Y0 = cy(930); const cAt = b.cAt !== undefined ? R(b.cAt) : 1.8;
+// probability / expectation card: b.chip, b.label, b.p, b.otherLabel, b.extra={title, value, note, vals}, b.caveat, b.cAt, b.img, b.src
+const Fed = ({t, b}: any) => {
+  const p = lerp(0, b.p, k(t, 0.2, 1.2)); const Y0 = cy(930); const cAt = b.cAt ?? 1.8; const o = 100 - b.p;
   return <>
-    <PCard x={50} y={Y0} w={980} h={500} v="A" c="#3C7DFF" img="fed_pexels_6534073.jpg" style={slideUp(t)}>
-      <div style={{position: 'absolute', left: 44, top: 34}}><Chip bg="#3C7DFF" size={36}>联储局 12 月会议 · 利率期货定价</Chip></div>
-      <Txt x={44} y={130} size={44}>加息 0.25 个百分点</Txt>
-      <Txt x={936} y={104} size={110} color={RED} style={{transform: 'translateX(-100%)'}}>{'>'}{p.toFixed(0)}%</Txt>
-      <div style={{position: 'absolute', left: 44, top: 250, width: 892, height: 56, borderRadius: 28, background: 'rgba(255,255,255,0.14)'}}><div style={{height: 56, borderRadius: 28, width: 892 * p / 100, background: `linear-gradient(90deg, #ff8a8a, ${RED})`}} /></div>
-      <Txt x={44} y={350} size={40}>其他结果</Txt>
-      <Txt x={936} y={344} size={60} color={MUTED} style={{transform: 'translateX(-100%)'}}>{'<'}{(10 * k(t, 0.2, 1.2)).toFixed(0)}%</Txt>
-      <div style={{position: 'absolute', left: 44, top: 420, width: 892, height: 36, borderRadius: 18, background: 'rgba(255,255,255,0.14)'}}><div style={{height: 36, borderRadius: 18, width: 892 * 0.1 * k(t, 0.2, 1.2), background: '#9AA3B5'}} /></div>
+    <PCard x={50} y={Y0} w={980} h={500} v="A" c="#3C7DFF" img={b.img || 'fed_pexels_6534073.jpg'} style={slideUp(t)}>
+      <div style={{position: 'absolute', left: 44, top: 34}}><Chip bg="#3C7DFF" size={36}>{b.chip}</Chip></div>
+      <Txt x={44} y={130} size={44}>{b.label}</Txt>
+      <Txt x={936} y={104} size={110} color={b.pc || RED} style={{transform: 'translateX(-100%)'}}>{b.gt ? '>' : ''}{p.toFixed(0)}%</Txt>
+      <div style={{position: 'absolute', left: 44, top: 250, width: 892, height: 56, borderRadius: 28, background: 'rgba(255,255,255,0.14)'}}><div style={{height: 56, borderRadius: 28, width: 892 * p / 100, background: `linear-gradient(90deg, #ff8a8a, ${b.pc || RED})`}} /></div>
+      <Txt x={44} y={350} size={40}>{b.otherLabel || '其他结果'}</Txt>
+      <Txt x={936} y={344} size={60} color={MUTED} style={{transform: 'translateX(-100%)'}}>{b.gt ? '<' : ''}{(o * k(t, 0.2, 1.2)).toFixed(0)}%</Txt>
+      <div style={{position: 'absolute', left: 44, top: 420, width: 892, height: 36, borderRadius: 18, background: 'rgba(255,255,255,0.14)'}}><div style={{height: 36, borderRadius: 18, width: 892 * o / 100 * k(t, 0.2, 1.2), background: '#9AA3B5'}} /></div>
     </PCard>
-    {t > 0.9 && <Glass x={50} y={Y0 + 530} w={980} h={250} style={slideUp(t, 1.0)}>
-      <Txt x={44} y={30} size={36}>10 年期美债收益率</Txt>
-      <Txt x={44} y={90} size={76}>4.91%</Txt>
-      <Txt x={46} y={190} size={26} weight={400} color={MUTED}>11/20 收盘 · 近 8 个交易日</Txt>
-      <div style={{position: 'absolute', left: 400, top: 50}}><Spark vals={b.tnx} w={530} h={150} prog={k(t, 1.2, 1.4)} color="#6FB7FF" /></div>
+    {b.extra && t > 0.9 && <Glass x={50} y={Y0 + 530} w={980} h={250} style={slideUp(t, 1.0)}>
+      <Txt x={44} y={30} size={36}>{b.extra.title}</Txt>
+      <Txt x={44} y={90} size={76}>{b.extra.value}</Txt>
+      <Txt x={46} y={190} size={26} weight={400} color={MUTED}>{b.extra.note}</Txt>
+      {b.extra.vals && <div style={{position: 'absolute', left: 400, top: 50}}><Spark vals={b.extra.vals} w={530} h={150} prog={k(t, 1.2, 1.4)} color="#6FB7FF" /></div>}
     </Glass>}
-    {t > cAt - 0.05 && <div style={{position: 'absolute', left: 0, width: W, top: Y0 + 820, textAlign: 'center', ...pop(t, cAt)}}><Chip bg={YEL} color={INK} size={52}>市场预期 ≠ 联储局决定</Chip></div>}
-    <Source text="来源：CME FedWatch；Yahoo Finance（^TNX）" />
+    {b.caveat && t > cAt - 0.05 && <div style={{position: 'absolute', left: 0, width: W, top: Y0 + 820, textAlign: 'center', ...pop(t, cAt)}}><Chip bg={YEL} color={INK} size={52}>{b.caveat}</Chip></div>}
+    <Source text={b.src} />
   </>;
 };
 
-const CHIPS = [['nvda', 'Nvidia', '−14.01%', 14.01], ['mu', '美光 Micron', '−13.89%', 13.89], ['amd', 'AMD', '−13.25%', 13.25], ['avgo', '博通 Broadcom', '−12.2%', 12.2]];
-const ChipsU = ({t, b}: any) => { const Y0 = cy(960); return <>
-  <div style={{position: 'absolute', left: 60, top: Y0, ...slideUp(t)}}><Chip bg={b.c} color={INK} size={44} style={{padding: '10px 30px', boxShadow: `0 0 30px ${rgba(b.c, 0.6)}`}}>周五芯片股跌幅</Chip></div>
-  {CHIPS.map(([s, n, txt, v]: any, i) => <PCard key={i} x={50} y={Y0 + 110 + i * 200} w={980} h={175} v={i ? 'B' : 'A'} c={i ? '#8C97AE' : b.c} img="chip_pexels_6636463.jpg" style={slideX(t, 0.15 * i)}>
-    <Logo sym={s} x={28} y={28} s={120} />
-    <Txt x={180} y={26} size={42}>{n}</Txt>
-    <Txt x={940} y={24} size={50} color={RED} style={{transform: 'translateX(-100%)'}}>{txt}</Txt>
-    <div style={{position: 'absolute', left: 180, top: 110, height: 38, borderRadius: 12, width: 740 * v / 15 * k(t, 0.15 * i + 0.2, 1.0), background: `linear-gradient(90deg, #ff9a9a, ${RED})`}} />
-  </PCard>)}
-  <div style={{position: 'absolute', left: 0, width: W, top: Y0 + 920, textAlign: 'center', ...pop(t, 2.0)}}><Chip bg={RED} size={48}>整个半导体板块一起被卖</Chip></div>
-  <Source text="11月20日收盘 · 数据：moomoo" y={1380} />
+// ranked bars: b.title, b.rows=[[logo|null, name, text, value]], b.max, b.chip, b.img, b.src
+const ChipsU = ({t, b}: any) => { const rows: any[] = b.rows; const Y0 = cy(110 + rows.length * 200 + 120); const mx = b.max || Math.max(...rows.map(r => Math.abs(r[3]))) * 1.07; return <>
+  <div style={{position: 'absolute', left: 60, top: Y0, ...slideUp(t)}}><Chip bg={b.c} color={INK} size={44} style={{padding: '10px 30px', boxShadow: `0 0 30px ${rgba(b.c, 0.6)}`}}>{b.title}</Chip></div>
+  {rows.map(([s, n, txt, v]: any, i: number) => { const c = String(txt).startsWith('+') ? GRN : RED; return <PCard key={i} x={50} y={Y0 + 110 + i * 200} w={980} h={175} v={i ? 'B' : 'A'} c={i ? '#8C97AE' : b.c} img={b.img} style={slideX(t, 0.15 * i)}>
+    {s && <Logo sym={s} x={28} y={28} s={120} />}
+    <Txt x={s ? 180 : 40} y={26} size={42}>{n}</Txt>
+    <Txt x={940} y={24} size={50} color={c} style={{transform: 'translateX(-100%)'}}>{txt}</Txt>
+    <div style={{position: 'absolute', left: s ? 180 : 40, top: 110, height: 38, borderRadius: 12, width: (s ? 740 : 880) * Math.abs(v) / mx * k(t, 0.15 * i + 0.2, 1.0), background: `linear-gradient(90deg, ${c === GRN ? '#9af5c8' : '#ff9a9a'}, ${c})`}} />
+  </PCard>; })}
+  {b.chip && <div style={{position: 'absolute', left: 0, width: W, top: Y0 + 130 + rows.length * 200, textAlign: 'center', ...pop(t, b.chipAt ?? 2.0)}}><Chip bg={b.chipBg || RED} size={48}>{b.chip}</Chip></div>}
+  <Source text={b.src} y={1380} />
 </>; };
 
-// generic candlestick: b.d=[[label,o,h,l,c]], b.rv reveal times, b.ref=[price,label], b.pct labels under dates
 const PriceU = ({t, b}: any) => {
   const D = b.d as any[]; const n = D.length; const rv: number[] = b.rv || D.map((_: any, i: number) => 0.2 + i * 0.16);
   const all = D.flatMap((x: any) => [x[2], x[3]]).concat(b.ref ? [b.ref[0]] : []);
@@ -896,49 +900,52 @@ const TTWO = ({t, b, R}: any) => {
   </>;
 };
 
-const WeekU = ({t}: any) => { const Y0 = cy(680); return <>
-  {[['标普 500', 8.6, '−8.6%', '去年 4 月以来最差的一周', 'bg_wallstreet_13802097.jpg'], ['纳斯达克综合指数', 10.0, '约 −10%', '', 'bg_market_8348727.jpg']].map(([n, v, txt, note, img]: any, i) => {
-    const kk = k(t, 0.3 + i * 0.7, 1.0);
-    return <PCard key={i} x={50} y={Y0 + i * 340} w={980} h={300} v="A" c={RED} img={img} style={slideUp(t, 0.3 + i * 0.7)}>
-      <Txt x={50} y={34} size={50}>{n}</Txt>
-      <Txt x={930} y={110} size={80} color={RED} style={{transform: 'translateX(-100%)', textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>{kk > 0.95 ? txt : `−${(v * kk).toFixed(1)}%`}</Txt>
-      <div style={{position: 'absolute', left: 50, top: 140, height: 64, borderRadius: 16, width: 520 * v / 11 * kk, background: `linear-gradient(90deg, #ff9a9a, ${RED})`, boxShadow: `0 0 24px ${rgba(RED, 0.6)}`}} />
-      {note && <Txt x={52} y={230} size={32} weight={700} color="#E2E8F3">{note}</Txt>}
+// week recap: b.rows=[{name, pct, txt, note, img}], b.max, b.src
+const WeekU = ({t, b}: any) => { const rows: any[] = b.rows; const Y0 = cy(rows.length * 340 - 40); const mx = b.max || Math.max(...rows.map(r => Math.abs(r.pct))) * 1.1; return <>
+  {rows.map((r, i) => {
+    const kk = k(t, 0.3 + i * 0.7, 1.0); const c = r.pct < 0 ? RED : GRN; const v = Math.abs(r.pct);
+    return <PCard key={i} x={50} y={Y0 + i * 340} w={980} h={300} v="A" c={c} img={r.img} style={slideUp(t, 0.3 + i * 0.7)}>
+      <Txt x={50} y={34} size={50}>{r.name}</Txt>
+      <Txt x={930} y={110} size={80} color={c} style={{transform: 'translateX(-100%)', textShadow: '0 4px 20px rgba(0,0,0,0.6)'}}>{kk > 0.95 ? r.txt : `${r.pct < 0 ? '−' : '+'}${(v * kk).toFixed(1)}%`}</Txt>
+      <div style={{position: 'absolute', left: 50, top: 140, height: 64, borderRadius: 16, width: 520 * v / mx * kk, background: `linear-gradient(90deg, ${c === GRN ? '#9af5c8' : '#ff9a9a'}, ${c})`, boxShadow: `0 0 24px ${rgba(c, 0.6)}`}} />
+      {r.note && <Txt x={52} y={230} size={32} weight={700} color="#E2E8F3">{r.note}</Txt>}
     </PCard>;})}
-  <Source text="周五收盘 vs 上周五收盘 · Yahoo Finance" />
+  <Source text={b.src || '周五收盘 vs 上周五收盘 · Yahoo Finance'} />
 </>; };
 
 const ICON: any = {
   bag: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 7h12l-1 13H7L6 7z" /><path d="M9 7a3 3 0 0 1 6 0" /></svg>,
   dinner: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="13" r="6" /><path d="M3 4v6a2 2 0 0 0 2 2V20" /><path d="M5 4v4" /><path d="M21 4c-1.5 0-2 2-2 4s1 3 2 3v9" /></svg>,
-  clock: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>};
-const CalendarU = ({t, R}: any) => {
-  const rows = [['周三', '25', ['10月 PCE 通胀数据', 'Q3 GDP 第二次估算'], 'shopping_pexels_39962496.jpg', '#3C7DFF', 'BEA', 'bag'],
-                ['周四', '26', ['感恩节', '美股休市'], 'thanksgiving_pexels_5876728.jpg', '#E5484D', 'NYSE', 'dinner'],
-                ['周五', '27', ['提早收市', '美东时间下午 1 点'], 'nyse_pexels_28962712.jpg', '#E09B1A', 'NYSE', 'clock']];
-  const rv = [R(1), R(2), R(3)]; const Y0 = cy(960);
+  clock: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>,
+  chart: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 20h18" /><path d="M5 16l4-5 4 3 6-8" /></svg>,
+  bank: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M3 10l9-6 9 6" /><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8" /><path d="M3 20h18" /></svg>,
+  report: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M7 3h7l4 4v14H7z" /><path d="M14 3v4h4" /><path d="M10 13h6M10 17h6" /></svg>,
+  flag: <svg width="70" height="70" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M5 21V4" /><path d="M5 4h12l-2 4 2 4H5" /></svg>};
+// calendar: b.month ('NOV'), b.rows=[{wd, dd, lines, img, c, src, icon}], b.rv (times), b.src
+const CalendarU = ({t, b}: any) => {
+  const rows: any[] = b.rows; const rv: number[] = b.rv || rows.map((_, i) => 0.3 + i * 1.5); const Y0 = cy(rows.length * 330 - 30);
   return <>
-    {rows.map(([wd, dd, ls, img, c, src, ic]: any, i) => {
-      if (t < rv[i] - 0.05) return null; const y = Y0 + i * 330;
+    {rows.map((r, i) => {
+      if (t < rv[i] - 0.05) return null; const y = Y0 + i * 330; const c = r.c || '#3C7DFF';
       return <div key={i} style={{...glassStyle({left: 50, top: y, width: 980, height: 300, border: `1.5px solid ${rgba(c, 0.6)}`}), ...slideX(t, rv[i])}}>
-        <Img src={staticFile('img/' + img)} style={{position: 'absolute', left: -20, top: -20, width: 1020, height: 340, objectFit: 'cover', filter: 'blur(3px) brightness(0.85) saturate(1.2)'}} />
+        {r.img && <Img src={staticFile('img/' + r.img)} style={{position: 'absolute', left: -20, top: -20, width: 1020, height: 340, objectFit: 'cover', filter: 'blur(3px) brightness(0.85) saturate(1.2)'}} />}
         <div style={{position: 'absolute', inset: 0, background: `linear-gradient(90deg, rgba(6,10,22,0.55) 0%, rgba(6,10,22,0.7) 35%, ${rgba(c, 0.25)} 100%)`}} />
         <div style={{...glassStyle({left: 30, top: 30, width: 210, height: 240, borderRadius: 22}), background: 'linear-gradient(180deg, rgba(255,255,255,0.32), rgba(255,255,255,0.12))'}}>
-          <div style={{position: 'absolute', left: 0, top: 0, width: 210, height: 56, background: c, color: 'white', fontSize: 30, fontWeight: 900, textAlign: 'center', lineHeight: '56px', letterSpacing: 4}}>NOV</div>
-          <Txt x={0} w={210} y={58} size={118} align="center">{dd}</Txt>
-          <Txt x={0} w={210} y={190} size={34} align="center" color="#E8EDF7">{wd}</Txt>
+          <div style={{position: 'absolute', left: 0, top: 0, width: 210, height: 56, background: c, color: 'white', fontSize: 30, fontWeight: 900, textAlign: 'center', lineHeight: '56px', letterSpacing: 4}}>{r.month || b.month}</div>
+          <Txt x={0} w={210} y={58} size={118} align="center">{r.dd}</Txt>
+          <Txt x={0} w={210} y={190} size={34} align="center" color="#E8EDF7">{r.wd}</Txt>
         </div>
-        <div style={{position: 'absolute', left: 280, top: 40, width: 96, height: 96, borderRadius: 48, background: c, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 0 30px ${c}`}}><div style={{transform: 'scale(0.8)'}}>{ICON[ic]}</div></div>
-        {ls.map((l: string, j: number) => <Txt key={j} x={400} y={44 + j * 74} size={j === 0 ? 52 : 40} weight={j === 0 ? 900 : 700} color={j === 0 ? 'white' : '#E2E8F3'} style={{textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{l}</Txt>)}
-        <Txt x={950} y={250} size={24} weight={400} color="#D0D8E6" style={{transform: 'translateX(-100%)'}}>{src}</Txt>
+        <div style={{position: 'absolute', left: 280, top: 40, width: 96, height: 96, borderRadius: 48, background: c, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 0 30px ${c}`}}><div style={{transform: 'scale(0.8)'}}>{ICON[r.icon || 'chart']}</div></div>
+        {r.lines.map((l: string, j: number) => <Txt key={j} x={400} y={44 + j * 74} size={j === 0 ? (l.length > 10 ? 44 : 52) : 40} weight={j === 0 ? 900 : 700} color={j === 0 ? 'white' : '#E2E8F3'} style={{textShadow: '0 2px 10px rgba(0,0,0,0.6)'}}>{l}</Txt>)}
+        {r.src && <Txt x={950} y={250} size={24} weight={400} color="#D0D8E6" style={{transform: 'translateX(-100%)'}}>{r.src}</Txt>}
       </div>;})}
-    <Source text="来源：BEA 发布时间表；NYSE 假期安排｜画面：Pexels" />
+    <Source text={b.src || '来源：官方日程｜画面：Pexels'} />
   </>;
 };
 
 
 // ===== Tapau 财经 branding =====
-const SHOW = '美股早报', DATE = '11/20';
+const SHOW: string = META.show, DATE: string = META.short;
 const BrandIntro = ({t}: any) => {
   const sIn = interpolate(t, [0, 0.5], [0.55, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.out(Easing.back(1.6))});
   const sweep = interpolate(t, [0.55, 1.15], [-500, 900], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
@@ -1085,7 +1092,7 @@ const Recap: React.FC = () => <AbsoluteFill style={{background: '#061022'}}>
 
 // 封面: date title (as in the video) + big question + yellow line + S&P card. Props: episodes/<ep>/cover.json via --props.
 // Everything important stays inside the centre 3:4 area (y 240-1680) so feed crops don't cut it.
-const CoverComp: React.FC<any> = ({bg, dark = 0.5, d1 = '11月20日', d2 = SHOW, lines = [], badge}) => {
+const CoverComp: React.FC<any> = ({bg, dark = 0.5, d1 = META.d1, d2 = SHOW, lines = [], badge}) => {
   const stroke = (w: number) => ({WebkitTextStroke: `${w}px #0B1020`, paintOrder: 'stroke fill', textShadow: '0 10px 40px rgba(0,0,0,0.7)'} as any);
   const Txt2 = ({t, s, c = 'white'}: any) => <div style={{fontSize: s, fontWeight: 900, color: c, lineHeight: 1.1, textAlign: 'center', whiteSpace: 'nowrap', ...stroke(s > 120 ? 14 : 10)}}>{t}</div>;
   const BW = 700, BH = 300;

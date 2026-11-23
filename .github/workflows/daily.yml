@@ -1,0 +1,93 @@
+name: Daily episode (build, render, post)
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "Folder under episodes/ that holds episode.json (e.g. 2026-11-24_us)"
+        required: true
+      post:
+        description: "none | unpublished | publish"
+        required: true
+        default: "publish"
+        type: choice
+        options: [none, unpublished, publish]
+      publish_at:
+        description: "Malaysia time HH:MM to go live (scheduled on Facebook if the render finishes early). Empty = now."
+        required: false
+        default: ""
+permissions:
+  contents: write
+env:
+  FB_PAGE_ID: "1541675575685159"
+concurrency:
+  group: daily-${{ inputs.episode }}
+  cancel-in-progress: false
+jobs:
+  episode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    env:
+      EP: ${{ inputs.episode }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: HOLD check
+        run: |
+          if [ -f HOLD ] || [ -f "episodes/$EP/HOLD" ]; then echo "HOLD file present - stopping."; exit 1; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install -q numpy pillow playwright
+      - name: Install Remotion + fonts
+        working-directory: remotion
+        run: npm install --no-audit --no-fund && npm run fonts
+      - name: Build episode (voice, timing, images, music) - retry once
+        env:
+          AZURE_API_KEY: ${{ secrets.AZURE_API_KEY }}
+          MUSIC_KEY: ${{ secrets.MUSIC_KEY }}
+        run: python3 pipeline/build.py || (echo "::warning::build failed, retrying in 60s"; sleep 60; python3 pipeline/build.py)
+      - name: Render cover
+        working-directory: remotion
+        run: npx remotion still src/index.ts Cover out/cover.png --props=../build/cover.json --browser-executable=$(which google-chrome)
+      - name: Check stills (first frame of every scene)
+        working-directory: remotion
+        run: |
+          FR=$(python3 -c "import json;s=json.load(open('src/scenes.json'));a=0;o=[]
+          for x in s: o.append(str(a+min(x['frames']-1,90))); a+=x['frames']
+          print(' '.join(o))")
+          CHROME=$(which google-chrome) node stills.mjs out/stills $FR
+      - name: Render video - retry once
+        working-directory: remotion
+        run: |
+          R="npx remotion render src/index.ts Recap out/$EP.mp4 --concurrency=4 --crf=20 --browser-executable=$(which google-chrome)"
+          $R || (echo "::warning::render failed, retrying"; $R)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ inputs.episode }}
+          path: |
+            remotion/out/*.mp4
+            remotion/out/cover.png
+            remotion/out/stills/*.png
+            build/caption.txt
+            build/summary.json
+          retention-days: 14
+      - name: Release (direct URLs for Facebook)
+        if: inputs.post != 'none'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release delete "ep-$EP" -y --cleanup-tag 2>/dev/null || true
+          gh release create "ep-$EP" "remotion/out/$EP.mp4" remotion/out/cover.png --title "$EP" --notes-file build/caption.txt
+      - name: Post to Facebook (no blind retry - avoids double posts)
+        if: inputs.post != 'none'
+        env:
+          COMPOSIO_API_KEY: ${{ secrets.COMPOSIO_API_KEY }}
+          MODE: ${{ inputs.post }}
+          PUBLISH_AT: ${{ inputs.publish_at }}
+          CAPTION_FILE: build/caption.txt
+          VIDEO_URL: https://github.com/${{ github.repository }}/releases/download/ep-${{ inputs.episode }}/${{ inputs.episode }}.mp4
+          COVER_URL: https://github.com/${{ github.repository }}/releases/download/ep-${{ inputs.episode }}/cover.png
+        run: python3 scripts/post_facebook.py

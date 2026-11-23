@@ -1,0 +1,99 @@
+{
+ "until": "2026-12-31",
+ "wav": "ad_01.wav",
+ "durs": [
+  1.917,
+  5.983,
+  7.049,
+  1.754,
+  4.758,
+  1.438
+ ],
+ "subs": [
+  [
+   "哇，moomoo 又有新客福利啦！",
+   "moomoo has new-customer rewards again!"
+  ],
+  [
+   "年底前开户：180 天零佣金，美股、马股、新加坡、香港、A 股都可以用",
+   "Open by year-end: 180 days zero commission in 5 markets"
+  ],
+  [
+   "入金满 RM1,000 送 RM100 现金券和交易券；放得越多还有 Apple 股票，最高合计 RM1,500！",
+   "Deposit RM1,000 for RM100 in coupons; more for Apple stock, up to RM1,500"
+  ],
+  [
+   "一切以 moomoo 官网条款为准",
+   "moomoo's official T&Cs apply"
+  ],
+  [
+   "扫画面上的 QR code，或输入画面上的推荐码",
+   "Scan the QR code or enter the referral code on screen"
+  ],
+  [
+   "好，我们回到新闻",
+   "Back to the news"
+  ]
+ ],
+ "scene": {
+  "bg": "bg_market_7579943.jpg",
+  "c": "#FF6A00",
+  "bar": "广告 · moomoo 新客福利",
+  "pause": {
+   "1": 0.5,
+   "5": 0.5
+  },
+  "beats": [
+   {
+    "s": 0,
+    "t": "adhero"
+   },
+   {
+    "s": 1,
+    "t": "bignumv",
+    "v": "A",
+    "img": "bg_market_7579943.jpg",
+    "label": "新客开户 · 2026/12/31 前",
+    "text": "180 天",
+    "unit": "零佣金 · 美股 马股 新加坡 香港 A股",
+    "size": 200,
+    "src": "广告｜推荐码开户，频道主获推荐奖励｜以 moomoo 条款为准｜非投资建议"
+   },
+   {
+    "s": 2,
+    "t": "adtiers",
+    "rv": [
+     {
+      "$s": 2,
+      "f": 0.0,
+      "o": 0.2
+     },
+     {
+      "$s": 2,
+      "f": 0.45,
+      "o": 0
+     },
+     {
+      "$s": 2,
+      "f": 0.6,
+      "o": 0
+     },
+     {
+      "$s": 2,
+      "f": 0.75,
+      "o": 0
+     }
+    ],
+    "chipAt": {
+     "$s": 2,
+     "f": 0.85,
+     "o": 0
+    }
+   },
+   {
+    "s": 4,
+    "t": "adqr"
+   }
+  ]
+ }
+}
