@@ -1,0 +1,1370 @@
+{
+ "show": "my",
+ "date": "2026-11-26",
+ "music": "news1",
+ "scenes": [
+  {
+   "intro": true,
+   "bg": "my_kl.jpg"
+  },
+  {
+   "bg": "my_kl.jpg",
+   "brand": false,
+   "pause": {
+    "0": 0.4
+   },
+   "beats": [
+    {
+     "t": "titleu",
+     "s": 0
+    },
+    {
+     "t": "hooku",
+     "s": 1,
+     "rows": [
+      {
+       "label": "杨忠礼电力 盘中最低",
+       "value": "−13.7%",
+       "sub": "收 RM3.61（−8.6%）",
+       "c": "#1E4FA3",
+       "img": "my_dc.jpg"
+      },
+      {
+       "label": "MN Holdings 今天",
+       "value": "−19.9%",
+       "sub": "收 RM2.17",
+       "c": "#FF5A5F",
+       "img": "my_power.jpg"
+      }
+     ],
+     "punch": "芯片不来了？",
+     "punchAt": 2.6,
+     "src": "来源：英国《金融时报》报道（经 Reuters、Rakyat Post 转述）；moomoo 日线（11月26日）"
+    }
+   ],
+   "sents": [
+    [
+     "十一月二十六号，马股晚报。",
+     "11月26号，马股晚报",
+     "Malaysia market brief · 26 Nov"
+    ],
+    [
+     "据报Nvidia叫停AI服务器运来大马，杨忠礼电力盘中一度跌了百分之十三点七！",
+     "据报 Nvidia 叫停 AI 服务器运来大马，杨忠礼电力盘中一度跌 13.7%！",
+     "Nvidia reportedly halts AI servers to Malaysia; YTL Power down as much as 13.7%"
+    ]
+   ]
+  },
+  {
+   "bg": "my_city.jpg",
+   "bar": "富时隆综指 · 今日收市",
+   "beats": [
+    {
+     "t": "dashboard",
+     "s": 0,
+     "idx": [
+      {
+       "name": "FBM KLCI 富时隆综指",
+       "pct": 0.55,
+       "lvl": 1570.98,
+       "prev": 1562.29,
+       "vals": {
+        "$yahoo": "^KLSE",
+        "kind": "closes",
+        "n": 8
+       },
+       "note": "涨 8.69 点"
+      }
+     ],
+     "src": "数据：Bernama、Free Malaysia Today 收市报道 · 走势线：Yahoo Finance 近 8 个交易日"
+    },
+    {
+     "t": "comparev",
+     "s": 2,
+     "v": "B",
+     "img": "my_city.jpg",
+     "title": "今天涨跌家数",
+     "v2": [
+      412,
+      703
+     ],
+     "lab": [
+      "上涨",
+      "下跌"
+     ],
+     "txt": [
+      "412 家",
+      "703 家"
+     ],
+     "hi": 1,
+     "chip": "指数涨，多数股票跌",
+     "chipBg": "#FF5A5F",
+     "src": "来源：Bernama、Free Malaysia Today（11月26日收市）"
+    },
+    {
+     "t": "quip",
+     "s": 5,
+     "text": "美国拟对大马商品加征最高 18% 关税",
+     "sub": "来源：Bernama、星报（11月25–26日）"
+    }
+   ],
+   "sents": [
+    [
+     "先看大盘。",
+     "先看大盘",
+     "Markets first"
+    ],
+    [
+     "富时隆综指今天收在一千五百七十点九八，涨了八点六九点，涨幅百分之零点五五，主要靠银行股撑场。",
+     "富时隆综指收 1,570.98 点，涨 8.69 点（+0.55%），银行股撑场",
+     "KLCI +8.69 pts (+0.55%) to 1,570.98, led by banks"
+    ],
+    [
+     "不过下跌的股票有七百零三家，比上涨的四百一十二家还多，指数涨，多数股票却在跌。",
+     "下跌 703 家，多过上涨 412 家：指数涨，多数股票跌",
+     "Losers 703 vs gainers 412"
+    ],
+    [
+     "成交额三十二亿九千万令吉，比前一天的二十三亿六千万令吉活跃不少。",
+     "成交额 RM32.9 亿，前一天 RM23.6 亿",
+     "Value RM3.29B vs RM2.36B"
+    ],
+    [
+     "令吉也走强，傍晚六点对美元报四点一一三五，前一天是四点一一七零。",
+     "令吉走强：对美元 4.1135，前一天 4.1170",
+     "Ringgit firmer at 4.1135 per USD"
+    ],
+    [
+     "另外，美国贸易代表办公室提议，对大马商品加征最高百分之十八的额外关税，明年一月才开听证会。",
+     "美国提议对大马商品加征最高 18% 额外关税，明年 1 月听证",
+     "US proposes up to 18% extra tariff; hearings in January"
+    ]
+   ],
+   "pause": {}
+  },
+  {
+   "bg": "my_dc.jpg",
+   "c": "#76B900",
+   "num": "1",
+   "bar": "NVIDIA 停运 · 数据中心股急跌",
+   "pause": {
+    "3": 0.8,
+    "7": 0.6,
+    "11": 1.0
+   },
+   "beats": [
+    {
+     "t": "quip",
+     "s": 0,
+     "text": "AI 芯片风波 · 新进展",
+     "sub": "第一件事"
+    },
+    {
+     "t": "siteu",
+     "s": 1,
+     "name": "YTL Power 杨忠礼电力",
+     "logo": "ytlpower_logo.png",
+     "logoW": 200,
+     "img": "site_ytlpower.png",
+     "c": "#1E4FA3",
+     "line": "电力、水务 · 柔佛 AI 数据中心",
+     "src": "画面：YTL Power 官网"
+    },
+    {
+     "t": "rel",
+     "s": 2,
+     "title": "据《金融时报》报道",
+     "titleBg": "#76B900",
+     "h": 760,
+     "nodes": [
+      [
+       "Nvidia",
+       "AI 芯片龙头",
+       540,
+       70,
+       "#76B900",
+       0.2
+      ],
+      [
+       "Dell · Supermicro",
+       "组装 AI 服务器",
+       540,
+       360,
+       "#3C7DFF",
+       {
+        "$s": 2,
+        "f": 0.3
+       }
+      ],
+      [
+       "马 · 新 · 泰 · 印尼",
+       "数据中心客户",
+       540,
+       650,
+       "#FF5A5F",
+       {
+        "$s": 2,
+        "f": 0.6
+       }
+      ]
+     ],
+     "links": [
+      [
+       0,
+       1,
+       "叫停出货",
+       {
+        "$s": 2,
+        "f": 0.35
+       }
+      ],
+      [
+       1,
+       2,
+       "订单暂缓",
+       {
+        "$s": 2,
+        "f": 0.65
+       }
+      ]
+     ],
+     "chip": "起因：美国 11/19 新规，90 天内要拿许可证",
+     "chipAt": {
+      "$s": 3,
+      "f": 0.3
+     },
+     "src": "来源：英国《金融时报》（经 Reuters、Rakyat Post 转述，11月26日）"
+    },
+    {
+     "t": "timeline",
+     "s": 5,
+     "img": "my_dc.jpg",
+     "c": "#76B900",
+     "title": "这阵子发生了什么",
+     "ev": [
+      [
+       "11 月 19 日",
+       "美国芯片新规生效"
+      ],
+      [
+       "11 月 20 日",
+       "杨忠礼电力否认转移芯片报道"
+      ],
+      [
+       "11 月 24 日",
+       "股价反弹 6.4%"
+      ],
+      [
+       "11 月 26 日",
+       "传 Nvidia 叫停出货",
+       "#FF5A5F"
+      ]
+     ],
+     "at": [
+      0.3,
+      {
+       "$s": 5,
+       "f": 0.3
+      },
+      {
+       "$s": 5,
+       "f": 0.6
+      },
+      {
+       "$s": 6,
+       "f": 0.1
+      }
+     ],
+     "src": "来源：星报、Rakyat Post；moomoo 日线"
+    },
+    {
+     "t": "priceu",
+     "s": 7,
+     "c": "#1E4FA3",
+     "title": "杨忠礼电力股价",
+     "sub": "每日 K 线 · 令吉",
+     "d": [
+      [
+       "11/17",
+       4.35,
+       4.38,
+       3.96,
+       4.05
+      ],
+      [
+       "11/18",
+       4.1,
+       4.13,
+       3.96,
+       4.0
+      ],
+      [
+       "11/19",
+       4.0,
+       4.05,
+       3.96,
+       4.0
+      ],
+      [
+       "11/20",
+       3.88,
+       3.96,
+       3.81,
+       3.95
+      ],
+      [
+       "11/23",
+       3.87,
+       3.91,
+       3.78,
+       3.91
+      ],
+      [
+       "11/24",
+       4.3,
+       4.38,
+       4.15,
+       4.16
+      ],
+      [
+       "11/25",
+       4.17,
+       4.17,
+       3.95,
+       3.95
+      ],
+      [
+       "11/26",
+       3.95,
+       4.07,
+       3.41,
+       3.61
+      ]
+     ],
+     "chip": "今天 −8.6% → RM3.61",
+     "chipAt": {
+      "$s": 7,
+      "f": 0.7
+     },
+     "chipBg": "#FF5A5F",
+     "src": "数据：moomoo 日线（BMS）"
+    },
+    {
+     "t": "chipsu",
+     "s": 8,
+     "title": "今天被拖下水的",
+     "rows": [
+      [
+       null,
+       "MN Holdings",
+       "−54 仙 → RM2.17",
+       19.9
+      ],
+      [
+       null,
+       "Ranhill",
+       "−26 仙 → RM2.20",
+       10.6
+      ],
+      [
+       null,
+       "杨忠礼电力 YTL Power",
+       "−34 仙 → RM3.61",
+       8.6
+      ]
+     ],
+     "max": 22,
+     "chip": "跌幅（%）",
+     "img": "my_power.jpg",
+     "src": "数据：moomoo 日线（BMS）"
+    },
+    {
+     "t": "listv",
+     "s": 9,
+     "v": "B",
+     "img": "my_dc.jpg",
+     "c": "#1E4FA3",
+     "title": "公司和分析员怎么说",
+     "lines": [
+      "YTL：符合规定，不受影响",
+      "RHB：服务器来自柔佛 Wiwynn"
+     ],
+     "src": "来源：The Edge、RHB 报告（经 Dragon Leong 转述，11月26日）"
+    },
+    {
+     "t": "listv",
+     "s": 11,
+     "v": "A",
+     "img": "my_dc.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "一则报道，一天蒸发近一成",
+      "关键看 2 月中许可证期限"
+     ],
+     "src": "分析与解读，非新闻事实"
+    }
+   ],
+   "sents": [
+    [
+     "第一件事，重点来了，AI芯片风波又有新剧情。",
+     "第一件事：AI 芯片风波又有新剧情",
+     "Story 1: new twist in the AI chip saga"
+    ],
+    [
+     "杨忠礼电力在柔佛有AI数据中心，用的就是Nvidia的芯片。",
+     "杨忠礼电力在柔佛有 AI 数据中心，用 Nvidia 芯片",
+     "YTL Power runs an AI data centre in Johor with Nvidia chips"
+    ],
+    [
+     "英国金融时报报道，Nvidia已经通知Dell和Supermicro，暂停把AI服务器运去马来西亚、新加坡、泰国和印尼。",
+     "《金融时报》：Nvidia 通知 Dell、Supermicro 暂停把 AI 服务器运去马、新、泰、印尼",
+     "FT: Nvidia told Dell, Supermicro to halt AI server shipments to MY, SG, TH, ID"
+    ],
+    [
+     "起因是美国十一月十九号生效的新规，这些国家的数据中心，要在九十天内拿到美国出口许可证。",
+     "起因：美国 11/19 新规，数据中心要在 90 天内拿到出口许可",
+     "Cause: US rule from 19 Nov, export licence needed within 90 days"
+    ],
+    [
+     "政府数据显示，二零二一年以来批准的数据中心和AI投资，大约有三千八百五十七亿令吉，所以这件事牵动的不只一家公司。",
+     "2021 年以来批准的数据中心和 AI 投资约 RM3,857 亿，牵动的不只一家",
+     "~RM385.7B DC/AI investment approved since 2021"
+    ],
+    [
+     "回顾一下，二十号公司才否认转移芯片的报道，二十四号股价还反弹了百分之六点四。",
+     "回顾：20 号公司否认转移芯片报道，24 号股价反弹 6.4%",
+     "Recap: denial on 20 Nov, +6.4% rebound on 24 Nov"
+    ],
+    [
+     "结果今天消息一出，剧情又反转了。",
+     "结果今天消息一出，剧情又反转",
+     "Today the story flipped again"
+    ],
+    [
+     "杨忠礼电力盘中最低去到三令吉四十一仙，收市跌百分之八点六，到三令吉六十一仙，惨咯。",
+     "盘中最低 RM3.41，收市 −8.6% 到 RM3.61，惨咯",
+     "Low RM3.41, closed −8.6% at RM3.61"
+    ],
+    [
+     "电力工程商MN Holdings更惨，跌了百分之十九点九，水务电力公司Ranhill也跌了百分之十点六。",
+     "MN Holdings −19.9%，Ranhill −10.6%",
+     "MN Holdings −19.9%, Ranhill −10.6%"
+    ],
+    [
+     "公司说柔佛数据中心符合规定，不受美国新规影响，RHB也认为冲击有限，因为它的服务器来自柔佛的Wiwynn。",
+     "公司：符合规定、不受影响；RHB：冲击有限，服务器来自柔佛 Wiwynn",
+     "YTL: compliant, unaffected; RHB: limited impact"
+    ],
+    [
+     "贸工部之前也说，还在向华盛顿寻求澄清，许可证期限大约到明年二月中。",
+     "贸工部：还在向华盛顿寻求澄清，期限约到明年 2 月中",
+     "MITI still seeking clarity; deadline ~mid-Feb"
+    ],
+    [
+     "我们的观察是，一则报道就让股价一天蒸发将近一成，讲真比连续剧还刺激，接下来要看明年二月中许可证期限前的进展哦。",
+     "我们的观察：一则报道一天蒸发近一成，关键看 2 月中许可证期限前的进展",
+     "Our take: watch progress before the mid-Feb licence deadline"
+    ]
+   ]
+  },
+  {
+   "ad": true
+  },
+  {
+   "bg": "my_city.jpg",
+   "c": "#D71920",
+   "num": "2",
+   "bar": "云顶第三季转亏",
+   "pause": {
+    "2": 0.6,
+    "5": 0.8,
+    "8": 1.0
+   },
+   "beats": [
+    {
+     "t": "siteu",
+     "s": 0,
+     "name": "Genting 云顶",
+     "logo": "genting_logo.png",
+     "logoW": 220,
+     "img": "site_genting.png",
+     "c": "#D71920",
+     "line": "赌场度假村 · 云顶高原 · 圣淘沙名胜世界",
+     "src": "画面：Genting 官网"
+    },
+    {
+     "t": "doc",
+     "s": 1,
+     "auto": true,
+     "img": "fr_genting.png",
+     "boxAt": [
+      {
+       "$s": 1,
+       "f": 0.2
+      },
+      {
+       "$s": 1,
+       "f": 0.6
+      }
+     ],
+     "zoomTo": 1,
+     "take": [
+      "营收：RM74.8 亿 → RM80.2 亿",
+      "净利 RM3,030 万 → 净亏 RM1.614 亿"
+     ],
+     "takeTitle": "Bursa 季报",
+     "src": "来源：Bursa Malaysia 季报；星报（11月26日）",
+     "fb": {
+      "t": "comparev",
+      "v": "B",
+      "img": "my_city.jpg",
+      "title": "第三季营收",
+      "v2": [
+       74.8,
+       80.2
+      ],
+      "lab": [
+       "去年同季",
+       "今年第三季"
+      ],
+      "txt": [
+       "RM74.8 亿",
+       "RM80.2 亿"
+      ],
+      "hi": 1,
+      "chip": "营收 +7.3%",
+      "chipBg": "#3DD68C",
+      "src": "来源：星报（11月26日）"
+     }
+    },
+    {
+     "t": "listv",
+     "s": 3,
+     "v": "B",
+     "img": "my_city.jpg",
+     "c": "#FF5A5F",
+     "title": "为什么转亏？",
+     "lines": [
+      "① 令吉强，海外收入缩水",
+      "② 圣淘沙高端博彩转弱",
+      "③ 云顶高原员工成本上升"
+     ],
+     "src": "来源：星报（11月26日）"
+    },
+    {
+     "t": "comparev",
+     "s": 5,
+     "v": "B",
+     "img": "my_city.jpg",
+     "title": "云顶大马 第三季净利",
+     "v2": [
+      119.7,
+      40.6
+     ],
+     "lab": [
+      "去年同季",
+      "今年第三季"
+     ],
+     "txt": [
+      "RM1.197 亿",
+      "RM4,060 万"
+     ],
+     "hi": 1,
+     "chip": "营收 +29.1%，净利 −66.1%",
+     "chipBg": "#FF5A5F",
+     "src": "来源：星报（11月26日）"
+    },
+    {
+     "t": "priceu",
+     "s": 7,
+     "c": "#D71920",
+     "title": "云顶股价",
+     "sub": "每日 K 线 · 令吉（业绩在收市后公布）",
+     "d": [
+      [
+       "11/20",
+       1.36,
+       1.37,
+       1.34,
+       1.36
+      ],
+      [
+       "11/23",
+       1.36,
+       1.36,
+       1.31,
+       1.32
+      ],
+      [
+       "11/24",
+       1.33,
+       1.37,
+       1.33,
+       1.34
+      ],
+      [
+       "11/25",
+       1.33,
+       1.35,
+       1.32,
+       1.34
+      ],
+      [
+       "11/26",
+       1.34,
+       1.39,
+       1.34,
+       1.35
+      ]
+     ],
+     "chip": "今天收 RM1.35",
+     "chipAt": 1.5,
+     "chipBg": "#D71920",
+     "src": "数据：moomoo 日线（BMS）"
+    },
+    {
+     "t": "listv",
+     "s": 8,
+     "v": "A",
+     "img": "my_city.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "生意多了，钱却少赚",
+      "圣淘沙翻新到 2027 年"
+     ],
+     "src": "分析与解读，非新闻事实"
+    }
+   ],
+   "sents": [
+    [
+     "第二件事，家喻户晓的云顶，第三季居然转亏了。",
+     "第二件事：云顶第三季转亏",
+     "Story 2: Genting swings to a loss"
+    ],
+    [
+     "这是它交给交易所的季报，营收增加百分之七点三，到八十亿二千万令吉，却录得一亿六千一百四十万令吉的净亏损。",
+     "Bursa 季报：营收 +7.3% 到 RM80.2 亿，净亏 RM1.614 亿",
+     "Revenue +7.3% to RM8.02B, net loss RM161.4M"
+    ],
+    [
+     "去年同期，它还赚了三千零三十万令吉。",
+     "去年同期还赚 RM3,030 万",
+     "Profit of RM30.3M a year ago"
+    ],
+    [
+     "原因有三个，令吉走强让海外收入缩水，新加坡圣淘沙名胜世界的高端博彩生意转弱。",
+     "原因：令吉走强海外收入缩水；圣淘沙高端博彩转弱",
+     "Strong ringgit; weaker premium gaming at RWS"
+    ],
+    [
+     "还有，云顶高原续签工会协议后，员工成本上升了。",
+     "还有：云顶高原续签工会协议，员工成本上升",
+     "Higher payroll at Genting Highlands"
+    ],
+    [
+     "子公司云顶大马更夸张，营收大增百分之二十九点一，净利反而跌了百分之六十六点一，只剩四千零六十万令吉。",
+     "云顶大马：营收 +29.1%，净利 −66.1% 到 RM4,060 万",
+     "GENM revenue +29.1%, profit −66.1% to RM40.6M"
+    ],
+    [
+     "头九个月加起来，云顶营收增加百分之八，却是八千七百四十万令吉的净亏损，去年同期还赚两亿七千八百四十万令吉。",
+     "头 9 个月：营收 +8%，净亏 RM8,740 万；去年同期赚 RM2.784 亿",
+     "9M: revenue +8%, net loss RM87.4M vs profit RM278.4M"
+    ],
+    [
+     "业绩是收市后才公布的，云顶今天收在一令吉三十五仙，明天才看得到市场反应。",
+     "业绩收市后公布，云顶今天收 RM1.35，明天看反应",
+     "Results after close; Genting closed RM1.35"
+    ],
+    [
+     "我们的观察是，生意多了钱却少赚，冤不冤啊，而且公司说圣淘沙下一阶段翻新会影响到二零二七年哦。",
+     "我们的观察：生意多了钱少赚；圣淘沙翻新影响到 2027 年",
+     "Our take: RWS renovation weighs through 2027"
+    ]
+   ]
+  },
+  {
+   "bg": "my_build.jpg",
+   "c": "#0057A8",
+   "num": "3",
+   "bar": "PRESS METAL 净利大涨 52%",
+   "pause": {
+    "2": 0.6,
+    "4": 0.8,
+    "5": 1.0
+   },
+   "beats": [
+    {
+     "t": "siteu",
+     "s": 0,
+     "name": "Press Metal 齐力工业",
+     "logo": "pmetal_logo.png",
+     "logoW": 220,
+     "img": "site_pmetal.png",
+     "c": "#0057A8",
+     "line": "铝冶炼 · 综指成分股",
+     "src": "画面：Press Metal 官网"
+    },
+    {
+     "t": "doc",
+     "s": 1,
+     "auto": true,
+     "img": "fr_pmetal.png",
+     "boxAt": [
+      {
+       "$s": 1,
+       "f": 0.2
+      },
+      {
+       "$s": 1,
+       "f": 0.5
+      }
+     ],
+     "zoomTo": 1,
+     "take": [
+      "股东净利：RM5.633 亿 → RM8.550 亿"
+     ],
+     "takeTitle": "Bursa 季报",
+     "src": "来源：Bursa Malaysia 季报；NST、Bernama（11月26日）",
+     "fb": {
+      "t": "comparev",
+      "v": "B",
+      "img": "my_build.jpg",
+      "title": "第三季股东净利",
+      "v2": [
+       563.3,
+       855.02
+      ],
+      "lab": [
+       "去年同季",
+       "今年第三季"
+      ],
+      "txt": [
+       "RM5.633 亿",
+       "RM8.550 亿"
+      ],
+      "hi": 1,
+      "chip": "按年 +51.8%",
+      "chipBg": "#3DD68C",
+      "src": "来源：NST、Bernama（11月26日）"
+     }
+    },
+    {
+     "t": "comparev",
+     "s": 2,
+     "v": "B",
+     "img": "my_build.jpg",
+     "title": "季报前 vs 实际",
+     "v2": [
+      18,
+      51.8
+     ],
+     "lab": [
+      "预测：最多跌",
+      "实际：涨"
+     ],
+     "txt": [
+      "−18%",
+      "+51.8%"
+     ],
+     "hi": 1,
+     "chip": "跟预测完全相反",
+     "chipBg": "#3DD68C",
+     "src": "来源：NST（季报前预测）；Bernama（11月26日）"
+    },
+    {
+     "t": "quip",
+     "s": 3,
+     "text": "股息每股 2.5 仙（去年同季 2 仙）",
+     "sub": "来源：BusinessToday（11月26日）；星报（2025年11月20日）"
+    },
+    {
+     "t": "priceu",
+     "s": 4,
+     "c": "#0057A8",
+     "title": "Press Metal 股价",
+     "sub": "每日 K 线 · 令吉（业绩在收市后公布）",
+     "d": [
+      [
+       "11/20",
+       6.58,
+       6.59,
+       6.2,
+       6.27
+      ],
+      [
+       "11/23",
+       6.2,
+       6.34,
+       6.08,
+       6.3
+      ],
+      [
+       "11/24",
+       6.37,
+       6.54,
+       6.33,
+       6.4
+      ],
+      [
+       "11/25",
+       6.4,
+       6.47,
+       6.28,
+       6.29
+      ],
+      [
+       "11/26",
+       6.31,
+       6.45,
+       6.31,
+       6.4
+      ]
+     ],
+     "chip": "今天 +11 仙 → RM6.40",
+     "chipAt": 1.5,
+     "chipBg": "#3DD68C",
+     "src": "数据：moomoo 日线（BMS）"
+    },
+    {
+     "t": "listv",
+     "s": 5,
+     "v": "A",
+     "img": "my_build.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "预测跌，结果大涨",
+      "看铝价能否撑住"
+     ],
+     "src": "分析与解读，非新闻事实"
+    }
+   ],
+   "sents": [
+    [
+     "第三件事，综指成分股Press Metal，做铝冶炼的，交出了一份漂亮的成绩单。",
+     "第三件事：铝业股 Press Metal 交出漂亮成绩单",
+     "Story 3: Press Metal's strong quarter"
+    ],
+    [
+     "交易所季报显示，第三季股东净利八亿五千五百万令吉，去年同期是五亿六千三百三十万令吉，多了百分之五十一点八。",
+     "Bursa 季报：股东净利 RM8.55 亿，去年 RM5.633 亿，+51.8%",
+     "Net profit RM855M vs RM563.3M, +51.8%"
+    ],
+    [
+     "哇，季报前还有分析预测，铝价走软会让这季盈利最多跌百分之十八，结果完全相反。",
+     "季报前有预测说最多跌 18%，结果完全相反",
+     "Pre-results forecast: down up to 18%"
+    ],
+    [
+     "股息方面，每股派两点五仙，比去年同季的两仙多。",
+     "股息每股 2.5 仙，去年同季 2 仙",
+     "Dividend 2.5 sen vs 2 sen"
+    ],
+    [
+     "业绩是收市后公布的，今天股价先涨了十一仙，收在六令吉四十仙。",
+     "业绩收市后公布，今天先涨 11 仙收 RM6.40",
+     "Results after close; shares +11 sen to RM6.40"
+    ],
+    [
+     "我们的观察是，预测跌结果大涨，市场明天会怎么反应值得留意，接下来也要看铝价能不能撑住哦。",
+     "我们的观察：留意明天反应，也要看铝价能否撑住",
+     "Our take: watch aluminium prices"
+    ]
+   ]
+  },
+  {
+   "bg": "my_fibre.jpg",
+   "c": "#F26F21",
+   "num": "4",
+   "bar": "TM 净利少了 28%",
+   "pause": {
+    "2": 0.6,
+    "5": 0.6,
+    "6": 0.8,
+    "7": 1.0
+   },
+   "beats": [
+    {
+     "t": "siteu",
+     "s": 0,
+     "name": "TM 马电讯",
+     "logo": "tm_logo.png",
+     "logoW": 200,
+     "img": "site_tm.png",
+     "c": "#F26F21",
+     "line": "unifi 光纤宽频 · 流动服务",
+     "src": "画面：TM 官网"
+    },
+    {
+     "t": "doc",
+     "s": 1,
+     "auto": true,
+     "img": "fr_tm.png",
+     "boxAt": [
+      {
+       "$s": 1,
+       "f": 0.2
+      },
+      {
+       "$s": 1,
+       "f": 0.5
+      }
+     ],
+     "zoomTo": 1,
+     "take": [
+      "营收：约 RM30 亿（+0.3%）",
+      "股东净利：RM6.863 亿 → RM4.940 亿"
+     ],
+     "takeTitle": "Bursa 季报",
+     "src": "来源：Bursa Malaysia 季报；The Edge（11月25日）",
+     "fb": {
+      "t": "comparev",
+      "v": "B",
+      "img": "my_fibre.jpg",
+      "title": "第三季股东净利",
+      "v2": [
+       686.27,
+       494.04
+      ],
+      "lab": [
+       "去年同季",
+       "今年第三季"
+      ],
+      "txt": [
+       "RM6.863 亿",
+       "RM4.940 亿"
+      ],
+      "hi": 1,
+      "chip": "按年 −28%",
+      "chipBg": "#FF5A5F",
+      "src": "来源：The Edge（11月25日）"
+     }
+    },
+    {
+     "t": "listv",
+     "s": 2,
+     "v": "B",
+     "img": "my_fibre.jpg",
+     "c": "#FF5A5F",
+     "title": "为什么少了？",
+     "lines": [
+      "去年有一次性投资收益",
+      "今年税务开销增加"
+     ],
+     "src": "来源：The Edge（11月25日）"
+    },
+    {
+     "t": "comparev",
+     "s": 4,
+     "v": "B",
+     "img": "my_fibre.jpg",
+     "title": "今年累计宣布股息",
+     "v2": [
+      12.5,
+      23.5
+     ],
+     "lab": [
+      "去年同期",
+      "今年"
+     ],
+     "txt": [
+      "12.5 仙",
+      "23.5 仙"
+     ],
+     "hi": 1,
+     "chip": "这次派 10 仙 · 12/23 派发",
+     "chipBg": "#3DD68C",
+     "src": "来源：The Edge（11月25日）"
+    },
+    {
+     "t": "priceu",
+     "s": 5,
+     "c": "#F26F21",
+     "title": "TM 股价",
+     "sub": "每日 K 线 · 令吉",
+     "d": [
+      [
+       "11/20",
+       7.69,
+       7.7,
+       7.6,
+       7.63
+      ],
+      [
+       "11/23",
+       7.54,
+       7.78,
+       7.54,
+       7.64
+      ],
+      [
+       "11/24",
+       7.64,
+       7.76,
+       7.63,
+       7.64
+      ],
+      [
+       "11/25",
+       7.64,
+       7.68,
+       7.56,
+       7.63
+      ],
+      [
+       "11/26",
+       7.63,
+       7.68,
+       7.23,
+       7.25
+      ]
+     ],
+     "chip": "今天 −38 仙（−5%）→ RM7.25",
+     "chipAt": 1.5,
+     "chipBg": "#FF5A5F",
+     "src": "数据：moomoo 日线（BMS）"
+    },
+    {
+     "t": "listv",
+     "s": 7,
+     "v": "A",
+     "img": "my_fibre.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "少的主要是一次性收益",
+      "市场还是先用脚投票"
+     ],
+     "src": "分析与解读，非新闻事实"
+    }
+   ],
+   "sents": [
+    [
+     "第四件事，unifi的母公司TM，昨晚公布了第三季业绩。",
+     "第四件事：unifi 母公司 TM 昨晚公布第三季业绩",
+     "Story 4: TM's Q3 results"
+    ],
+    [
+     "交易所季报显示，营收大约三十亿令吉，差不多持平，股东净利却从六亿八千六百三十万令吉，跌到四亿九千四百万令吉，少了百分之二十八。",
+     "Bursa 季报：营收约 RM30 亿持平，净利 RM6.863 亿 → RM4.94 亿，−28%",
+     "Revenue flat ~RM3B; profit −28% to RM494M"
+    ],
+    [
+     "主要原因是去年同期有一笔一次性的投资收益，今年没有，再加上税务开销增加。",
+     "主因：去年有一次性投资收益，今年没有；税务开销增加",
+     "Last year's one-off gain; higher tax"
+    ],
+    [
+     "头九个月净利也少了百分之二十点八，到十一亿八千万令吉。",
+     "头 9 个月净利 −20.8%，到 RM11.8 亿",
+     "9M profit −20.8% to RM1.18B"
+    ],
+    [
+     "股息倒是不错，这次派十仙，今年累计已经宣布二十三点五仙，去年同期只有十二点五仙。",
+     "这次派 10 仙，今年累计 23.5 仙，去年同期 12.5 仙",
+     "10 sen now; 23.5 sen YTD vs 12.5 sen"
+    ],
+    [
+     "不过市场不太买账，今天股价跌了三十八仙，大约百分之五，收在七令吉二十五仙。",
+     "市场不买账：今天 −38 仙（约 −5%），收 RM7.25",
+     "Shares −38 sen (~5%) to RM7.25"
+    ],
+    [
+     "股息十二月九号登记，十二月二十三号派发。",
+     "股息 12/9 登记，12/23 派发",
+     "Entitlement 9 Dec, paid 23 Dec"
+    ],
+    [
+     "我们的观察是，净利少的主要是一次性收益，不过市场还是先用脚投票，惨咯，接下来要看核心业务能不能继续增长。",
+     "我们的观察：少的主要是一次性收益，但市场先用脚投票；看核心业务能否增长",
+     "Our take: watch core growth"
+    ]
+   ]
+  },
+  {
+   "bg": "my_city.jpg",
+   "c": "#8E44AD",
+   "num": "5",
+   "bar": "新股：YES GROUP 上市",
+   "pause": {
+    "3": 0.6,
+    "6": 0.6,
+    "7": 1.0
+   },
+   "beats": [
+    {
+     "t": "quip",
+     "s": 0,
+     "text": "今天新股上市",
+     "sub": "第五件事"
+    },
+    {
+     "t": "siteu",
+     "s": 1,
+     "name": "Yes Group 旅游",
+     "abbr": "YES",
+     "c": "#8E44AD",
+     "line": "企业奖励旅游 · 活动策划",
+     "src": "来源：The Edge（11月4日）"
+    },
+    {
+     "t": "listv",
+     "s": 3,
+     "v": "B",
+     "img": "my_city.jpg",
+     "c": "#8E44AD",
+     "title": "IPO 重点",
+     "lines": [
+      "每股 18 仙 · 创业板",
+      "公司集资 RM1,650 万",
+      "上市市值 RM9,540 万"
+     ],
+     "src": "来源：The Edge（11月4日）、星报（11月17日）"
+    },
+    {
+     "t": "comparev",
+     "s": 5,
+     "v": "B",
+     "img": "my_city.jpg",
+     "title": "RM1,650 万主要用在哪",
+     "v2": [
+      6.5,
+      3.0
+     ],
+     "lab": [
+      "欧洲交通 + 英国办公室",
+      "Yes Academy 培训"
+     ],
+     "txt": [
+      "RM650 万",
+      "RM300 万"
+     ],
+     "hi": 0,
+     "chip": "其余：营运资金 + 上市开销",
+     "chipBg": "#8E44AD",
+     "src": "来源：The Edge（11月4日）"
+    },
+    {
+     "t": "bignumv",
+     "s": 6,
+     "v": "A",
+     "img": "my_city.jpg",
+     "label": "公众部分超额认购",
+     "text": "2.8",
+     "unit": "倍",
+     "chip": "今天开盘高过招股价 2.78%",
+     "src": "来源：星报（11月17日）；BusinessToday（11月26日）"
+    },
+    {
+     "t": "listv",
+     "s": 7,
+     "v": "A",
+     "img": "my_city.jpg",
+     "c": "#FFD600",
+     "title": "我们的观察",
+     "lines": [
+      "小型新股，波动会比较大",
+      "看订单能否变成营收"
+     ],
+     "src": "分析与解读，非新闻事实"
+    }
+   ],
+   "sents": [
+    [
+     "第五件事，来看新股。",
+     "第五件事：新股",
+     "Story 5: IPO"
+    ],
+    [
+     "Yes Group是一家旅行社，主要帮企业办奖励旅游和活动，今天在创业板上市。",
+     "Yes Group：旅行社，帮企业办奖励旅游和活动，今天创业板上市",
+     "Yes Group: incentive travel, listed on ACE today"
+    ],
+    [
+     "截至今年六月的财年，它的营收是六千七百一十万令吉，净利七百五十万令吉。",
+     "截至 6 月财年：营收 RM6,710 万，净利 RM750 万",
+     "FY Jun 2026: revenue RM67.1M, profit RM7.5M"
+    ],
+    [
+     "招股价每股十八仙，公司集资一千六百五十万令吉，上市市值大约九千五百四十万令吉。",
+     "招股价 18 仙，公司集资 RM1,650 万，市值约 RM9,540 万",
+     "IPO 18 sen, RM16.5M raised, RM95.4M market cap"
+    ],
+    [
+     "上市后，创办人兼董事经理的持股会从百分之百降到百分之七十四。",
+     "上市后创办人持股从 100% 降到 74%",
+     "Founder stake falls from 100% to 74%"
+    ],
+    [
+     "钱主要拿去扩展欧洲的地面交通、在英国开区域办公室，还有三百万令吉办培训学院。",
+     "钱主要用于欧洲交通、英国办公室，RM300 万办培训学院",
+     "Europe transport, UK office, RM3M academy"
+    ],
+    [
+     "公众部分超额认购二点八倍，今天开盘比招股价高了百分之二点七八。",
+     "公众部分超额认购 2.8 倍，今天开盘高过招股价 2.78%",
+     "2.8x subscribed; opened 2.78% above IPO price"
+    ],
+    [
+     "我们的观察是，小型新股波动通常比较大，公司说手上还有三千四百六十万令吉的订单，接下来看能不能变成营收哦。",
+     "我们的观察：小型新股波动大；手上订单 RM3,460 万，看能否变成营收",
+     "Our take: watch RM34.6M order book"
+    ]
+   ]
+  },
+  {
+   "outro": true,
+   "bg": "bg_city_36206025.jpg"
+  }
+ ],
+ "assets": [
+  {
+   "type": "screenshot",
+   "url": "https://www.ytlpowerinternational.com/",
+   "file": "ytlpower_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.genting.com/",
+   "file": "genting_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.pressmetal.com/",
+   "file": "pmetal_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.tm.com.my/",
+   "file": "tm_logo.png",
+   "dest": "logo",
+   "w": 1280,
+   "h": 800,
+   "dpr": 3,
+   "selector": "img[alt*='logo' i], img[src*='logo' i], img[class*='logo' i], [class*='logo' i] img",
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.ytlpowerinternational.com/",
+   "file": "site_ytlpower.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.genting.com/",
+   "file": "site_genting.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.pressmetal.com/",
+   "file": "site_pmetal.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "url": "https://www.tm.com.my/",
+   "file": "site_tm.png",
+   "w": 1000,
+   "h": 600,
+   "optional": true
+  },
+  {
+   "type": "screenshot",
+   "file": "fr_genting.png",
+   "w": 1000,
+   "h": 1250,
+   "optional": true,
+   "highlight": [
+    "Revenue",
+    "Profit/(loss) attributable to ordinary equity holders of the parent"
+   ],
+   "find": {
+    "lists": [
+     "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=3182",
+     "https://www.klsescreener.com/v2/announcements/stock/3182"
+    ],
+    "text": "Quarterly rpt"
+   }
+  },
+  {
+   "type": "screenshot",
+   "file": "fr_pmetal.png",
+   "w": 1000,
+   "h": 1250,
+   "optional": true,
+   "highlight": [
+    "Revenue",
+    "Profit/(loss) attributable to ordinary equity holders of the parent"
+   ],
+   "find": {
+    "lists": [
+     "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=8869",
+     "https://www.klsescreener.com/v2/announcements/stock/8869"
+    ],
+    "text": "Quarterly rpt"
+   }
+  },
+  {
+   "type": "screenshot",
+   "file": "fr_tm.png",
+   "w": 1000,
+   "h": 1250,
+   "optional": true,
+   "highlight": [
+    "Revenue",
+    "Profit/(loss) attributable to ordinary equity holders of the parent"
+   ],
+   "find": {
+    "lists": [
+     "https://www.bursamalaysia.com/market_information/announcements/company_announcement?company=4863",
+     "https://www.klsescreener.com/v2/announcements/stock/4863"
+    ],
+    "text": "Quarterly rpt"
+   }
+  }
+ ],
+ "cover": {
+  "ds": 125,
+  "lines": [
+   {
+    "t": "芯片不来了？",
+    "s": 170
+   },
+   {
+    "t": "YTL电力 一度跌 13.7%",
+    "s": 100,
+    "c": "#FFD23F"
+   }
+  ]
+ },
+ "caption": "Nvidia 据报叫停 AI 服务器运来大马，YTL电力 一度跌 13.7%！\n🔌 Nvidia 停运，数据中心股跳水\n🎰 云顶第三季转亏\n🏭 Press Metal 净利大涨 52%\n📡 TM 净利少了 28%\n🆕 Yes Group 新股上市\n\n#马股 #马股晚报 #Bursa #TapauFinance #Tapau财经\n"
+}
